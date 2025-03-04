@@ -1,11 +1,10 @@
 package testCases;
 
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pageObject.BasePage;
 import pageObject.HomePage;
 import pageObject.LoginPage;
-import pageObject.PopUps;
 import testBase.BaseClass;
 import utilities.Dataproviders;
 
@@ -25,7 +24,7 @@ public class TC001_LoginTest extends BaseClass {
     {
         try
         {
-            PopUps pp=new PopUps(driver);
+            BasePage pp=new BasePage(driver);
             pp.handleAlert();
 
             LoginPage lp=new LoginPage(driver);
@@ -71,8 +70,6 @@ public class TC001_LoginTest extends BaseClass {
         {
             Assert.fail();
         }
-
-
     }
 
 }

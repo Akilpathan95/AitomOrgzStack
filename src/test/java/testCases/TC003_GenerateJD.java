@@ -5,7 +5,9 @@ import org.testng.annotations.Test;
 import pageObject.*;
 import testBase.BaseClass;
 
-public class TC002_CreateRequisition extends BaseClass {
+import java.time.Duration;
+
+public class TC003_GenerateJD extends BaseClass {
 
     @Test(priority = 1, groups = "Master")
     public void verify_Login()
@@ -91,4 +93,26 @@ public class TC002_CreateRequisition extends BaseClass {
 
         bp.handleAlert();
     }
+
+    @Test(priority = 6)
+    public void verify_Recruitment()
+    {
+        RequisitionPage rpage=new RequisitionPage(driver);
+        rpage.clkRequisition();
+        RecruitmentPage rp=new RecruitmentPage(driver);
+        rp.clkRecruitment();
+        rp.clkRecruitment_List();
+        rp.clkJob_Description();
+        rp.clkCreateWithAI();
+        rp.selectSuggestion_Inputbox();
+        rp.selectSuggestion();
+        rp.selectSubmit();
+        rp.selectSuggestion_Inputbox();
+        rp.selectSuggestion();
+        rp.selectSubmit();
+        rp.selectGenerate_JD();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        rp.selectSave();
+    }
+
 }

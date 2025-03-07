@@ -19,7 +19,7 @@ public class TC001_LoginTest extends BaseClass {
         lp.clkLogin();
     }
 
-    @Test(dataProvider = "LoginData", dataProviderClass = Dataproviders.class) //Getting dataprovider from different class
+    @Test(dataProvider = "LoginData", dataProviderClass = Dataproviders.class, groups = "Master") //Getting dataprovider from different class
     public void verify_loginfromData(String email, String pwd, String exp)
     {
         try

@@ -10,7 +10,7 @@
         <parameter name="os" value="Windows"/>
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="testCases.TC003_GenerateJD"/>
+            <class name="testCases.TC005_testing"/>
         </classes>
     </test>
 </suite>

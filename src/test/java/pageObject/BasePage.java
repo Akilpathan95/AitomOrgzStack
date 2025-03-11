@@ -1,8 +1,6 @@
 package pageObject;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,6 +12,7 @@ public class BasePage {
     WebDriver driver;
     WebDriverWait wait;
     Alert alert;
+    JavascriptExecutor js;
 
     public BasePage(WebDriver driver)
     {
@@ -53,7 +52,21 @@ public class BasePage {
             return null;
         }
 
-
     }
 
+    public void javascript(WebElement element)
+    {
+        js=(JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public boolean isAlertPresent() {
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(3))
+                    .until(ExpectedConditions.alertIsPresent());
+            return true; // Alert is present
+        } catch (Exception e) {
+            return false; // No alert
+        }
+    }
 }

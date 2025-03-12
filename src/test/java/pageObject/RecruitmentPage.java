@@ -20,10 +20,12 @@ public class RecruitmentPage extends BasePage {
 
     Actions actions;
 
+    Select select;
+
     @FindBy(xpath = "//div[normalize-space()=\"RECRUITMENT\"]")
     WebElement btnRecruitment;
 
-    @FindBy(xpath = "//p[normalize-space()=\"adsc\"]")
+    @FindBy(xpath = "(//p[contains(text(),'Senior Software Tester')])[1]")
     WebElement selectRecruirment_List;
 
     @FindBy(xpath = "(//div[normalize-space()='Job Description'])[1]")
@@ -74,6 +76,11 @@ public class RecruitmentPage extends BasePage {
     @FindBy(xpath = "//label[normalize-space()=\"Assign to All Locations\"]")
     List<WebElement> checkBox_AssigntoLocations;
 
+    //------------------------Interview Setup------------------
+
+    @FindBy(xpath = "//div[normalize-space()=\"Interview Setup\"]")
+    WebElement btn_InterviewSetup;
+
     @FindBy(xpath = "//input[@placeholder=\"Enter new skill\"]")
     WebElement txtAddMoreSkill;
 
@@ -103,6 +110,104 @@ public class RecruitmentPage extends BasePage {
 
     @FindBy(xpath = "(//button[contains(text(),'Add')])[2]")
     WebElement btnAddQuestion;
+
+    @FindBy(xpath = "//button[normalize-space()=\"SAVE INTERVIEW\"]")
+    WebElement btnSave_Interview;
+
+    //------------------------Add Candidate------------------
+
+    @FindBy(xpath = "//div[normalize-space()=\"Candidates\"]")
+    WebElement btnCandidates;
+
+    @FindBy(xpath = "//span[normalize-space()=\"Add Candidate\"]")
+    WebElement btnAdd_Candidate;
+
+    @FindBy(xpath = "//p[normalize-space()=\"Add Manually\"]")
+    WebElement btnAdd_Manually;
+
+    //------Add Candidate--Personal Details-----
+    @FindBy(xpath = "//input[@name=\"first_Name\"]")
+    WebElement txtFirst_Name;
+
+    @FindBy(xpath = "//input[@name=\"middle_Name\"]")
+    WebElement txtMiddle_Name;
+
+    @FindBy(xpath = "//input[@name=\"last_Name\"]")
+    WebElement txtLast_Name;
+
+    @FindBy(xpath = "//input[@name=\"email\"]")
+    WebElement txtEmail;
+
+    @FindBy(xpath = "//input[@name=\"mobile\"]")
+    WebElement txtMobile_Number;
+
+    @FindBy(xpath = "//input[@name=\"DOB\"]")
+    WebElement txtDOB;
+
+    @FindBy(xpath = "//input[@name=\"country\"]")
+    WebElement txtCountry;
+
+    @FindBy(xpath = "//input[@name=\"Industry\"]")
+    WebElement txtIndustry;
+
+    @FindBy(xpath = "//input[@name=\"current_Org\"]")
+    WebElement txtCurrent_Organization;
+
+    @FindBy(xpath = "//input[@name=\"current_Designation\"]")
+    WebElement txtCurrent_Designation;
+
+    @FindBy(xpath = "//input[@name=\"current_Location\"]")
+    WebElement txtCurrent_Location;
+
+    @FindBy(xpath = "//input[@name=\"functional_Area\"]")
+    WebElement txtFunction_Area;
+
+    @FindBy(xpath = "//input[@name=\"notice_Period\"]")
+    WebElement txtNotice_Period;
+
+    @FindBy(xpath = "//select[@name=\"relocate\"]")
+    WebElement drpRelocate;
+
+    @FindBy(xpath = "(//input[@placeholder='Enter here'])[10]")
+    WebElement txtPrimary_Source;
+
+    @FindBy(xpath = "//input[@name=\"secondary_Source\"]")
+    WebElement txtSecondary_Source;
+
+    @FindBy(xpath = "(//input[@placeholder='Enter here'])[11]")
+    WebElement txtPassportNumber;
+
+    @FindBy(xpath = "//input[@name=\"online_Profile_Url\"]")
+    WebElement txtOnlineProfile_URL;
+
+    @FindBy(xpath = "//select[@name=\"open_For_Remote_Work\"]")
+    WebElement txtRemote_Work;
+
+    @FindBy(xpath = "(//input[@placeholder='Enter here'])[18]")
+    WebElement txtCurrent_Salary;
+
+    @FindBy(xpath = "(//select[@name='currency'])[1]")
+    WebElement drpCurrent_Salary;
+
+    @FindBy(xpath = "(//select[@name='annual'])[1]")
+    WebElement drpCurrentSalary_Type;
+
+    @FindBy(xpath = "(//input[@placeholder='Enter here'])[19]")
+    WebElement txtExpected_Salary;
+
+    @FindBy(xpath = "(//select[@name='currency'])[2]")
+    WebElement drpExpected_Salary;
+
+    @FindBy(xpath = "(//select[@name='annual'])[2]")
+    WebElement drpExpectedSalary_Type;
+
+    @FindBy(xpath = "//input[@id=\"must-have-skills\"]")
+    WebElement txtSkills;
+
+    @FindBy(xpath = "//div[normalize-space()=\"SUBMIT\"]")
+    WebElement btnCandidate_submit;
+
+    //-------------------------Methods---------------
 
     public void clkRecruitment()
     {
@@ -185,7 +290,7 @@ public class RecruitmentPage extends BasePage {
             System.out.println("Assign Role : " + (i + 1) + ": " + drpAssignRole.get(i).getText());
             try {
                 WebElement assignRole = drpAssignRole.get(i);
-
+                JavascriptExecutor js=(JavascriptExecutor) driver;
                 js.executeScript("arguments[0].scrollIntoView({block: 'center'});", assignRole);
 
                 wait=new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -218,7 +323,7 @@ public class RecruitmentPage extends BasePage {
             System.out.println("Name and Email Id present on the page : " + (i + 1) + ": " + drpNameEmailId.get(i).getText());
             try {
                 WebElement nameEmailId = drpNameEmailId.get(i);
-
+                JavascriptExecutor js=(JavascriptExecutor) driver;
                 js.executeScript("arguments[0].scrollIntoView({block: 'center'});", nameEmailId);
 
                 wait=new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -250,7 +355,7 @@ public class RecruitmentPage extends BasePage {
             try {
                 Thread.sleep(2000);
                 WebElement addToTeam = btnAddtoTeam.get(i);
-
+                JavascriptExecutor js=(JavascriptExecutor) driver;
                 js.executeScript("arguments[0].scrollIntoView({block: 'center'});", addToTeam);
 
                 wait=new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -307,6 +412,7 @@ public class RecruitmentPage extends BasePage {
     public void enter_AddMoreSkill(String add_Skill)
     {
         txtAddMoreSkill.sendKeys(add_Skill);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
     public void clkbtnAddSkill()
@@ -314,8 +420,8 @@ public class RecruitmentPage extends BasePage {
         btnAddSkill.click();
     }
 
-    public void clkbtnAddMoreMCQs()
-    {
+    public void clkbtnAddMoreMCQs() throws InterruptedException {
+        Thread.sleep(30000);
         btnAddMoreMCQs.click();
     }
 
@@ -346,6 +452,7 @@ public class RecruitmentPage extends BasePage {
 
     public void clkdrpCorrectAnswer()
     {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         Select select=new Select(drpCorrectAnswer);
         select.selectByValue("Black Box Testing");
     }
@@ -353,5 +460,389 @@ public class RecruitmentPage extends BasePage {
     public void clkbtnAddQuestion()
     {
         btnAddQuestion.click();
+    }
+
+    public void selectWorking_Type()
+    {
+        driver.findElement(By.xpath("//input[@value=\"hybrid\"]")).click();
+        WebElement location=driver.findElement(By.xpath("//input[@placeholder=\"Enter locations (separated by commas)\"]"));
+        location.sendKeys("Navi Mukmbai");
+        location.sendKeys(Keys.ENTER);
+    }
+
+    public void selectSalary_Expectations(String selection)
+    {
+        WebElement yesRadioButton=driver.findElement(By.xpath("//input[@value=\"yes\"]"));
+        WebElement noRadionButton=driver.findElement(By.xpath("//input[@value=\"no\"]"));
+
+        if (selection.equalsIgnoreCase("Yes"))
+        {
+            yesRadioButton.click();
+            System.out.println("Yes button is selected");
+        }
+        else if (selection.equalsIgnoreCase("No"))
+        {
+            noRadionButton.click();
+            System.out.println("No button is selected");
+        }
+        else
+        {
+            System.out.println("Invalid option is selected");
+        }
+    }
+
+    public void enterSalary_Range(String userInput, String minSalary, String maxSalary)
+    {
+        WebElement enter_MinSalary= driver.findElement(By.xpath("//input[@placeholder=\"Min Salary\"]"));
+        WebElement enter_MaxSalary=driver.findElement(By.xpath("//input[@placeholder=\"Max Salary\"]"));
+        if (userInput.equalsIgnoreCase("yes"))
+        {
+            enter_MinSalary.sendKeys(minSalary);
+            enter_MaxSalary.sendKeys(maxSalary);
+            System.out.println("Salary Range entered Min Salary : " + enter_MinSalary + "Max Salary : " + enter_MaxSalary);
+        }
+        else if (userInput.equalsIgnoreCase("No"))
+        {
+            System.out.println("salary range is not entered");
+        }
+        else
+        {
+            System.out.println("Wrong option entered");
+        }
+    }
+
+    public void select_Availibility()
+    {
+        driver.findElement(By.xpath("//input[@value=\"within1month\"]")).click();
+    }
+
+    public void clkSave_Interview()
+    {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'});", btnSave_Interview);
+        btnSave_Interview.click();
+        BasePage bp=new BasePage(driver);
+        bp.handleAlert();
+    }
+
+    public void clkInterview_Setup()
+    {
+        btn_InterviewSetup.click();
+        BasePage bp=new BasePage(driver);
+        bp.handleAlert();
+    }
+
+    public void clkCandidate()
+    {
+        btnCandidates.click();
+    }
+
+    public void clkAdd_Candidate()
+    {
+        btnAdd_Candidate.click();
+    }
+
+    public void clkAdd_Manually()
+    {
+        btnAdd_Manually.click();
+    }
+
+    public void enterFirst_Name(String first_Name)
+    {
+        txtFirst_Name.sendKeys(first_Name);
+    }
+
+    public void enterMiddle_Name(String middle_Name)
+    {
+        txtMiddle_Name.sendKeys(middle_Name);
+    }
+
+    public void enterLast_Name(String last_Name)
+    {
+        txtLast_Name.sendKeys(last_Name);
+    }
+
+    public void enter_Email(String email)
+    {
+        txtEmail.sendKeys(email);
+    }
+
+    public void enter_MobileNo(String mobile_Number)
+    {
+        txtMobile_Number.sendKeys(mobile_Number);
+    }
+
+    public void enter_DOB(String dob)
+    {
+        txtDOB.sendKeys(dob);
+    }
+
+    public void enter_Country(String country)
+    {
+        txtCountry.sendKeys(country);
+    }
+
+    public void enterCurrent_Organization(String current_Organization)
+    {
+        txtCurrent_Organization.sendKeys(current_Organization);
+    }
+
+    public void enterCurrent_Designation(String current_Designation)
+    {
+        txtCurrent_Designation.sendKeys(current_Designation);
+    }
+
+    public void enter_Industry(String industry)
+    {
+        txtIndustry.sendKeys(industry);
+    }
+
+    public void enterCurrent_Location(String current_Location)
+    {
+        txtCurrent_Location.sendKeys(current_Location);
+    }
+
+    public void enterFunctional_Area(String functional_Area)
+    {
+        txtFunction_Area.sendKeys(functional_Area);
+    }
+
+    public void enterNotice_Period(String notice_Period)
+    {
+        txtNotice_Period.sendKeys(notice_Period);
+    }
+
+    public void selectRelocate()
+    {
+        select=new Select(drpRelocate);
+        select.selectByValue("Yes");
+    }
+
+    public void enterPrimary_Source(String primary_Source)
+    {
+        txtPrimary_Source.sendKeys(primary_Source);
+    }
+
+    public void enterSecondary_Source(String secondary_Source)
+    {
+        txtSecondary_Source.sendKeys(secondary_Source);
+    }
+
+    public void enterPassport_Number(String passport_Number)
+    {
+        txtPassportNumber.sendKeys(passport_Number);
+    }
+
+    public void enteronlineProfile_URL(String onlineProfile_URL)
+    {
+        txtOnlineProfile_URL.sendKeys(onlineProfile_URL);
+    }
+
+    public void selectRemote_Work()
+    {
+        select=new Select(txtRemote_Work);
+        select.selectByValue("Yes");
+    }
+
+    public void enterCurrent_Salary(String current_Salary)
+    {
+        txtCurrent_Salary.sendKeys(current_Salary);
+    }
+
+    public void selectCurrent_Salary()
+    {
+        select=new Select(drpCurrent_Salary);
+        select.selectByValue("INR");
+    }
+
+    public void selectDrpCurrentSalary_Type()
+    {
+        select=new Select(drpCurrentSalary_Type);
+        select.selectByValue("Yearly");
+    }
+
+    public void enterExpected_Salary(String expected_Salary)
+    {
+        txtExpected_Salary.sendKeys(expected_Salary);
+    }
+
+    public void selectExpected_Salary()
+    {
+        select=new Select(drpExpected_Salary);
+        select.selectByValue("INR");
+    }
+
+    public void selectExpectecSalary_Type()
+    {
+        select=new Select(drpExpectedSalary_Type);
+        select.selectByValue("Yearly");
+    }
+
+    public void enterSkills(String skills)
+    {
+        txtSkills.sendKeys(skills);
+        txtSkills.sendKeys(Keys.ENTER);
+    }
+
+    public void selectEducation(String selectEducationDetails) throws InterruptedException {
+        WebElement education=driver.findElement(By.xpath("//button[normalize-space()=\"+ Add Education\"]"));
+
+        if (selectEducationDetails.equalsIgnoreCase("Yes"))
+        {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].scrollIntoView({block: 'center'});", education);
+            education.click();
+            Thread.sleep(2000);
+            WebElement degree=driver.findElement(By.xpath("//input[@name=\"Degree\"]"));
+            WebElement institution=driver.findElement(By.xpath("//input[@name=\"Institution\"]"));
+            WebElement university=driver.findElement(By.xpath("//input[@name=\"university\"]"));
+            WebElement fromDate=driver.findElement(By.xpath("//input[@name=\"fromDate\"]"));
+            WebElement toDate=driver.findElement(By.xpath("//input[@name=\"toDate\"]"));
+            WebElement percentage=driver.findElement(By.xpath("//input[@name=\"percentage\"]"));
+            WebElement location=driver.findElement(By.xpath("(//input[@name=\"location\"])[1]"));
+            WebElement add=driver.findElement(By.xpath("//button[normalize-space()=\"Add\"][1]"));
+
+            degree.sendKeys("B.sc in Computer Science");
+            institution.sendKeys("ICL's Motilal JhunJhunwala College");
+            university.sendKeys("Mumbai University");
+            fromDate.sendKeys("01-06-2013");
+            toDate.sendKeys("01-06-2016");
+            percentage.sendKeys("60%");
+            location.sendKeys("Vashi");
+            add.click();
+            System.out.println("Education details added successfully.");
+        }
+        else if (selectEducationDetails.equalsIgnoreCase("No"))
+        {
+            System.out.println("User dont want to add education details. Please move forward");
+        }
+
+    }
+
+    public void selectExperience(String experienceDetails) throws InterruptedException {
+        WebElement experience=driver.findElement(By.xpath("//button[normalize-space()=\"+ Add Experience\"]"));
+
+        if (experienceDetails.equalsIgnoreCase("Yes"))
+        {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].scrollIntoView({block: 'center'});", experience);
+            experience.click();
+            Thread.sleep(2000);
+            WebElement job_Title=driver.findElement(By.xpath("//input[@name=\"jobTitle\"]"));
+            job_Title.sendKeys("Senior Software Tester");
+            WebElement company_Name=driver.findElement(By.xpath("//input[@name=\"companyName\"]"));
+            company_Name.sendKeys("Cirrius Technologies PVT LTD");
+            WebElement location=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[1]//div[3]//input[1]"));
+            js.executeScript("arguments[0].scrollIntoView({block: 'center'});", location);
+            js.executeScript("arguments[0].click();", location);
+            location.clear();
+            location.sendKeys("Andheri");
+            WebElement fromDate=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[2]//div[1]//input[1]"));
+            fromDate.sendKeys("20-09-2021");
+            WebElement toDate=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[2]//div[2]//input[1]"));
+            toDate.sendKeys("05-08-2022");
+            WebElement roles=driver.findElement(By.xpath("//input[@name=\"roles\"]"));
+            roles.sendKeys("Manual and Automation Testing");
+            WebElement add=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[4]//button[2]"));
+            add.click();
+
+            System.out.println("Experience added successfully");
+
+        }
+        else if (experienceDetails.equalsIgnoreCase("No"))
+        {
+            System.out.println("Candidate dont want to add experience, Please move forward");
+        }
+    }
+
+    public void selectProject(String selectProjectDetail)
+    {
+        WebElement project=driver.findElement(By.xpath("//button[normalize-space()=\"+ Add Project\"]"));
+
+        if (selectProjectDetail.equalsIgnoreCase("Yes"))
+        {
+            project.click();
+
+            WebElement project_Name=driver.findElement(By.xpath("//input[@name=\"projectName\"]"));
+            project_Name.sendKeys("Orgzstack");
+            WebElement location=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/input[1]"));
+            location.sendKeys("Navi Mumbai");
+            WebElement from_Date=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[2]/div[1]/input[1]"));
+            from_Date.sendKeys("06-10-2022");
+            WebElement to_Date=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[2]/div[2]/input[1]"));
+            to_Date.sendKeys("03-12-2024");
+            WebElement project_Description=driver.findElement(By.xpath("//input[@name=\"description\"]"));
+            project_Description.sendKeys("It is HR management tool");
+            WebElement add=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[4]/button[2]"));
+            add.click();
+            System.out.println("Project added successfully");
+        }
+        else if (selectProjectDetail.equalsIgnoreCase("No"))
+        {
+            System.out.println("Candidate dont want to add project, Please move forward");
+        }
+    }
+
+    public void selectLanguage(String selectLanguage_Option)
+    {
+        WebElement language=driver.findElement(By.xpath("//button[normalize-space()=\"+ Add Language\"]"));
+
+        if (selectLanguage_Option.equalsIgnoreCase("Yes"))
+        {
+            language.click();
+
+            WebElement selectlanguage_option=driver.findElement(By.xpath("//select[@name=\"language\"]"));
+            select=new Select(selectlanguage_option);
+            select.selectByValue("English");
+            WebElement read=driver.findElement(By.xpath("//input[@name=\"read\"]"));
+            read.click();
+            WebElement write=driver.findElement(By.xpath("//input[@name=\"write\"]"));
+            write.click();
+            WebElement speak=driver.findElement(By.xpath("//input[@name=\"speak\"]"));
+            speak.click();
+            WebElement add=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[4]/div[4]/div[1]/div[1]/div[2]/button[2]"));
+            add.click();
+
+            System.out.println("Language added successfully");
+        }
+        else if (selectLanguage_Option.equalsIgnoreCase("No"))
+        {
+            System.out.println("User dont want to update Language, Please move forward");
+        }
+    }
+
+    public void selectCourses(String selectCourses_Details)
+    {
+        WebElement course=driver.findElement(By.xpath("//button[normalize-space()=\"+ Add Course\"]"));
+
+        if (selectCourses_Details.equalsIgnoreCase("Yes"))
+        {
+            course.click();
+
+            WebElement courseName=driver.findElement(By.xpath("//input[@name=\"courseName\"]"));
+            courseName.sendKeys("Automation Test Specialist");
+            WebElement fromDate=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[5]/div[1]/div[3]/div[1]/div[1]/div[2]/input[1]"));
+            fromDate.sendKeys("07-05-2023");
+            WebElement toDate=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[5]/div[1]/div[3]/div[1]/div[1]/div[3]/input[1]"));
+            toDate.sendKeys("15-11-2023");
+            WebElement add=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div//div//div//div//div//div//div//button[contains(text(),\"Add\")]"));
+            add.click();
+
+            System.out.println("Course details added successfully");
+        }
+        else if (selectCourses_Details.equalsIgnoreCase("No"))
+        {
+            System.out.println("User dont want to add course detail, Please proceed and submit the form");
+        }
+    }
+
+    public void submit()
+    {
+        btnCandidate_submit.click();
+        BasePage bp=new BasePage(driver);
+        bp.handleAlert();
     }
 }

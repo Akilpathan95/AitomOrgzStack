@@ -21,6 +21,7 @@ public class RecruitmentPage extends BasePage {
     Actions actions;
 
     Select select;
+    JavascriptExecutor js;
 
     @FindBy(xpath = "//div[normalize-space()=\"RECRUITMENT\"]")
     WebElement btnRecruitment;
@@ -290,7 +291,7 @@ public class RecruitmentPage extends BasePage {
             System.out.println("Assign Role : " + (i + 1) + ": " + drpAssignRole.get(i).getText());
             try {
                 WebElement assignRole = drpAssignRole.get(i);
-                JavascriptExecutor js=(JavascriptExecutor) driver;
+                 js=(JavascriptExecutor) driver;
                 js.executeScript("arguments[0].scrollIntoView({block: 'center'});", assignRole);
 
                 wait=new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -323,7 +324,7 @@ public class RecruitmentPage extends BasePage {
             System.out.println("Name and Email Id present on the page : " + (i + 1) + ": " + drpNameEmailId.get(i).getText());
             try {
                 WebElement nameEmailId = drpNameEmailId.get(i);
-                JavascriptExecutor js=(JavascriptExecutor) driver;
+                js=(JavascriptExecutor) driver;
                 js.executeScript("arguments[0].scrollIntoView({block: 'center'});", nameEmailId);
 
                 wait=new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -355,7 +356,7 @@ public class RecruitmentPage extends BasePage {
             try {
                 Thread.sleep(2000);
                 WebElement addToTeam = btnAddtoTeam.get(i);
-                JavascriptExecutor js=(JavascriptExecutor) driver;
+                js=(JavascriptExecutor) driver;
                 js.executeScript("arguments[0].scrollIntoView({block: 'center'});", addToTeam);
 
                 wait=new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -519,7 +520,7 @@ public class RecruitmentPage extends BasePage {
     public void clkSave_Interview()
     {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView({block: 'center'});", btnSave_Interview);
         btnSave_Interview.click();
         BasePage bp=new BasePage(driver);
@@ -550,67 +551,195 @@ public class RecruitmentPage extends BasePage {
 
     public void enterFirst_Name(String first_Name)
     {
-        txtFirst_Name.sendKeys(first_Name);
+        String firstName=txtFirst_Name.getAttribute("value");
+        if (firstName == null || firstName.isEmpty())
+        {
+            txtFirst_Name.sendKeys(first_Name);
+            System.out.println("First Name is added");
+        }
+        else
+        {
+            System.out.println("Name is present.");
+        }
+
     }
 
     public void enterMiddle_Name(String middle_Name)
     {
-        txtMiddle_Name.sendKeys(middle_Name);
+        String middleName=txtMiddle_Name.getAttribute("value");
+        if (middleName == null ||middleName.isEmpty())
+        {
+            txtMiddle_Name.sendKeys(middle_Name);
+            System.out.println("Middle Name is added");
+        }
+        else
+        {
+            System.out.println("Middle name is present");
+        }
     }
 
     public void enterLast_Name(String last_Name)
     {
-        txtLast_Name.sendKeys(last_Name);
+        String lastName=txtLast_Name.getAttribute("Value");
+        if (lastName == null || lastName.isEmpty())
+        {
+            txtLast_Name.sendKeys(last_Name);
+            System.out.println("Last Name is added");
+        }
+        else
+        {
+            System.out.println("Last name is present");
+        }
+
     }
 
     public void enter_Email(String email)
     {
-        txtEmail.sendKeys(email);
+        String Cemail=txtEmail.getAttribute("Value");
+        if (Cemail == null || Cemail.isEmpty())
+        {
+            txtEmail.sendKeys(email);
+            System.out.println("Email is added");
+        }
+        else
+        {
+            System.out.println("Email is present");
+        }
+
     }
 
     public void enter_MobileNo(String mobile_Number)
     {
-        txtMobile_Number.sendKeys(mobile_Number);
+        String mob_Number=txtMobile_Number.getAttribute("Value");
+        if (mob_Number == null || mob_Number.isEmpty())
+        {
+            txtMobile_Number.sendKeys(mobile_Number);
+            System.out.println("Mobile Number is added");
+        }
+        else
+        {
+            System.out.println("Mobile Number is Present");
+        }
+
     }
 
     public void enter_DOB(String dob)
     {
-        txtDOB.sendKeys(dob);
+        String dOB=txtDOB.getAttribute("Value");
+        if (dOB==null || dOB.isEmpty())
+        {
+            txtDOB.sendKeys(dob);
+            System.out.println("Date of Birth is added");
+        }
+        else
+        {
+            System.out.println("Date of birth present");
+        }
+
     }
 
     public void enter_Country(String country)
     {
-        txtCountry.sendKeys(country);
+        String eCountry=txtCountry.getAttribute("Value");
+        if (eCountry == null || eCountry.isEmpty())
+        {
+            txtCountry.sendKeys(country);
+            System.out.println("Country is added");
+        }
+        else
+        {
+            System.out.println("Country is present");
+        }
+
     }
 
     public void enterCurrent_Organization(String current_Organization)
     {
-        txtCurrent_Organization.sendKeys(current_Organization);
+        String cOrg=txtCurrent_Organization.getAttribute("Value");
+        if (cOrg==null || cOrg.isEmpty())
+        {
+            txtCurrent_Organization.sendKeys(current_Organization);
+            System.out.println("Current Organization is added");
+        }
+        else
+        {
+            System.out.println("Current Organization is present");
+        }
+
     }
 
     public void enterCurrent_Designation(String current_Designation)
     {
-        txtCurrent_Designation.sendKeys(current_Designation);
+        String cDes=txtCurrent_Designation.getAttribute("Value");
+        if (cDes == null || cDes.isEmpty())
+        {
+            txtCurrent_Designation.sendKeys(current_Designation);
+            System.out.println("Current Designation is added");
+        }
+        else
+        {
+            System.out.println("Current Designation is present");
+        }
+
     }
 
     public void enter_Industry(String industry)
     {
-        txtIndustry.sendKeys(industry);
+        String ind=txtIndustry.getAttribute("Value");
+        if (ind == null || ind.isEmpty())
+        {
+            txtIndustry.sendKeys(industry);
+            System.out.println("Industry is added");
+        }
+        {
+            System.out.println("Industry is present");
+        }
+
     }
 
     public void enterCurrent_Location(String current_Location)
     {
-        txtCurrent_Location.sendKeys(current_Location);
+        String loc=txtCurrent_Location.getAttribute("Value");
+        if (loc == null || loc.isEmpty())
+        {
+            txtCurrent_Location.sendKeys(current_Location);
+            System.out.println("Current Location is added");
+        }
+        else
+        {
+            System.out.println("Current location is present");
+        }
+
     }
 
     public void enterFunctional_Area(String functional_Area)
     {
-        txtFunction_Area.sendKeys(functional_Area);
+        String fun=txtFunction_Area.getAttribute("Value");
+        if (fun == null || fun.isEmpty())
+        {
+            txtFunction_Area.sendKeys(functional_Area);
+            System.out.println("Functional Area is added");
+        }
+        else
+        {
+            System.out.println("Functional area is present");
+        }
+
     }
 
     public void enterNotice_Period(String notice_Period)
     {
-        txtNotice_Period.sendKeys(notice_Period);
+        String notice=txtNotice_Period.getAttribute("Value");
+        if (notice == null || notice.isEmpty())
+        {
+            txtNotice_Period.sendKeys(notice_Period);
+            System.out.println("Notice Period is added");
+        }
+        else
+        {
+            System.out.println("Notice Period is present");
+        }
+
     }
 
     public void selectRelocate()
@@ -621,22 +750,59 @@ public class RecruitmentPage extends BasePage {
 
     public void enterPrimary_Source(String primary_Source)
     {
-        txtPrimary_Source.sendKeys(primary_Source);
+        String primary=txtPrimary_Source.getAttribute("Value");
+        if (primary == null || primary.isEmpty())
+        {
+            txtPrimary_Source.sendKeys(primary_Source);
+            System.out.println("Primary Source is added");
+        }
+        else
+        {
+            System.out.println("Primary Source is present");
+        }
+
     }
 
     public void enterSecondary_Source(String secondary_Source)
     {
+        String secondary=txtSecondary_Source.getAttribute("Value");
+        if (secondary == null || secondary.isEmpty())
+        {
         txtSecondary_Source.sendKeys(secondary_Source);
+            System.out.println("Secondary Source is added");
+        }
+        else
+        {
+            System.out.println("Secondary Source is present");
+        }
     }
 
     public void enterPassport_Number(String passport_Number)
     {
+        String pass=txtPassportNumber.getAttribute("Value");
+        if (pass == null || pass.isEmpty())
+        {
         txtPassportNumber.sendKeys(passport_Number);
+            System.out.println("Passport Number is added");
+        }
+        else
+        {
+            System.out.println("Passport Number is present");
+        }
     }
 
     public void enteronlineProfile_URL(String onlineProfile_URL)
     {
+        String url=txtOnlineProfile_URL.getAttribute("Value");
+        if (url == null || url.isEmpty())
+        {
         txtOnlineProfile_URL.sendKeys(onlineProfile_URL);
+            System.out.println("Online Profile URL is added");
+        }
+        else
+        {
+            System.out.println("Profile URL is present");
+        }
     }
 
     public void selectRemote_Work()
@@ -647,7 +813,16 @@ public class RecruitmentPage extends BasePage {
 
     public void enterCurrent_Salary(String current_Salary)
     {
+        String salary=txtCurrent_Salary.getAttribute("Value");
+        if (salary == null || salary.isEmpty())
+        {
         txtCurrent_Salary.sendKeys(current_Salary);
+        System.out.println("Current Salary is added");
+        }
+        else
+        {
+            System.out.println("Current Salary is present");
+        }
     }
 
     public void selectCurrent_Salary()
@@ -664,7 +839,16 @@ public class RecruitmentPage extends BasePage {
 
     public void enterExpected_Salary(String expected_Salary)
     {
+        String exp=txtExpected_Salary.getAttribute("Value");
+        if (exp == null || exp.isEmpty())
+        {
         txtExpected_Salary.sendKeys(expected_Salary);
+        System.out.println("Expected Salary is added");
+        }
+        else
+        {
+            System.out.println("Expected Salary is present");
+        }
     }
 
     public void selectExpected_Salary()
@@ -681,108 +865,138 @@ public class RecruitmentPage extends BasePage {
 
     public void enterSkills(String skills)
     {
+        String ski=txtSkills.getAttribute("Value");
+        if (ski == null || ski.isEmpty())
+        {
         txtSkills.sendKeys(skills);
         txtSkills.sendKeys(Keys.ENTER);
+            System.out.println("Skills are is added");
+        }
+        else
+        {
+            System.out.println("Skills are is present");
+        }
     }
 
     public void selectEducation(String selectEducationDetails) throws InterruptedException {
         WebElement education=driver.findElement(By.xpath("//button[normalize-space()=\"+ Add Education\"]"));
+        List<WebElement> eduDetails=driver.findElements(By.xpath("//div[@style='padding: 20px 40px; background-color: rgb(242, 242, 242); margin-left: 20px;']//div[@style='display: flex; justify-content: space-between; align-items: center;']"));
 
-        if (selectEducationDetails.equalsIgnoreCase("Yes"))
+        if (eduDetails.size()>0)
         {
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].scrollIntoView({block: 'center'});", education);
-            education.click();
-            Thread.sleep(2000);
-            WebElement degree=driver.findElement(By.xpath("//input[@name=\"Degree\"]"));
-            WebElement institution=driver.findElement(By.xpath("//input[@name=\"Institution\"]"));
-            WebElement university=driver.findElement(By.xpath("//input[@name=\"university\"]"));
-            WebElement fromDate=driver.findElement(By.xpath("//input[@name=\"fromDate\"]"));
-            WebElement toDate=driver.findElement(By.xpath("//input[@name=\"toDate\"]"));
-            WebElement percentage=driver.findElement(By.xpath("//input[@name=\"percentage\"]"));
-            WebElement location=driver.findElement(By.xpath("(//input[@name=\"location\"])[1]"));
-            WebElement add=driver.findElement(By.xpath("//button[normalize-space()=\"Add\"][1]"));
-
-            degree.sendKeys("B.sc in Computer Science");
-            institution.sendKeys("ICL's Motilal JhunJhunwala College");
-            university.sendKeys("Mumbai University");
-            fromDate.sendKeys("01-06-2013");
-            toDate.sendKeys("01-06-2016");
-            percentage.sendKeys("60%");
-            location.sendKeys("Vashi");
-            add.click();
-            System.out.println("Education details added successfully.");
+            System.out.println("Education details are already present. No need to Add");
         }
-        else if (selectEducationDetails.equalsIgnoreCase("No"))
+        else
         {
-            System.out.println("User dont want to add education details. Please move forward");
-        }
+            if (selectEducationDetails.equalsIgnoreCase("Yes"))
+            {
+                System.out.println("No educational details found. Clicking on the Add education button to add the details");
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                js = (JavascriptExecutor) driver;
+                js.executeScript("arguments[0].scrollIntoView({block: 'center'});", education);
+                education.click();
+                Thread.sleep(2000);
+                WebElement degree=driver.findElement(By.xpath("//input[@name=\"Degree\"]"));
+                WebElement institution=driver.findElement(By.xpath("//input[@name=\"Institution\"]"));
+                WebElement university=driver.findElement(By.xpath("//input[@name=\"university\"]"));
+                WebElement fromDate=driver.findElement(By.xpath("//input[@name=\"fromDate\"]"));
+                WebElement toDate=driver.findElement(By.xpath("//input[@name=\"toDate\"]"));
+                WebElement percentage=driver.findElement(By.xpath("//input[@name=\"percentage\"]"));
+                WebElement location=driver.findElement(By.xpath("(//input[@name=\"location\"])[1]"));
+                WebElement add=driver.findElement(By.xpath("//button[normalize-space()=\"Add\"][1]"));
 
+                degree.sendKeys("B.sc in Computer Science");
+                institution.sendKeys("ICL's Motilal JhunJhunwala College");
+                university.sendKeys("Mumbai University");
+                fromDate.sendKeys("01-06-2013");
+                toDate.sendKeys("01-06-2016");
+                percentage.sendKeys("60%");
+                location.sendKeys("Vashi");
+                add.click();
+                System.out.println("Education details added successfully.");
+            }
+            else if (selectEducationDetails.equalsIgnoreCase("No"))
+            {
+                System.out.println("User dont want to add education details. Please move forward");
+            }
+        }
     }
 
     public void selectExperience(String experienceDetails) throws InterruptedException {
         WebElement experience=driver.findElement(By.xpath("//button[normalize-space()=\"+ Add Experience\"]"));
+        List<WebElement> expDetails=driver.findElements(By.xpath("//h1[contains(text(),'Experience')]/ancestor::div/following-sibling::div[contains(@style, 'padding')]"));
 
-        if (experienceDetails.equalsIgnoreCase("Yes"))
+        if (expDetails.size()>0)
         {
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].scrollIntoView({block: 'center'});", experience);
-            experience.click();
-            Thread.sleep(2000);
-            WebElement job_Title=driver.findElement(By.xpath("//input[@name=\"jobTitle\"]"));
-            job_Title.sendKeys("Senior Software Tester");
-            WebElement company_Name=driver.findElement(By.xpath("//input[@name=\"companyName\"]"));
-            company_Name.sendKeys("Cirrius Technologies PVT LTD");
-            WebElement location=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[1]//div[3]//input[1]"));
-            js.executeScript("arguments[0].scrollIntoView({block: 'center'});", location);
-            js.executeScript("arguments[0].click();", location);
-            location.clear();
-            location.sendKeys("Andheri");
-            WebElement fromDate=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[2]//div[1]//input[1]"));
-            fromDate.sendKeys("20-09-2021");
-            WebElement toDate=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[2]//div[2]//input[1]"));
-            toDate.sendKeys("05-08-2022");
-            WebElement roles=driver.findElement(By.xpath("//input[@name=\"roles\"]"));
-            roles.sendKeys("Manual and Automation Testing");
-            WebElement add=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[4]//button[2]"));
-            add.click();
-
-            System.out.println("Experience added successfully");
-
+            System.out.println("Experience details are already present. No need to Add");
         }
-        else if (experienceDetails.equalsIgnoreCase("No"))
+        else
         {
-            System.out.println("Candidate dont want to add experience, Please move forward");
+            if (experienceDetails.equalsIgnoreCase("Yes"))
+            {
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                js = (JavascriptExecutor) driver;
+                js.executeScript("arguments[0].scrollIntoView({block: 'center'});", experience);
+                experience.click();
+                Thread.sleep(2000);
+                WebElement job_Title=driver.findElement(By.xpath("//input[@name=\"jobTitle\"]"));
+                job_Title.sendKeys("Senior Software Tester");
+                WebElement company_Name=driver.findElement(By.xpath("//input[@name=\"companyName\"]"));
+                company_Name.sendKeys("Cirrius Technologies PVT LTD");
+                WebElement location=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[1]//div[3]//input[1]"));
+                js.executeScript("arguments[0].scrollIntoView({block: 'center'});", location);
+                js.executeScript("arguments[0].click();", location);
+                location.clear();
+                location.sendKeys("Andheri");
+                WebElement fromDate=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[2]//div[1]//input[1]"));
+                fromDate.sendKeys("20-09-2021");
+                WebElement toDate=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[2]//div[2]//input[1]"));
+                toDate.sendKeys("05-08-2022");
+                WebElement roles=driver.findElement(By.xpath("//input[@name=\"roles\"]"));
+                roles.sendKeys("Manual and Automation Testing");
+                WebElement add=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[4]//button[2]"));
+                add.click();
+
+                System.out.println("Experience added successfully");
+
+            }
+            else if (experienceDetails.equalsIgnoreCase("No"))
+            {
+                System.out.println("Candidate dont want to add experience, Please move forward");
+            }
         }
     }
 
     public void selectProject(String selectProjectDetail)
     {
         WebElement project=driver.findElement(By.xpath("//button[normalize-space()=\"+ Add Project\"]"));
+        List<WebElement> proDetails=driver.findElements(By.xpath("//h1[contains(text(),'Project')]/ancestor::div/following-sibling::div[contains(@style, 'padding')]"));
 
-        if (selectProjectDetail.equalsIgnoreCase("Yes"))
+        if (proDetails.size()>1)
         {
-            project.click();
-
-            WebElement project_Name=driver.findElement(By.xpath("//input[@name=\"projectName\"]"));
-            project_Name.sendKeys("Orgzstack");
-            WebElement location=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/input[1]"));
-            location.sendKeys("Navi Mumbai");
-            WebElement from_Date=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[2]/div[1]/input[1]"));
-            from_Date.sendKeys("06-10-2022");
-            WebElement to_Date=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[2]/div[2]/input[1]"));
-            to_Date.sendKeys("03-12-2024");
-            WebElement project_Description=driver.findElement(By.xpath("//input[@name=\"description\"]"));
-            project_Description.sendKeys("It is HR management tool");
-            WebElement add=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[4]/button[2]"));
-            add.click();
-            System.out.println("Project added successfully");
+            System.out.println("Project details are already present. No need to Add");
         }
-        else if (selectProjectDetail.equalsIgnoreCase("No"))
-        {
-            System.out.println("Candidate dont want to add project, Please move forward");
+        else {
+
+            if (selectProjectDetail.equalsIgnoreCase("Yes")) {
+                project.click();
+
+                WebElement project_Name = driver.findElement(By.xpath("//input[@name=\"projectName\"]"));
+                project_Name.sendKeys("Orgzstack");
+                WebElement location = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/input[1]"));
+                location.sendKeys("Navi Mumbai");
+                WebElement from_Date = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[2]/div[1]/input[1]"));
+                from_Date.sendKeys("06-10-2022");
+                WebElement to_Date = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[2]/div[2]/input[1]"));
+                to_Date.sendKeys("03-12-2024");
+                WebElement project_Description = driver.findElement(By.xpath("//input[@name=\"description\"]"));
+                project_Description.sendKeys("It is HR management tool");
+                WebElement add = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[4]/button[2]"));
+                add.click();
+                System.out.println("Project added successfully");
+            } else if (selectProjectDetail.equalsIgnoreCase("No")) {
+                System.out.println("Candidate dont want to add project, Please move forward");
+            }
         }
     }
 
@@ -817,26 +1031,38 @@ public class RecruitmentPage extends BasePage {
     public void selectCourses(String selectCourses_Details)
     {
         WebElement course=driver.findElement(By.xpath("//button[normalize-space()=\"+ Add Course\"]"));
-
-        if (selectCourses_Details.equalsIgnoreCase("Yes"))
+        List<WebElement> couDetails=driver.findElements(By.xpath("//h1[contains(text(),'Courses')]/ancestor::div/following-sibling::div[contains(@style, 'padding')]"));
+        if (couDetails.size()>0)
         {
-            course.click();
-
-            WebElement courseName=driver.findElement(By.xpath("//input[@name=\"courseName\"]"));
-            courseName.sendKeys("Automation Test Specialist");
-            WebElement fromDate=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[5]/div[1]/div[3]/div[1]/div[1]/div[2]/input[1]"));
-            fromDate.sendKeys("07-05-2023");
-            WebElement toDate=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[5]/div[1]/div[3]/div[1]/div[1]/div[3]/input[1]"));
-            toDate.sendKeys("15-11-2023");
-            WebElement add=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div//div//div//div//div//div//div//button[contains(text(),\"Add\")]"));
-            add.click();
-
-            System.out.println("Course details added successfully");
+            System.out.println("Course details are already present. No need to Add");
         }
-        else if (selectCourses_Details.equalsIgnoreCase("No"))
+        else
         {
-            System.out.println("User dont want to add course detail, Please proceed and submit the form");
+            if (selectCourses_Details.equalsIgnoreCase("Yes")) {
+                course.click();
+
+                WebElement courseName = driver.findElement(By.xpath("//input[@name=\"courseName\"]"));
+                courseName.sendKeys("Automation Test Specialist");
+                WebElement fromDate = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[5]/div[1]/div[3]/div[1]/div[1]/div[2]/input[1]"));
+                fromDate.sendKeys("07-05-2023");
+                WebElement toDate = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[5]/div[1]/div[3]/div[1]/div[1]/div[3]/input[1]"));
+                toDate.sendKeys("15-11-2023");
+                WebElement add = driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div//div//div//div//div//div//div//button[contains(text(),\"Add\")]"));
+                add.click();
+
+                System.out.println("Course details added successfully");
+            } else if (selectCourses_Details.equalsIgnoreCase("No")) {
+                System.out.println("User dont want to add course detail, Please proceed and submit the form");
+            }
         }
+    }
+
+    public void addFile() throws InterruptedException {
+        Thread.sleep(5000);
+        WebElement uploadResume=driver.findElement(By.xpath("//input[@type='file']"));
+        js=(JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",uploadResume);
+        uploadResume.sendKeys("C:\\Users\\IPSL\\Downloads\\Akil_Pathan_FinalManual.pdf");
     }
 
     public void submit()

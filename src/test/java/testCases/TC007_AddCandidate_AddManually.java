@@ -161,6 +161,8 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         rp.clkCandidate();
         rp.clkAdd_Candidate();
         rp.clkAdd_Manually();
+        rp.addFile();
+        driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(2));
         rp.enterFirst_Name("Akil");
         rp.enterMiddle_Name("Nisar");
         rp.enterLast_Name("Pathan");

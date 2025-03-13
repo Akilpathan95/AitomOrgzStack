@@ -1,10 +1,13 @@
 package testCases;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import pageObject.LoginPage;
 import pageObject.RecruitmentPage;
 import pageObject.RequisitionPage;
 import testBase.BaseClass;
+
+import java.time.Duration;
 
 public class TC_Testing extends BaseClass {
 

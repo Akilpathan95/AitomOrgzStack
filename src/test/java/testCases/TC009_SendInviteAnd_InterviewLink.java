@@ -7,9 +7,7 @@ import pageObject.RecruitmentPage;
 import pageObject.RequisitionPage;
 import testBase.BaseClass;
 
-import java.time.Duration;
-
-public class TC_Testing extends BaseClass {
+public class TC009_SendInviteAnd_InterviewLink extends BaseClass {
 
     @Test(priority = 1, groups = "Master")
     public void verify_Login()
@@ -33,7 +31,14 @@ public class TC_Testing extends BaseClass {
         rp.clkRecruitment();
         rp.clkRecruitment_List();
         rp.clkCandidate();
-        rp.enterSearch("Akil");
-
+        rp.selectCandidateList();
+        rp.enterSearch("Saiyadali");
+        rp.clkMenu();
+        rp.clkSendInviteEmail();
+        BasePage bp=new BasePage(driver);
+        bp.handleAlert();
+        rp.clkMenu();
+        rp.clkSendInterviewLink();
+        bp.handleAlert();
     }
 }

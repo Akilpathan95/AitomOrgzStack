@@ -1,15 +1,12 @@
 package testCases;
 
 import org.testng.annotations.Test;
-import pageObject.BasePage;
 import pageObject.LoginPage;
 import pageObject.RecruitmentPage;
 import pageObject.RequisitionPage;
 import testBase.BaseClass;
 
-import java.time.Duration;
-
-public class TC_Testing extends BaseClass {
+public class TC008_AddCandidate_AddBulk extends BaseClass {
 
     @Test(priority = 1, groups = "Master")
     public void verify_Login()
@@ -33,7 +30,10 @@ public class TC_Testing extends BaseClass {
         rp.clkRecruitment();
         rp.clkRecruitment_List();
         rp.clkCandidate();
+        rp.clkAdd_Candidate();
+        rp.clkBulkUpload();
+        rp.addBulkUpload();
+        rp.clkCancel();
         rp.enterSearch("Akil");
-
     }
 }

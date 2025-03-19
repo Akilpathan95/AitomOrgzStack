@@ -15,6 +15,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import pageObject.LoginPage;
 
 import java.io.File;
 import java.io.FileReader;
@@ -105,6 +107,15 @@ public class BaseClass {
     public void tearDown()
     {
         driver.quit();
+    }
+
+    @Test(priority = 1, groups = "Master")
+    public void verify_Login()
+    {
+        LoginPage lp=new LoginPage(driver);
+        lp.enterEmail(p.getProperty("email"));
+        lp.enterPassword(p.getProperty("password"));
+        lp.clkLogin();
     }
 
     public String randomString()

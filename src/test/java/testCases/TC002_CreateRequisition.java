@@ -7,20 +7,13 @@ import testBase.BaseClass;
 
 public class TC002_CreateRequisition extends BaseClass {
 
-    @Test(priority = 1, groups = "Master")
-    public void verify_Login()
-    {
-        LoginPage lp=new LoginPage(driver);
-        lp.enterEmail(p.getProperty("email"));
-        lp.enterPassword(p.getProperty("password"));
-        lp.clkLogin();
-    }
-
     @Test(priority = 2, groups = "Master")
     public void verify_RequisitionPage()
     {
-        RequisitionPage rp=new RequisitionPage(driver);
-        rp.clkRequisition();
+        LeftMenuPage lf=new LeftMenuPage(driver);
+        lf.clkRequisition();
+
+        RequisitionTopMenuPage rp=new RequisitionTopMenuPage(driver);
         rp.clkRequisition_Option();
     }
 

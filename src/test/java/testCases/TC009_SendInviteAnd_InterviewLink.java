@@ -1,44 +1,36 @@
 package testCases;
 
 import org.testng.annotations.Test;
-import pageObject.BasePage;
-import pageObject.LoginPage;
-import pageObject.RecruitmentPage;
-import pageObject.RequisitionPage;
+import pageObject.*;
 import testBase.BaseClass;
 
 public class TC009_SendInviteAnd_InterviewLink extends BaseClass {
 
-    @Test(priority = 1, groups = "Master")
-    public void verify_Login()
-    {
-        LoginPage lp=new LoginPage(driver);
-        lp.enterEmail(p.getProperty("email"));
-        lp.enterPassword(p.getProperty("password"));
-        lp.clkLogin();
-    }
-
     @Test(priority = 2, groups = "Master")
     public void verify_RequisitionPage()
     {
-        RequisitionPage rp=new RequisitionPage(driver);
-        rp.clkRequisition();
+        LeftMenuPage lp=new LeftMenuPage(driver);
+        lp.clkRequisition();
     }
 
     @Test(priority = 8)
     public void verify_AddCandidate() throws InterruptedException {
+        RequisitionTopMenuPage rtp=new RequisitionTopMenuPage(driver);
+        rtp.clkRecruitment();
+
         RecruitmentPage rp = new RecruitmentPage(driver);
-        rp.clkRecruitment();
         rp.clkRecruitment_List();
-        rp.clkCandidate();
-        rp.selectCandidateList();
-        rp.enterSearch("Saiyadali");
-        rp.clkMenu();
-        rp.clkSendInviteEmail();
+
+        Requirement_CandidatesPage rc=new Requirement_CandidatesPage(driver);
+        rc.clkCandidate();
+        rc.selectCandidateList();
+        rc.enterSearch("Saiyadali");
+        rc.clkMenu();
+        rc.clkSendInviteEmail();
         BasePage bp=new BasePage(driver);
         bp.handleAlert();
-        rp.clkMenu();
-        rp.clkSendInterviewLink();
+        rc.clkMenu();
+        rc.clkSendInterviewLink();
         bp.handleAlert();
     }
 }

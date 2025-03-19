@@ -9,20 +9,15 @@ import java.time.Duration;
 
 public class TC005_HiringTeam extends BaseClass {
 
-    @Test(priority = 1, groups = "Master")
-    public void verify_Login()
-    {
-        LoginPage lp=new LoginPage(driver);
-        lp.enterEmail(p.getProperty("email"));
-        lp.enterPassword(p.getProperty("password"));
-        lp.clkLogin();
-    }
+    LeftMenuPage lp;
+    RequisitionTopMenuPage rtp;
 
     @Test(priority = 2, groups = "Master")
     public void verify_RequisitionPage()
     {
-        RequisitionPage rp=new RequisitionPage(driver);
-        rp.clkRequisition();
+        RequisitionTopMenuPage rp=new RequisitionTopMenuPage(driver);
+        lp=new LeftMenuPage(driver);
+        lp.clkRequisition();
         rp.clkRequisition_Option();
     }
 
@@ -31,7 +26,6 @@ public class TC005_HiringTeam extends BaseClass {
     {
         CreateRequisition cr=new CreateRequisition(driver);
         cr.clkCreate_requisition();
-
         cr.clk_InternalExternal();
         cr.clkSelect_Organisation();
         cr.clk_ClientName();
@@ -97,42 +91,46 @@ public class TC005_HiringTeam extends BaseClass {
     @Test(priority = 6)
     public void verify_Recruitment()
     {
-        RequisitionPage rpage=new RequisitionPage(driver);
-        rpage.clkRequisition();
+        lp=new LeftMenuPage(driver);
+        lp.clkRequisition();
         RecruitmentPage rp=new RecruitmentPage(driver);
-        rp.clkRecruitment();
+        rtp=new RequisitionTopMenuPage(driver);
+        rtp.clkRecruitment();
         rp.clkRecruitment_List();
-        rp.clkJob_Description();
-        rp.clkCreateWithAI();
-        rp.selectSuggestion_Inputbox();
-        rp.selectSuggestion();
-        rp.selectSubmit();
-        rp.selectSuggestion_Inputbox();
-        rp.selectSuggestion();
-        rp.selectSubmit();
-        rp.selectGenerate_JD();
+        Requirement_JobDescriptionPage jd=new Requirement_JobDescriptionPage(driver);
+        jd.clkJob_Description();
+        jd.clkCreateWithAI();
+        jd.selectSuggestion_Inputbox();
+        jd.selectSuggestion();
+        jd.selectSubmit();
+        jd.selectSuggestion_Inputbox();
+        jd.selectSuggestion();
+        jd.selectSubmit();
+        jd.selectGenerate_JD();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-        rp.selectSave();
+        jd.selectSave();
     }
 
     @Test(priority = 7)
     public void verify_GenerateKeyword() {
-        RecruitmentPage rp = new RecruitmentPage(driver);
+        Requirement_JobDescriptionPage jd=new Requirement_JobDescriptionPage(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-        rp.selectGenerate_Keyword();
-        rp.clkdrpGenerate_Keyword();
-        rp.clkGenerateKeyword_Save();
+        jd.selectGenerate_Keyword();
+        jd.clkdrpGenerate_Keyword();
+        jd.clkGenerateKeyword_Save();
     }
 
     @Test(priority = 8)
     public void verify_Hiring() {
         RecruitmentPage rp = new RecruitmentPage(driver);
-        rp.clkRecruitment();
+        rtp=new RequisitionTopMenuPage(driver);
+        rtp.clkRecruitment();
         rp.clkRecruitment_List();
-        rp.clkHiring_Team();
-        rp.clkAssignRole();
-        rp.clkNameEmailId();
-        rp.clkAddtoTeam();
-        rp.selectAssigntoAllLocations();
+        Requirement_HiringTeamPage ht=new Requirement_HiringTeamPage(driver);
+        ht.clkHiring_Team();
+        ht.clkAssignRole();
+        ht.clkNameEmailId();
+        ht.clkAddtoTeam();
+        ht.selectAssigntoAllLocations();
     }
 }

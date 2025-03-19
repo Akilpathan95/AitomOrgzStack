@@ -9,20 +9,14 @@ import java.time.Duration;
 
 public class TC003_GenerateJD extends BaseClass {
 
-    @Test(priority = 1, groups = "Master")
-    public void verify_Login()
-    {
-        LoginPage lp=new LoginPage(driver);
-        lp.enterEmail(p.getProperty("email"));
-        lp.enterPassword(p.getProperty("password"));
-        lp.clkLogin();
-    }
+    LeftMenuPage lp;
 
     @Test(priority = 2, groups = "Master")
     public void verify_RequisitionPage()
     {
-        RequisitionPage rp=new RequisitionPage(driver);
-        rp.clkRequisition();
+        lp=new LeftMenuPage(driver);
+        lp.clkRequisition();
+        RequisitionTopMenuPage rp=new RequisitionTopMenuPage(driver);
         rp.clkRequisition_Option();
     }
 
@@ -97,22 +91,24 @@ public class TC003_GenerateJD extends BaseClass {
     @Test(priority = 6)
     public void verify_Recruitment()
     {
-        RequisitionPage rpage=new RequisitionPage(driver);
-        rpage.clkRequisition();
+        lp=new LeftMenuPage(driver);
+        lp.clkRequisition();
         RecruitmentPage rp=new RecruitmentPage(driver);
-        rp.clkRecruitment();
+        RequisitionTopMenuPage rtp=new RequisitionTopMenuPage(driver);
+        rtp.clkRecruitment();
         rp.clkRecruitment_List();
-        rp.clkJob_Description();
-        rp.clkCreateWithAI();
-        rp.selectSuggestion_Inputbox();
-        rp.selectSuggestion();
-        rp.selectSubmit();
-        rp.selectSuggestion_Inputbox();
-        rp.selectSuggestion();
-        rp.selectSubmit();
-        rp.selectGenerate_JD();
+        Requirement_JobDescriptionPage jd=new Requirement_JobDescriptionPage(driver);
+        jd.clkJob_Description();
+        jd.clkCreateWithAI();
+        jd.selectSuggestion_Inputbox();
+        jd.selectSuggestion();
+        jd.selectSubmit();
+        jd.selectSuggestion_Inputbox();
+        jd.selectSuggestion();
+        jd.selectSubmit();
+        jd.selectGenerate_JD();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        rp.selectSave();
+        jd.selectSave();
     }
 
 }

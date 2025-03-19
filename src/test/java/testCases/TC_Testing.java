@@ -1,39 +1,30 @@
 package testCases;
 
 import org.testng.annotations.Test;
-import pageObject.BasePage;
-import pageObject.LoginPage;
-import pageObject.RecruitmentPage;
-import pageObject.RequisitionPage;
+import pageObject.*;
 import testBase.BaseClass;
 
 import java.time.Duration;
 
 public class TC_Testing extends BaseClass {
 
-    @Test(priority = 1, groups = "Master")
-    public void verify_Login()
-    {
-        LoginPage lp=new LoginPage(driver);
-        lp.enterEmail(p.getProperty("email"));
-        lp.enterPassword(p.getProperty("password"));
-        lp.clkLogin();
-    }
-
     @Test(priority = 2, groups = "Master")
     public void verify_RequisitionPage()
     {
-        RequisitionPage rp=new RequisitionPage(driver);
-        rp.clkRequisition();
+        LeftMenuPage lp=new LeftMenuPage(driver);
+        lp.clkRequisition();
     }
 
     @Test(priority = 8)
     public void verify_AddCandidate() throws InterruptedException {
-        RecruitmentPage rp = new RecruitmentPage(driver);
-        rp.clkRecruitment();
-        rp.clkRecruitment_List();
-        rp.clkCandidate();
-        rp.enterSearch("Akil");
+        RequisitionTopMenuPage rtp=new RequisitionTopMenuPage(driver);
+        rtp.clkRecruitment();
 
+        RecruitmentPage rp = new RecruitmentPage(driver);
+        rp.clkRecruitment_List();
+
+        Requirement_CandidatesPage rc=new Requirement_CandidatesPage(driver);
+        rc.clkCandidate();
+        rc.enterSearch("Akil");
     }
 }

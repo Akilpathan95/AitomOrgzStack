@@ -9,20 +9,14 @@ import java.time.Duration;
 
 public class TC007_AddCandidate_AddManually extends BaseClass {
 
-    @Test(priority = 1, groups = "Master")
-    public void verify_Login()
-    {
-        LoginPage lp=new LoginPage(driver);
-        lp.enterEmail(p.getProperty("email"));
-        lp.enterPassword(p.getProperty("password"));
-        lp.clkLogin();
-    }
+    LeftMenuPage lp;
 
     @Test(priority = 2, groups = "Master")
     public void verify_RequisitionPage()
     {
-        RequisitionPage rp=new RequisitionPage(driver);
-        rp.clkRequisition();
+        RequisitionTopMenuPage rp=new RequisitionTopMenuPage(driver);
+        lp=new LeftMenuPage(driver);
+        lp.clkRequisition();
         rp.clkRequisition_Option();
     }
 
@@ -97,104 +91,106 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
     @Test(priority = 6)
     public void verify_Recruitment()
     {
-        RequisitionPage rpage=new RequisitionPage(driver);
-        rpage.clkRequisition();
+        lp=new LeftMenuPage(driver);
+        lp.clkRequisition();
         RecruitmentPage rp=new RecruitmentPage(driver);
-        rp.clkRecruitment();
+        RequisitionTopMenuPage rtp=new RequisitionTopMenuPage(driver);
+        rtp.clkRecruitment();
         rp.clkRecruitment_List();
-        rp.clkJob_Description();
-        rp.clkCreateWithAI();
-        rp.selectSuggestion_Inputbox();
-        rp.selectSuggestion();
-        rp.selectSubmit();
-        rp.selectSuggestion_Inputbox();
-        rp.selectSuggestion();
-        rp.selectSubmit();
-        rp.selectGenerate_JD();
+        Requirement_JobDescriptionPage jd=new Requirement_JobDescriptionPage(driver);
+        jd.clkJob_Description();
+        jd.clkCreateWithAI();
+        jd.selectSuggestion_Inputbox();
+        jd.selectSuggestion();
+        jd.selectSubmit();
+        jd.selectSuggestion_Inputbox();
+        jd.selectSuggestion();
+        jd.selectSubmit();
+        jd.selectGenerate_JD();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-        rp.selectSave();
+        jd.selectSave();
     }
 
     @Test(priority = 7)
     public void verify_GenerateKeyword() {
-        RecruitmentPage rp = new RecruitmentPage(driver);
+        Requirement_JobDescriptionPage jd=new Requirement_JobDescriptionPage(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-        rp.selectGenerate_Keyword();
-        rp.clkdrpGenerate_Keyword();
-        rp.clkGenerateKeyword_Save();
+        jd.selectGenerate_Keyword();
+        jd.clkdrpGenerate_Keyword();
+        jd.clkGenerateKeyword_Save();
     }
 
     @Test(priority = 8)
     public void verify_Hiring() {
-        RecruitmentPage rp = new RecruitmentPage(driver);
-        rp.clkHiring_Team();
-        rp.clkAssignRole();
-        rp.clkNameEmailId();
-        rp.clkAddtoTeam();
-        rp.selectAssigntoAllLocations();
+        Requirement_HiringTeamPage ht=new Requirement_HiringTeamPage(driver);
+        ht.clkHiring_Team();
+        ht.clkAssignRole();
+        ht.clkNameEmailId();
+        ht.clkAddtoTeam();
+        ht.selectAssigntoAllLocations();
     }
 
     @Test(priority = 9)
     public void verify_InterviewSetup() throws InterruptedException {
-        RecruitmentPage rp = new RecruitmentPage(driver);
-        rp.clkInterview_Setup();
-        rp.enter_AddMoreSkill("CI/CD pipeline knowledge must know");
-        rp.clkbtnAddSkill();
-        rp.clkbtnAddMoreMCQs();
-        rp.enter_AddQuestion("System testing is a");
-        rp.enter_Option1("Grey Box Testing");
-        rp.enter_Option2("White Box Testing");
-        rp.enter_Option3("Black Box Testing");
-        rp.enter_Option4("Both B and C are correct");
-        rp.clkdrpCorrectAnswer();
-        rp.clkbtnAddQuestion();
-        rp.selectWorking_Type();
-        rp.selectSalary_Expectations("Yes");
-        rp.enterSalary_Range("yes", "300000", "600000");
-        rp.select_Availibility();
-        rp.clkSave_Interview();
+        Requirement_InterviewSetupPage ip=new Requirement_InterviewSetupPage(driver);
+        ip.clkInterview_Setup();
+        ip.enter_AddMoreSkill("CI/CD pipeline knowledge must know");
+        ip.clkbtnAddSkill();
+        ip.clkbtnAddMoreMCQs();
+        ip.enter_AddQuestion("System testing is a");
+        ip.enter_Option1("Grey Box Testing");
+        ip.enter_Option2("White Box Testing");
+        ip.enter_Option3("Black Box Testing");
+        ip.enter_Option4("Both B and C are correct");
+        ip.clkdrpCorrectAnswer();
+        ip.clkbtnAddQuestion();
+        ip.selectWorking_Type();
+        ip.selectSalary_Expectations("Yes");
+        ip.enterSalary_Range("yes", "300000", "600000");
+        ip.select_Availibility();
+        ip.clkSave_Interview();
     }
 
     @Test(priority = 10)
     public void verify_AddCandidate() throws InterruptedException {
-        RecruitmentPage rp = new RecruitmentPage(driver);
-        rp.clkCandidate();
-        rp.clkAdd_Candidate();
-        rp.clkAdd_Manually();
-        rp.addFile();
+        Requirement_CandidatesPage rc = new Requirement_CandidatesPage(driver);
+        rc.clkCandidate();
+        rc.clkAdd_Candidate();
+        rc.clkAdd_Manually();
+        rc.addFile();
         driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(2));
-        rp.enterFirst_Name("Akil");
-        rp.enterMiddle_Name("Nisar");
-        rp.enterLast_Name("Pathan");
-        rp.enter_Email("akil.pathan@orgzstack.com");
-        rp.enter_MobileNo("9870150276");
-        rp.enter_DOB("14-08-1995");
-        rp.enter_Country("India");
-        rp.enterCurrent_Organization("Informatic Connecting Tech PVT. LTD.");
-        rp.enterCurrent_Designation("Senior Software Tester");
-        rp.enter_Industry("IT Department");
-        rp.enterCurrent_Location("Navi Mumbai");
-        rp.enterFunctional_Area("IT Department");
-        rp.enterNotice_Period("2 Months");
-        rp.selectRelocate();
-        rp.enterPrimary_Source("Job Portal");
-        rp.enterSecondary_Source("Social Sites");
-        rp.enterPassport_Number("A1234567");
-        rp.enteronlineProfile_URL("https://aitom.orgzstack.com/Requisition/RecrutementList");
-        rp.selectRemote_Work();
-        rp.enterCurrent_Salary("3");
-        rp.selectCurrent_Salary();
-        rp.selectDrpCurrentSalary_Type();
-        rp.enterExpected_Salary("5");
-        rp.selectExpected_Salary();
-        rp.selectExpectecSalary_Type();
-        rp.enterSkills("Expertise in Selenium with Java.");
-        rp.selectEducation("Yes");
-        rp.selectExperience("Yes");
-        rp.selectProject("Yes");
-        rp.selectLanguage("Yes");
-        rp.selectCourses("Yes");
-        rp.submit();
+        rc.enterFirst_Name("Akil");
+        rc.enterMiddle_Name("Nisar");
+        rc.enterLast_Name("Pathan");
+        rc.enter_Email("akil.pathan@orgzstack.com");
+        rc.enter_MobileNo("9870150276");
+        rc.enter_DOB("14-08-1995");
+        rc.enter_Country("India");
+        rc.enterCurrent_Organization("Informatic Connecting Tech PVT. LTD.");
+        rc.enterCurrent_Designation("Senior Software Tester");
+        rc.enter_Industry("IT Department");
+        rc.enterCurrent_Location("Navi Mumbai");
+        rc.enterFunctional_Area("IT Department");
+        rc.enterNotice_Period("2 Months");
+        rc.selectRelocate();
+        rc.enterPrimary_Source("Job Portal");
+        rc.enterSecondary_Source("Social Sites");
+        rc.enterPassport_Number("A1234567");
+        rc.enteronlineProfile_URL("https://aitom.orgzstack.com/Requisition/RecrutementList");
+        rc.selectRemote_Work();
+        rc.enterCurrent_Salary("3");
+        rc.selectCurrent_Salary();
+        rc.selectDrpCurrentSalary_Type();
+        rc.enterExpected_Salary("5");
+        rc.selectExpected_Salary();
+        rc.selectExpectecSalary_Type();
+        rc.enterSkills("Expertise in Selenium with Java.");
+        rc.selectEducation("Yes");
+        rc.selectExperience("Yes");
+        rc.selectProject("Yes");
+        rc.selectLanguage("Yes");
+        rc.selectCourses("Yes");
+        rc.submit();
     }
 
 }

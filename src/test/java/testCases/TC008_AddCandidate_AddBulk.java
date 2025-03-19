@@ -1,39 +1,32 @@
 package testCases;
 
 import org.testng.annotations.Test;
-import pageObject.LoginPage;
-import pageObject.RecruitmentPage;
-import pageObject.RequisitionPage;
+import pageObject.*;
 import testBase.BaseClass;
 
 public class TC008_AddCandidate_AddBulk extends BaseClass {
 
-    @Test(priority = 1, groups = "Master")
-    public void verify_Login()
-    {
-        LoginPage lp=new LoginPage(driver);
-        lp.enterEmail(p.getProperty("email"));
-        lp.enterPassword(p.getProperty("password"));
-        lp.clkLogin();
-    }
-
     @Test(priority = 2, groups = "Master")
     public void verify_RequisitionPage()
     {
-        RequisitionPage rp=new RequisitionPage(driver);
-        rp.clkRequisition();
+        LeftMenuPage lp=new LeftMenuPage(driver);
+        lp.clkRequisition();
     }
 
     @Test(priority = 8)
     public void verify_AddCandidate() throws InterruptedException {
+        RequisitionTopMenuPage rtp=new RequisitionTopMenuPage(driver);
+        rtp.clkRecruitment();
+
         RecruitmentPage rp = new RecruitmentPage(driver);
-        rp.clkRecruitment();
         rp.clkRecruitment_List();
-        rp.clkCandidate();
-        rp.clkAdd_Candidate();
-        rp.clkBulkUpload();
-        rp.addBulkUpload();
-        rp.clkCancel();
-        rp.enterSearch("Akil");
+
+        Requirement_CandidatesPage rc=new Requirement_CandidatesPage(driver);
+        rc.clkCandidate();
+        rc.clkAdd_Candidate();
+        rc.clkBulkUpload();
+        rc.addBulkUpload();
+        rc.clkCancel();
+        rc.enterSearch("Akil");
     }
 }

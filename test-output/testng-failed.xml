@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="utilities.ExtentReportManager"/>
+  </listeners>
+  <test thread-count="5" name="test(failed)">
+    <parameter name="os" value="Windows"/>
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testCases.TC007_AddCandidate_AddManually">
+        <methods>
+          <include name="setup"/>
+          <include name="verify_AddCandidate"/>
+        </methods>
+      </class> <!-- testCases.TC007_AddCandidate_AddManually -->
+      <class name="testCases.TC009_SendInviteAnd_InterviewLink">
+        <methods>
+          <include name="verify_AddCandidate"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- testCases.TC009_SendInviteAnd_InterviewLink -->
+      <class name="testCases.TC006_InterviewSetup">
+        <methods>
+          <include name="verify_Recruitment"/>
+          <include name="verify_InterviewSetup"/>
+          <include name="verify_GenerateKeyword"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- testCases.TC006_InterviewSetup -->
+      <class name="testCases.TC001_LoginTest">
+        <methods>
+          <include name="verify_loginfromData" invocation-numbers="7"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- testCases.TC001_LoginTest -->
+    </classes>
+  </test> <!-- test(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->

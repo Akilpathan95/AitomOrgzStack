@@ -128,9 +128,7 @@ public class TC005_HiringTeam extends BaseClass {
         rp.clkRecruitment_List();
         Requirement_HiringTeamPage ht=new Requirement_HiringTeamPage(driver);
         ht.clkHiring_Team();
-        ht.clkAssignRole();
-        ht.clkNameEmailId();
-        ht.clkAddtoTeam();
+        ht.selectLcoation();
         ht.selectAssigntoAllLocations();
     }
 }

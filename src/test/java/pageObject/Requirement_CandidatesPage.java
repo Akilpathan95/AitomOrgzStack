@@ -33,7 +33,7 @@ public class Requirement_CandidatesPage extends BasePage {
 
     //------Add Candidate--Personal Details-----
     @FindBy(xpath = "//input[@name=\"first_Name\"]")
-    WebElement txtFirst_Name;
+    public WebElement txtFirst_Name;
 
     @FindBy(xpath = "//input[@name=\"middle_Name\"]")
     WebElement txtMiddle_Name;
@@ -141,10 +141,20 @@ public class Requirement_CandidatesPage extends BasePage {
 
     public void addFile() throws InterruptedException {
         Thread.sleep(5000);
-        WebElement uploadResume=driver.findElement(By.xpath("//input[@type='file']"));
+        WebElement uploadResume=driver.findElement(By.id("upload"));
+
         js=(JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);",uploadResume);
-        uploadResume.sendKeys("C:\\Users\\IPSL\\Downloads\\Akil_Pathan_FinalManual.pdf");
+        try {
+            uploadResume.sendKeys("C:/Users/IPSL/Downloads/Saiyad Ali -Electrical Techician.pdf");
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+            System.out.println("File uploaded successfully.");
+            System.out.println("Current Cookies: " + driver.manage().getCookies());
+        } catch (Exception e) {
+            System.out.println("File upload failed: " + e.getMessage());
+            System.out.println("Current Cookies: " + driver.manage().getCookies());
+        }
+        Thread.sleep(10000);
     }
 
     public void enterFirst_Name(String first_Name)
@@ -178,7 +188,7 @@ public class Requirement_CandidatesPage extends BasePage {
 
     public void enterLast_Name(String last_Name)
     {
-        String lastName=txtLast_Name.getAttribute("Value");
+        String lastName=txtLast_Name.getAttribute("value");
         if (lastName == null || lastName.isEmpty())
         {
             txtLast_Name.sendKeys(last_Name);
@@ -188,12 +198,11 @@ public class Requirement_CandidatesPage extends BasePage {
         {
             System.out.println("Last name is present");
         }
-
     }
 
     public void enter_Email(String email)
     {
-        String Cemail=txtEmail.getAttribute("Value");
+        String Cemail=txtEmail.getAttribute("value");
         if (Cemail == null || Cemail.isEmpty())
         {
             txtEmail.sendKeys(email);
@@ -203,12 +212,11 @@ public class Requirement_CandidatesPage extends BasePage {
         {
             System.out.println("Email is present");
         }
-
     }
 
     public void enter_MobileNo(String mobile_Number)
     {
-        String mob_Number=txtMobile_Number.getAttribute("Value");
+        String mob_Number=txtMobile_Number.getAttribute("value");
         if (mob_Number == null || mob_Number.isEmpty())
         {
             txtMobile_Number.sendKeys(mobile_Number);
@@ -218,12 +226,11 @@ public class Requirement_CandidatesPage extends BasePage {
         {
             System.out.println("Mobile Number is Present");
         }
-
     }
 
     public void enter_DOB(String dob)
     {
-        String dOB=txtDOB.getAttribute("Value");
+        String dOB=txtDOB.getAttribute("value");
         if (dOB==null || dOB.isEmpty())
         {
             txtDOB.sendKeys(dob);
@@ -233,12 +240,11 @@ public class Requirement_CandidatesPage extends BasePage {
         {
             System.out.println("Date of birth present");
         }
-
     }
 
     public void enter_Country(String country)
     {
-        String eCountry=txtCountry.getAttribute("Value");
+        String eCountry=txtCountry.getAttribute("value");
         if (eCountry == null || eCountry.isEmpty())
         {
             txtCountry.sendKeys(country);
@@ -248,12 +254,11 @@ public class Requirement_CandidatesPage extends BasePage {
         {
             System.out.println("Country is present");
         }
-
     }
 
     public void enterCurrent_Organization(String current_Organization)
     {
-        String cOrg=txtCurrent_Organization.getAttribute("Value");
+        String cOrg=txtCurrent_Organization.getAttribute("value");
         if (cOrg==null || cOrg.isEmpty())
         {
             txtCurrent_Organization.sendKeys(current_Organization);
@@ -263,12 +268,11 @@ public class Requirement_CandidatesPage extends BasePage {
         {
             System.out.println("Current Organization is present");
         }
-
     }
 
     public void enterCurrent_Designation(String current_Designation)
     {
-        String cDes=txtCurrent_Designation.getAttribute("Value");
+        String cDes=txtCurrent_Designation.getAttribute("value");
         if (cDes == null || cDes.isEmpty())
         {
             txtCurrent_Designation.sendKeys(current_Designation);
@@ -278,12 +282,11 @@ public class Requirement_CandidatesPage extends BasePage {
         {
             System.out.println("Current Designation is present");
         }
-
     }
 
     public void enter_Industry(String industry)
     {
-        String ind=txtIndustry.getAttribute("Value");
+        String ind=txtIndustry.getAttribute("value");
         if (ind == null || ind.isEmpty())
         {
             txtIndustry.sendKeys(industry);
@@ -292,12 +295,11 @@ public class Requirement_CandidatesPage extends BasePage {
         {
             System.out.println("Industry is present");
         }
-
     }
 
     public void enterCurrent_Location(String current_Location)
     {
-        String loc=txtCurrent_Location.getAttribute("Value");
+        String loc=txtCurrent_Location.getAttribute("value");
         if (loc == null || loc.isEmpty())
         {
             txtCurrent_Location.sendKeys(current_Location);
@@ -307,12 +309,11 @@ public class Requirement_CandidatesPage extends BasePage {
         {
             System.out.println("Current location is present");
         }
-
     }
 
     public void enterFunctional_Area(String functional_Area)
     {
-        String fun=txtFunction_Area.getAttribute("Value");
+        String fun=txtFunction_Area.getAttribute("value");
         if (fun == null || fun.isEmpty())
         {
             txtFunction_Area.sendKeys(functional_Area);
@@ -322,12 +323,11 @@ public class Requirement_CandidatesPage extends BasePage {
         {
             System.out.println("Functional area is present");
         }
-
     }
 
     public void enterNotice_Period(String notice_Period)
     {
-        String notice=txtNotice_Period.getAttribute("Value");
+        String notice=txtNotice_Period.getAttribute("value");
         if (notice == null || notice.isEmpty())
         {
             txtNotice_Period.sendKeys(notice_Period);
@@ -337,7 +337,6 @@ public class Requirement_CandidatesPage extends BasePage {
         {
             System.out.println("Notice Period is present");
         }
-
     }
 
     public void selectRelocate()
@@ -348,7 +347,7 @@ public class Requirement_CandidatesPage extends BasePage {
 
     public void enterPrimary_Source(String primary_Source)
     {
-        String primary=txtPrimary_Source.getAttribute("Value");
+        String primary=txtPrimary_Source.getAttribute("value");
         if (primary == null || primary.isEmpty())
         {
             txtPrimary_Source.sendKeys(primary_Source);
@@ -358,12 +357,11 @@ public class Requirement_CandidatesPage extends BasePage {
         {
             System.out.println("Primary Source is present");
         }
-
     }
 
     public void enterSecondary_Source(String secondary_Source)
     {
-        String secondary=txtSecondary_Source.getAttribute("Value");
+        String secondary=txtSecondary_Source.getAttribute("value");
         if (secondary == null || secondary.isEmpty())
         {
             txtSecondary_Source.sendKeys(secondary_Source);
@@ -377,7 +375,7 @@ public class Requirement_CandidatesPage extends BasePage {
 
     public void enterPassport_Number(String passport_Number)
     {
-        String pass=txtPassportNumber.getAttribute("Value");
+        String pass=txtPassportNumber.getAttribute("value");
         if (pass == null || pass.isEmpty())
         {
             txtPassportNumber.sendKeys(passport_Number);
@@ -391,7 +389,7 @@ public class Requirement_CandidatesPage extends BasePage {
 
     public void enteronlineProfile_URL(String onlineProfile_URL)
     {
-        String url=txtOnlineProfile_URL.getAttribute("Value");
+        String url=txtOnlineProfile_URL.getAttribute("value");
         if (url == null || url.isEmpty())
         {
             txtOnlineProfile_URL.sendKeys(onlineProfile_URL);
@@ -437,7 +435,7 @@ public class Requirement_CandidatesPage extends BasePage {
 
     public void enterExpected_Salary(String expected_Salary)
     {
-        String exp=txtExpected_Salary.getAttribute("Value");
+        String exp=txtExpected_Salary.getAttribute("value");
         if (exp == null || exp.isEmpty())
         {
             txtExpected_Salary.sendKeys(expected_Salary);
@@ -463,7 +461,7 @@ public class Requirement_CandidatesPage extends BasePage {
 
     public void enterSkills(String skills)
     {
-        String ski=txtSkills.getAttribute("Value");
+        String ski=txtSkills.getAttribute("value");
         if (ski == null || ski.isEmpty())
         {
             txtSkills.sendKeys(skills);
@@ -541,18 +539,18 @@ public class Requirement_CandidatesPage extends BasePage {
                 job_Title.sendKeys("Senior Software Tester");
                 WebElement company_Name=driver.findElement(By.xpath("//input[@name=\"companyName\"]"));
                 company_Name.sendKeys("Cirrius Technologies PVT LTD");
-                WebElement location=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[1]//div[3]//input[1]"));
+                WebElement location=driver.findElement(By.xpath("//h1[contains(text(),'Experience')]/following::input[@name='location'][1]"));
                 js.executeScript("arguments[0].scrollIntoView({block: 'center'});", location);
                 js.executeScript("arguments[0].click();", location);
                 location.clear();
                 location.sendKeys("Andheri");
-                WebElement fromDate=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[2]//div[1]//input[1]"));
+                WebElement fromDate=driver.findElement(By.xpath("//h1[contains(text(),'Experience')]/following::input[@name='fromDate'][1]"));
                 fromDate.sendKeys("20-09-2021");
-                WebElement toDate=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[2]//div[2]//input[1]"));
+                WebElement toDate=driver.findElement(By.xpath("//h1[contains(text(),'Experience')]/following::input[@name='toDate'][1]"));
                 toDate.sendKeys("05-08-2022");
                 WebElement roles=driver.findElement(By.xpath("//input[@name=\"roles\"]"));
                 roles.sendKeys("Manual and Automation Testing");
-                WebElement add=driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div[2]//div[1]//div[3]//div[1]//div[4]//button[2]"));
+                WebElement add=driver.findElement(By.xpath("//h1[contains(text(),'Experience')]/following::button[text()='Add'][1]"));
                 add.click();
 
                 System.out.println("Experience added successfully");
@@ -581,15 +579,15 @@ public class Requirement_CandidatesPage extends BasePage {
 
                 WebElement project_Name = driver.findElement(By.xpath("//input[@name=\"projectName\"]"));
                 project_Name.sendKeys("Orgzstack");
-                WebElement location = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/input[1]"));
+                WebElement location = driver.findElement(By.xpath("//h1[contains(text(),'Project')]/following::input[@name='location'][1]"));
                 location.sendKeys("Navi Mumbai");
-                WebElement from_Date = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[2]/div[1]/input[1]"));
+                WebElement from_Date = driver.findElement(By.xpath("//h1[contains(text(),'Project')]/following::input[@name='fromDate'][1]"));
                 from_Date.sendKeys("06-10-2022");
-                WebElement to_Date = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[2]/div[2]/input[1]"));
+                WebElement to_Date = driver.findElement(By.xpath("//h1[contains(text(),'Project')]/following::input[@name='toDate'][1]"));
                 to_Date.sendKeys("03-12-2024");
                 WebElement project_Description = driver.findElement(By.xpath("//input[@name=\"description\"]"));
                 project_Description.sendKeys("It is HR management tool");
-                WebElement add = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[3]/div[1]/div[3]/div[1]/div[4]/button[2]"));
+                WebElement add = driver.findElement(By.xpath("//h1[contains(text(),'Project')]/following::button[text()='Add'][1]"));
                 add.click();
                 System.out.println("Project added successfully");
             } else if (selectProjectDetail.equalsIgnoreCase("No")) {
@@ -615,7 +613,7 @@ public class Requirement_CandidatesPage extends BasePage {
             write.click();
             WebElement speak=driver.findElement(By.xpath("//input[@name=\"speak\"]"));
             speak.click();
-            WebElement add=driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[4]/div[4]/div[1]/div[1]/div[2]/button[2]"));
+            WebElement add=driver.findElement(By.xpath("//h1[contains(text(), 'Language Details')]/following::div//button[text()='Add']"));
             add.click();
 
             System.out.println("Language added successfully");
@@ -647,11 +645,11 @@ public class Requirement_CandidatesPage extends BasePage {
 
                 WebElement courseName = driver.findElement(By.xpath("//input[@name=\"courseName\"]"));
                 courseName.sendKeys("Automation Test Specialist");
-                WebElement fromDate = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[5]/div[1]/div[3]/div[1]/div[1]/div[2]/input[1]"));
+                WebElement fromDate = driver.findElement(By.xpath("//h1[contains(text(),'Courses')]/following::input[@name='fromDate']"));
                 fromDate.sendKeys("07-05-2023");
-                WebElement toDate = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[3]/div[4]/div[5]/div[1]/div[3]/div[1]/div[1]/div[3]/input[1]"));
+                WebElement toDate = driver.findElement(By.xpath("//h1[contains(text(),'Courses')]/following::input[@name='toDate']"));
                 toDate.sendKeys("15-11-2023");
-                WebElement add = driver.findElement(By.xpath("//div[@class=\"w-full h-full font-sans\"]//div//div//div//div//div//div//div//div//button[contains(text(),\"Add\")]"));
+                WebElement add = driver.findElement(By.xpath("//h1[contains(text(),'Courses')]/following::button[text()='Add'][1]"));
                 add.click();
 
                 System.out.println("Course details added successfully");
@@ -713,7 +711,6 @@ public class Requirement_CandidatesPage extends BasePage {
             wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(statusElement, "Uploading...")));
             System.out.println("Final Status: " + statusElement.getText().trim());
         }
-
     }
 
     public void clkCancel()

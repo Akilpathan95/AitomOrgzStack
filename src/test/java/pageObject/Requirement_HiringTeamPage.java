@@ -22,126 +22,80 @@ public class Requirement_HiringTeamPage extends BasePage {
     @FindBy(xpath = "//div[normalize-space()=\"Hiring Team\"]")
     WebElement selectHiring_Team;
 
-    @FindBy(xpath = "//div[contains(text(),'Assign Role')]")
-    List<WebElement> drpAssignRole;
-
-    @FindBy(xpath = "//div[contains(text(),'Name/Email Id')]")
-    List<WebElement> drpNameEmailId;
-
-    @FindBy(xpath = "//span[contains(text(),'Add To Team')]")
-    List<WebElement> btnAddtoTeam;
-
     @FindBy(xpath = "//label[normalize-space()=\"Assign to All Locations\"]")
     List<WebElement> checkBox_AssigntoLocations;
+
+    @FindBy(xpath = "(//span[contains(text(),'For Location:')])")
+    List<WebElement> location;
 
     public void clkHiring_Team()
     {
         selectHiring_Team.click();
     }
 
-    public void clkAssignRole()
-    {
-        int size = drpAssignRole.size();
-        System.out.println("Number of the Assign Role : " + size);
-        for (int i=0; i<drpAssignRole.size(); i++)
-        {
-            System.out.println("Assign Role : " + (i + 1) + ": " + drpAssignRole.get(i).getText());
+    public void safeClick(WebElement element, int retries) {
+        for (int i = 0; i < retries; i++) {
             try {
-                WebElement assignRole = drpAssignRole.get(i);
-                js=(JavascriptExecutor) driver;
-                js.executeScript("arguments[0].scrollIntoView({block: 'center'});", assignRole);
-
-                wait=new WebDriverWait(driver, Duration.ofSeconds(5));
-                wait.until(ExpectedConditions.elementToBeClickable(assignRole));
-
-                actions=new Actions(driver);
-                actions.moveToElement(assignRole).click().perform();
-                System.out.println("Assign Role dropdown clicked: " + (i + 1));
-
-                WebElement option=driver.findElement(By.xpath("//div[contains(text(), 'Recruiter')]"));
-                wait.until(ExpectedConditions.elementToBeClickable(option));
-                option.click();
-                System.out.println("Role selected for assign role: " + (i+1));
-
-            }
-            catch (Exception e)
-            {
-                System.out.println("Click failed for Assign Role. Trying JavaScript click." + (i + 1) + ": " + e.getMessage());
-                Assert.fail();
-            }
-
-        }
-    }
-
-    public void clkNameEmailId()
-    {
-        int size = drpNameEmailId.size();
-        System.out.println("Number of the Name and Email Id : " + size);
-        for (int i=0; i<drpNameEmailId.size(); i++) {
-            System.out.println("Name and Email Id present on the page : " + (i + 1) + ": " + drpNameEmailId.get(i).getText());
-            try {
-                WebElement nameEmailId = drpNameEmailId.get(i);
-                js=(JavascriptExecutor) driver;
-                js.executeScript("arguments[0].scrollIntoView({block: 'center'});", nameEmailId);
-
-                wait=new WebDriverWait(driver, Duration.ofSeconds(5));
-                wait.until(ExpectedConditions.elementToBeClickable(nameEmailId));
-
-                actions=new Actions(driver);
-                actions.moveToElement(nameEmailId).click().perform();
-                System.out.println("Name/Email dropdown clicked: " + (i + 1));
-
-                WebElement options=driver.findElement(By.xpath("//div[contains(text(), 'Akil Pathan (akilp1995@gmail.com)')]"));
-                wait.until(ExpectedConditions.elementToBeClickable(options));
-                options.click();
-                System.out.println("Name and Email is successfully added.");
-            }
-            catch (Exception e)
-            {
-                System.out.println("Click failed for Name and Emai Id. Trying JavaScript click." +  (i + 1) + ": " + e.getMessage());
-            }
-        }
-    }
-
-    public void clkAddtoTeam()
-    {
-        int size = btnAddtoTeam.size();
-        System.out.println("Number of the Add to Team : " + size);
-        for (int i=0; i<btnAddtoTeam.size(); i++)
-        {
-            System.out.println("Add to Team button present on the page : " + (i + 1) + ": " + btnAddtoTeam.get(i).getText());
-            try {
-                Thread.sleep(2000);
-                WebElement addToTeam = btnAddtoTeam.get(i);
-                js=(JavascriptExecutor) driver;
-                js.executeScript("arguments[0].scrollIntoView({block: 'center'});", addToTeam);
-
-                wait=new WebDriverWait(driver, Duration.ofSeconds(5));
-                wait.until(ExpectedConditions.elementToBeClickable(addToTeam));
-
-                    /*actions=new Actions(driver);
-                    actions.moveToElement(addToTeam).click().perform();*/
-                addToTeam.click();
-                System.out.println("Add to Team button is successfully done.");
-
-                if (isAlertPresent())
-                {
-                    handleAlert();
+                element.click();
+                System.out.println("Element clicked successfully.");
+                return;
+            } catch (ElementClickInterceptedException e) {
+                System.out.println("Retrying with JavaScript click. Attempt: " + (i + 1));
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+                return;
+            } catch (Exception e) {
+                System.out.println("Click failed on attempt " + (i + 1) + ": " + e.getMessage());
+                if (i == retries - 1) {
+                    throw e; // Re-throw if all attempts fail
                 }
-
-            }
-            catch (Exception e)
-            {
-                System.out.println("Click failed for Add to Team. Trying JavaScript click." +  (i + 1) + ": " + e.getMessage());
-            }
-            try {
-                Thread.sleep(1000);
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
             }
         }
+    }
+
+    public void selectLcoation()
+    {
+        // Initialize WebDriverWait properly
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        for (int i=0; i<location.size(); i++)
+        try {
+            // Wait for loader to disappear
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".loader-class")));
+
+            // Scroll to element
+            WebElement assignRole = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[contains(text(),'Assign Role')])[" + (i + 1) + "]")));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", assignRole);
+            safeClick(assignRole, 3);
+            System.out.println("Clicked Assign Role for row " + (i + 1));
+
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(), 'Recruiter')]")));
+            WebElement roleOption=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(), 'Recruiter')]")));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", roleOption);
+            System.out.println("Role selected for assign role: " + (i+1));
+
+            // Perform similar for Name/Email Id
+            WebElement recruiter = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[contains(text(),'Name/Email Id')])[" + (i + 1) + "]")));
+            safeClick(recruiter, 3);
+            System.out.println("Clicked on Name/Email Id for row " + (i + 1));
+
+            WebElement nameOption=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(), 'Akil Pathan (akilp1995@gmail.com)')]")));
+            nameOption.click();
+            System.out.println("Name and Email is successfully added." + (i + 1));
+
+            // Click Add To Team
+            WebElement addToTeamButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(text(),'Add To Team')])[" + (i + 1) + "]")));
+            safeClick(addToTeamButton, 3);
+            System.out.println("Clicked Add to Team for row " + (i + 1));
+
+            if (isAlertPresent())
+            {
+                handleAlert();
+            }
+        } catch (Exception e) {
+            System.out.println("Error on row " + (i + 1) + ": " + e.getMessage());
+        }
+
     }
 
     public void selectAssigntoAllLocations() {

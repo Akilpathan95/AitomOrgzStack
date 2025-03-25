@@ -14,9 +14,9 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
     @Test(priority = 2, groups = "Master")
     public void verify_RequisitionPage()
     {
-        RequisitionTopMenuPage rp=new RequisitionTopMenuPage(driver);
         lp=new LeftMenuPage(driver);
         lp.clkRequisition();
+        RequisitionTopMenuPage rp=new RequisitionTopMenuPage(driver);
         rp.clkRequisition_Option();
     }
 
@@ -124,9 +124,7 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
     public void verify_Hiring() {
         Requirement_HiringTeamPage ht=new Requirement_HiringTeamPage(driver);
         ht.clkHiring_Team();
-        ht.clkAssignRole();
-        ht.clkNameEmailId();
-        ht.clkAddtoTeam();
+        ht.selectLcoation();
         ht.selectAssigntoAllLocations();
     }
 
@@ -191,6 +189,8 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         rc.selectLanguage("Yes");
         rc.selectCourses("Yes");
         rc.submit();
+        BasePage bp=new BasePage(driver);
+        bp.handleAlert();
     }
 
 }

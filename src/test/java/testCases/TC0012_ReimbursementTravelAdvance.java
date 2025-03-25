@@ -1,10 +1,11 @@
 package testCases;
 
 import org.testng.annotations.Test;
-import pageObject.*;
+import pageObject.LeftMenuPage;
+import pageObject.MyReimbursements;
 import testBase.BaseClass;
 
-public class TC_Testing extends BaseClass {
+public class TC0012_ReimbursementTravelAdvance extends BaseClass {
 
     @Test(priority = 2, groups = "Master")
     public void verify_RequisitionPage()

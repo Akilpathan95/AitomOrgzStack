@@ -17,6 +17,9 @@ public class RequisitionTopMenuPage extends BasePage {
     @FindBy(xpath = "//div[normalize-space()=\"RECRUITMENT\"]")
     WebElement btnRecruitment;
 
+    @FindBy(xpath = "//div[normalize-space()=\"CANDIDATE REPOSITORY\"]")
+    WebElement btnCandidateRepository;
+
     public void clkRequisition_Option()
     {
         btnRequisition_Option.click();
@@ -25,5 +28,10 @@ public class RequisitionTopMenuPage extends BasePage {
     public void clkRecruitment()
     {
         btnRecruitment.click();
+    }
+
+    public void clkCandidateRepository()
+    {
+        btnCandidateRepository.click();
     }
 }

@@ -4,36 +4,16 @@
   <listeners>
     <listener class-name="utilities.ExtentReportManager"/>
   </listeners>
-  <test thread-count="5" name="test(failed)">
+  <test thread-count="5" name="C:/Users/IPSL/IdeaProjects/AitomOrgzStack(failed)">
     <parameter name="os" value="Windows"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TC007_AddCandidate_AddManually">
+      <class name="testCases.TC_Testing">
         <methods>
           <include name="setup"/>
-          <include name="verify_AddCandidate"/>
+          <include name="verify_myReimbursement"/>
         </methods>
-      </class> <!-- testCases.TC007_AddCandidate_AddManually -->
-      <class name="testCases.TC009_SendInviteAnd_InterviewLink">
-        <methods>
-          <include name="verify_AddCandidate"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- testCases.TC009_SendInviteAnd_InterviewLink -->
-      <class name="testCases.TC006_InterviewSetup">
-        <methods>
-          <include name="verify_Recruitment"/>
-          <include name="verify_InterviewSetup"/>
-          <include name="verify_GenerateKeyword"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- testCases.TC006_InterviewSetup -->
-      <class name="testCases.TC001_LoginTest">
-        <methods>
-          <include name="verify_loginfromData" invocation-numbers="7"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- testCases.TC001_LoginTest -->
+      </class> <!-- testCases.TC_Testing -->
     </classes>
-  </test> <!-- test(failed) -->
+  </test> <!-- C:/Users/IPSL/IdeaProjects/AitomOrgzStack(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

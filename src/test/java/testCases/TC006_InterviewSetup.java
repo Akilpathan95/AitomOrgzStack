@@ -124,9 +124,7 @@ public class TC006_InterviewSetup extends BaseClass {
     public void verify_Hiring() {
         Requirement_HiringTeamPage ht=new Requirement_HiringTeamPage(driver);
         ht.clkHiring_Team();
-        ht.clkAssignRole();
-        ht.clkNameEmailId();
-        ht.clkAddtoTeam();
+        ht.selectLcoation();
         ht.selectAssigntoAllLocations();
     }
 

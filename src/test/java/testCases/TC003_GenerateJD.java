@@ -110,5 +110,4 @@ public class TC003_GenerateJD extends BaseClass {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         jd.selectSave();
     }
-
 }

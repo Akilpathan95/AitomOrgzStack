@@ -6,7 +6,7 @@ import testBase.BaseClass;
 
 public class TC008_AddCandidate_AddBulk extends BaseClass {
 
-    @Test(priority = 2, groups = "Master")
+    @Test(priority = 2, groups = {"Master", "Requisition"})
     public void verify_RequisitionPage()
     {
         LeftMenuPage lp=new LeftMenuPage(driver);

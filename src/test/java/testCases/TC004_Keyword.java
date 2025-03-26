@@ -75,7 +75,7 @@ public class TC004_Keyword extends BaseClass {
         rp.clkSave();
     }
 
-    @Test(priority = 5)
+    @Test(priority = 5, groups = {"Master", "Requisition"})
     public void verify_Pop_UP() {
         BasePage bp = new BasePage(driver);
 

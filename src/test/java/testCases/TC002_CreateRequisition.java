@@ -7,7 +7,7 @@ import testBase.BaseClass;
 
 public class TC002_CreateRequisition extends BaseClass {
 
-    @Test(priority = 2, groups = "Master")
+    @Test(priority = 2, groups = {"Master", "Requisition"})
     public void verify_RequisitionPage()
     {
         LeftMenuPage lf=new LeftMenuPage(driver);

@@ -6,7 +6,7 @@ import testBase.BaseClass;
 
 public class TC009_SendInviteAnd_InterviewLink extends BaseClass {
 
-    @Test(priority = 2, groups = "Master")
+    @Test(priority = 2, groups = {"Master", "Requisition"})
     public void verify_RequisitionPage()
     {
         LeftMenuPage lp=new LeftMenuPage(driver);

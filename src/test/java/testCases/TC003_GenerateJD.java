@@ -11,7 +11,7 @@ public class TC003_GenerateJD extends BaseClass {
 
     LeftMenuPage lp;
 
-    @Test(priority = 2, groups = "Master")
+    @Test(priority = 2, groups = {"Master", "Requisition"})
     public void verify_RequisitionPage()
     {
         lp=new LeftMenuPage(driver);

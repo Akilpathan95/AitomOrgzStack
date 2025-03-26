@@ -6,7 +6,7 @@ import testBase.BaseClass;
 
 public class TC0010_EditCandidate extends BaseClass {
 
-    @Test(priority = 2, groups = "Master")
+    @Test(priority = 2, groups = {"Master", "Requisition"})
     public void verify_RequisitionPage()
     {
         LeftMenuPage lp=new LeftMenuPage(driver);

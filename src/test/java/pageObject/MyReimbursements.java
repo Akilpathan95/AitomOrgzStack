@@ -41,13 +41,20 @@ public class MyReimbursements extends BasePage{
     @FindBy(xpath = "//button[normalize-space()=\"Submit\"]")
     WebElement btnSubmit;
 
+    @FindBy(xpath = "//button[normalize-space()=\"submit\"]")
+    WebElement btnSubmitOtherExpense;
+
     @FindBy(xpath = "//span[normalize-space()=\"OK\"]")
     WebElement btnOK;
 
     @FindBy(xpath = "//div[contains(@class,\"MuiDialogContent-root MuiPickersModal-dialog\")]//button[2]//span[1]//*[name()=\"svg\"]")
     WebElement nextArrow;
 
-    //@FindBy(xpath = "")
+    @FindBy(xpath = "//div[normalize-space()=\"Other Advance\"]")
+    WebElement btnOtherAdvance;
+
+    @FindBy(xpath = "//div[@id=\"demo-select-small-outlined\"]")
+    WebElement drpAdvanceType;
 
     public void clkAdvance()
     {
@@ -160,5 +167,22 @@ public class MyReimbursements extends BasePage{
     public void clkSubmit()
     {
         btnSubmit.click();
+    }
+
+    public void clkOtherAdvance()
+    {
+        btnOtherAdvance.click();
+    }
+
+    public void clkAdvanceType()
+    {
+        drpAdvanceType.click();
+        driver.findElement(By.xpath("//li[normalize-space()=\"Rent Advance\"]")).click();
+
+    }
+
+    public void clkSubmitOtherAdvance()
+    {
+        btnSubmitOtherExpense.click();
     }
 }

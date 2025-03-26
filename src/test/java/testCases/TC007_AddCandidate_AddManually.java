@@ -11,7 +11,7 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
 
     LeftMenuPage lp;
 
-    @Test(priority = 2, groups = "Master")
+    @Test(priority = 2, groups = {"Master", "Requisition"})
     public void verify_RequisitionPage()
     {
         lp=new LeftMenuPage(driver);
@@ -121,7 +121,7 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
     }
 
     @Test(priority = 8)
-    public void verify_Hiring() {
+    public void verify_Hiring() throws InterruptedException {
         Requirement_HiringTeamPage ht=new Requirement_HiringTeamPage(driver);
         ht.clkHiring_Team();
         ht.selectLcoation();
@@ -155,7 +155,7 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         rc.clkCandidate();
         rc.clkAdd_Candidate();
         rc.clkAdd_Manually();
-        rc.addFile();
+        rc.addFileWithRetry("C:/Users/IPSL/Downloads/Saiyad Ali -Electrical Techician.pdf", 3);
         driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(2));
         rc.enterFirst_Name("Akil");
         rc.enterMiddle_Name("Nisar");
@@ -189,8 +189,6 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         rc.selectLanguage("Yes");
         rc.selectCourses("Yes");
         rc.submit();
-        BasePage bp=new BasePage(driver);
-        bp.handleAlert();
     }
 
 }

@@ -1,11 +1,14 @@
 package pageObject;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.List;
@@ -139,23 +142,57 @@ public class Requirement_CandidatesPage extends BasePage {
         btnAdd_Manually.click();
     }
 
-    public void addFile() throws InterruptedException {
-        Thread.sleep(5000);
-        WebElement uploadResume=driver.findElement(By.id("upload"));
+    public void addFileWithRetry(String filePath, int maxRetries){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        js=(JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);",uploadResume);
-        try {
-            uploadResume.sendKeys("C:/Users/IPSL/Downloads/Saiyad Ali -Electrical Techician.pdf");
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-            System.out.println("File uploaded successfully.");
-            System.out.println("Current Cookies: " + driver.manage().getCookies());
-        } catch (Exception e) {
-            System.out.println("File upload failed: " + e.getMessage());
-            System.out.println("Current Cookies: " + driver.manage().getCookies());
+        for (int attempt = 1; attempt <= maxRetries; attempt++) {
+            try {
+                // Locate the upload element
+                WebElement uploadResume = driver.findElement(By.id("upload"));
+                js.executeScript("arguments[0].scrollIntoView(true);", uploadResume);
+
+                // Upload the file
+                uploadResume.sendKeys(filePath);
+                System.out.println("Attempt " + attempt + ": File uploaded.");
+
+                // Wait to see if the error pop-up appears
+                //Thread.sleep(60000); // Adjust based on your app's response time
+
+                // Check for the alert
+                if (wait.until(ExpectedConditions.alertIsPresent()) != null) {
+                    Alert alert = driver.switchTo().alert();
+                    String alertText = alert.getText();
+                    System.out.println("Alert detected: " + alertText);
+                    alert.accept();
+
+                    // Check if the error is "File Not Parsed"
+                    if (alertText.contains("File Not Parsed Please Try Again")) {
+                        System.out.println("File not parsed. Retrying... Attempt " + (attempt + 1));
+                        continue; // Retry the upload
+                    }
+                }
+
+                System.out.println("File uploaded successfully.");
+                return; // Exit if successful
+
+            } catch (Exception e) {
+                System.out.println("File upload failed on attempt " + attempt + ": " + e.getMessage());
+            }
         }
-        Thread.sleep(10000);
+        System.out.println("Max retries reached. File upload failed.");
     }
+
+    // Helper method to check for alerts
+    public boolean isAlertPresent() {
+        try {
+            driver.switchTo().alert();
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
+    }
+
 
     public void enterFirst_Name(String first_Name)
     {

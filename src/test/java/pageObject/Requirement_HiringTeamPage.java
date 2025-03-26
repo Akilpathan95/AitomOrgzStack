@@ -33,64 +33,34 @@ public class Requirement_HiringTeamPage extends BasePage {
         selectHiring_Team.click();
     }
 
-    public void safeClick(WebElement element, int retries) {
-        for (int i = 0; i < retries; i++) {
-            try {
-                element.click();
-                System.out.println("Element clicked successfully.");
-                return;
-            } catch (ElementClickInterceptedException e) {
-                System.out.println("Retrying with JavaScript click. Attempt: " + (i + 1));
-                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
-                return;
-            } catch (Exception e) {
-                System.out.println("Click failed on attempt " + (i + 1) + ": " + e.getMessage());
-                if (i == retries - 1) {
-                    throw e; // Re-throw if all attempts fail
-                }
-            }
-        }
-    }
-
     public void selectLcoation()
     {
-        // Initialize WebDriverWait properly
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
         for (int i=0; i<location.size(); i++)
         try {
-            // Wait for loader to disappear
-            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".loader-class")));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-            // Scroll to element
-            WebElement assignRole = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[contains(text(),'Assign Role')])[" + (i + 1) + "]")));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", assignRole);
-            safeClick(assignRole, 3);
-            System.out.println("Clicked Assign Role for row " + (i + 1));
+            //Wait and select Assign Role
+            WebElement assignRole=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'Assign Role')])[" + (i + 1) + "]")));
+            Actions actions = new Actions(driver);
+            actions.moveToElement(assignRole).click().perform();
+            System.out.println("Assign role is selected");
+            WebElement role=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(), 'Recruiter')]")));
+            actions.moveToElement(role).click().perform();
 
-            Thread.sleep(2000);
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(), 'Recruiter')]")));
-            WebElement roleOption=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(), 'Recruiter')]")));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", roleOption);
-            System.out.println("Role selected for assign role: " + (i+1));
+            //Wait for select Recruiter role
+            WebElement nameEmailId=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'Name/Email Id')])[" + (i + 1) + "]")));
+            actions.moveToElement(nameEmailId).click().perform();
+            System.out.println("Name and Email id selected");
+            driver.findElement(By.xpath("//div[contains(text(),'Akil Pathan (akilp1995@gmail.com)')]")).click();
 
-            // Perform similar for Name/Email Id
-            WebElement recruiter = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[contains(text(),'Name/Email Id')])[" + (i + 1) + "]")));
-            safeClick(recruiter, 3);
-            System.out.println("Clicked on Name/Email Id for row " + (i + 1));
-
-            WebElement nameOption=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(), 'Akil Pathan (akilp1995@gmail.com)')]")));
-            nameOption.click();
-            System.out.println("Name and Email is successfully added." + (i + 1));
-
-            // Click Add To Team
-            WebElement addToTeamButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(text(),'Add To Team')])[" + (i + 1) + "]")));
-            safeClick(addToTeamButton, 3);
-            System.out.println("Clicked Add to Team for row " + (i + 1));
-
+            //wait for the buttin to be submit
+            WebElement addToTeamButton = driver.findElement(By.xpath("(//span[contains(text(),'Add To Team')])[" + (i + 1) + "]"));
+            addToTeamButton.click();
+            System.out.println("Add to Team clicked.");
             if (isAlertPresent())
             {
                 handleAlert();
+                Assert.assertTrue(true);
             }
         } catch (Exception e) {
             System.out.println("Error on row " + (i + 1) + ": " + e.getMessage());

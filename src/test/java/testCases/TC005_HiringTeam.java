@@ -32,7 +32,7 @@ public class TC005_HiringTeam extends BaseClass {
         cr.clkCreateRequisition_POPup();
     }
 
-    @Test(priority = 4, groups = "Master")
+    @Test(priority = 4, groups = {"Master", "Requisition"})
     public void verify_RequirementDetails()
     {
         Requirement_DetailsPage rp=new Requirement_DetailsPage(driver);
@@ -89,40 +89,10 @@ public class TC005_HiringTeam extends BaseClass {
     }
 
     @Test(priority = 6)
-    public void verify_Recruitment()
-    {
+    public void verify_Hiring() throws InterruptedException {
+        RecruitmentPage rp = new RecruitmentPage(driver);
         lp=new LeftMenuPage(driver);
         lp.clkRequisition();
-        RecruitmentPage rp=new RecruitmentPage(driver);
-        rtp=new RequisitionTopMenuPage(driver);
-        rtp.clkRecruitment();
-        rp.clkRecruitment_List();
-        Requirement_JobDescriptionPage jd=new Requirement_JobDescriptionPage(driver);
-        jd.clkJob_Description();
-        jd.clkCreateWithAI();
-        jd.selectSuggestion_Inputbox();
-        jd.selectSuggestion();
-        jd.selectSubmit();
-        jd.selectSuggestion_Inputbox();
-        jd.selectSuggestion();
-        jd.selectSubmit();
-        jd.selectGenerate_JD();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-        jd.selectSave();
-    }
-
-    @Test(priority = 7)
-    public void verify_GenerateKeyword() {
-        Requirement_JobDescriptionPage jd=new Requirement_JobDescriptionPage(driver);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-        jd.selectGenerate_Keyword();
-        jd.clkdrpGenerate_Keyword();
-        jd.clkGenerateKeyword_Save();
-    }
-
-    @Test(priority = 8)
-    public void verify_Hiring() {
-        RecruitmentPage rp = new RecruitmentPage(driver);
         rtp=new RequisitionTopMenuPage(driver);
         rtp.clkRecruitment();
         rp.clkRecruitment_List();

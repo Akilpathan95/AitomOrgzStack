@@ -19,14 +19,8 @@
         <parameter name="os" value="Windows"/>
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="testCases.TC002_CreateRequisition"/>
-            <class name="testCases.TC003_GenerateJD"/>
-            <class name="testCases.TC004_Keyword"/>
-            <class name="testCases.TC005_HiringTeam"/>
-            <class name="testCases.TC006_InterviewSetup"/>
-            <class name="testCases.TC007_AddCandidate_AddManually"/>
-            <class name="testCases.TC008_AddCandidate_AddBulk"/>
-            <class name="testCases.TC009_SendInviteAnd_InterviewLink"/>
+            <class name="testCases.TC0012_ReimbursementTravelAdvance"/>
+            <class name="testCases.TC0013_ReimbursementOtherAdvance"/>
         </classes>
     </test>
 

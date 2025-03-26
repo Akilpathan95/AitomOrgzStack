@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-All_Test_Suite" class="navigator-link">
-              <span class="suite-name border-passed">All Test Suite</span>
+              <span class="suite-name border-failed">All Test Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-All_Test_Suite" class="navigator-link ">
-                    <span>1 group</span>
+                    <span>2 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,36 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">10 methods, 4 failed,   6 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-All_Test_Suite" class="hide-methods failed suite-All_Test_Suite"> (hide)</a> <!-- hide-methods failed suite-All_Test_Suite -->
+                      <a href="#" panel-name="suite-All_Test_Suite" class="show-methods failed suite-All_Test_Suite"> (show)</a> <!-- show-methods failed suite-All_Test_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-All_Test_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="testCases.TC007_AddCandidate_AddManually" class="method navigator-link" hash-for-method="verify_AddCandidate">verify_AddCandidate</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="testCases.TC007_AddCandidate_AddManually" class="method navigator-link" hash-for-method="verify_GenerateKeyword">verify_GenerateKeyword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="testCases.TC007_AddCandidate_AddManually" class="method navigator-link" hash-for-method="verify_Hiring">verify_Hiring</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="testCases.TC007_AddCandidate_AddManually" class="method navigator-link" hash-for-method="verify_InterviewSetup">verify_InterviewSetup</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-All_Test_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,17 +132,32 @@
                     <div class="method-list-content passed suite-All_Test_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-All_Test_Suite" title="testCases.TC0012_ReimbursementTravelAdvance" class="method navigator-link" hash-for-method="verify_Login">verify_Login</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-All_Test_Suite" title="testCases.TC007_AddCandidate_AddManually" class="method navigator-link" hash-for-method="verify_CreateRequisition">verify_CreateRequisition</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-All_Test_Suite" title="testCases.TC0012_ReimbursementTravelAdvance" class="method navigator-link" hash-for-method="verify_RequisitionPage">verify_RequisitionPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-All_Test_Suite" title="testCases.TC007_AddCandidate_AddManually" class="method navigator-link" hash-for-method="verify_Login">verify_Login</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-All_Test_Suite" title="testCases.TC0012_ReimbursementTravelAdvance" class="method navigator-link" hash-for-method="verify_myReimbursement">verify_myReimbursement</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-All_Test_Suite" title="testCases.TC007_AddCandidate_AddManually" class="method navigator-link" hash-for-method="verify_Pop_UP">verify_Pop_UP</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="testCases.TC007_AddCandidate_AddManually" class="method navigator-link" hash-for-method="verify_Recruitment">verify_Recruitment</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="testCases.TC007_AddCandidate_AddManually" class="method navigator-link" hash-for-method="verify_RequirementDetails">verify_RequirementDetails</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="testCases.TC007_AddCandidate_AddManually" class="method navigator-link" hash-for-method="verify_RequisitionPage">verify_RequisitionPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-All_Test_Suite -->
@@ -128,12 +172,349 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-All_Test_Suite" class="panel All_Test_Suite">
+          <div class="suite-All_Test_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">testCases.TC007_AddCandidate_AddManually</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_AddCandidate">
+                  </a> <!-- verify_AddCandidate -->
+                  <span class="method-name">verify_AddCandidate</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div style=&quot;font-size: 18px; line-height: 24px; font-style: normal; margin: 15px;&quot;&gt;...&lt;/div&gt; is not clickable at point (1011, 12). Other element would receive the click: &lt;div style=&quot;width: 100%; display: flex; justify-content: flex-end;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=134.0.6998.89)
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [df8d839860804cc7822c2a6ca56d86ac, clickElement {id=f.E268DF6AFB556F4A2EC1D498D5C11241.d.43D12E68ECF14262AF55AC79E8CB91C4.e.528}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\IPSL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60615}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60615/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (df8d839860804cc7822c2a6ca56d86ac)] -&gt; xpath: //div[normalize-space()=&quot;Candidates&quot;]]
+Session ID: df8d839860804cc7822c2a6ca56d86ac
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+	at pageObject.Requirement_CandidatesPage.clkCandidate(Requirement_CandidatesPage.java:132)
+	at testCases.TC007_AddCandidate_AddManually.verify_AddCandidate(TC007_AddCandidate_AddManually.java:155)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_GenerateKeyword">
+                  </a> <!-- verify_GenerateKeyword -->
+                  <span class="method-name">verify_GenerateKeyword</span>
+                  <div class="stack-trace">org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [df8d839860804cc7822c2a6ca56d86ac, actions {actions=[org.openqa.selenium.interactions.Sequence@7316523a]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\IPSL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60615}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60615/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: df8d839860804cc7822c2a6ca56d86ac
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:520)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:182)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:204)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:204)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:222)
+	at java.base/java.util.Map.forEach(Map.java:713)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:217)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:400)
+	at org.openqa.selenium.json.Json.toJson(Json.java:133)
+	at org.openqa.selenium.json.Json.toJson(Json.java:119)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:236)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:109)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:203)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:631)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:616)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:581)
+	at pageObject.Requirement_JobDescriptionPage.selectGenerate_Keyword(Requirement_JobDescriptionPage.java:85)
+	at testCases.TC007_AddCandidate_AddManually.verify_GenerateKeyword(TC007_AddCandidate_AddManually.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: driver.version: RemoteWebDriver
+		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:431)
+		at org.openqa.selenium.json.Json.toJson(Json.java:131)
+		... 39 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:516)
+	... 60 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[normalize-space()=&quot;Generate Keywords&quot;]&quot;}
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [df8d839860804cc7822c2a6ca56d86ac, findElement {value=//div[normalize-space()=&quot;Generate Keywords&quot;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\IPSL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60615}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60615/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: df8d839860804cc7822c2a6ca56d86ac
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:262)
+	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:211)
+	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:74)
+	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:83)
+	... 65 more
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_Hiring">
+                  </a> <!-- verify_Hiring -->
+                  <span class="method-name">verify_Hiring</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div style=&quot;font-size: 18px; line-height: 24px; font-style: normal; margin: 15px;&quot;&gt;...&lt;/div&gt; is not clickable at point (589, 12). Other element would receive the click: &lt;img class=&quot;mt-2&quot; src=&quot;data:image/svg+xml,%3Csvg width=&apos;40&apos; height=&apos;34&apos; viewBox=&apos;0 0 40 34&apos; fill=&apos;none&apos; xmlns=&apos;http://www.w3.org/2000/svg&apos;%3E %3Cpath d=&apos;M5 5.20997C4.84008 5.20794 4.68476 5.15615 4.55562 5.06181C4.42647 4.96747 4.3299 4.83526 4.27933 4.68353C4.22875 4.53181 4.22668 4.3681 4.27339 4.21514C4.3201 4.06218 4.41329 3.92756 4.54 3.82997C7.29921 1.87792 10.6221 0.883863 14 0.999975C16.66 0.999975 20.48 1.44997 23.5 3.61997C23.6652 3.73846 23.7768 3.91744 23.8105 4.11788C23.8442 4.31833 23.7973 4.52397 23.68 4.68997C23.5582 4.85422 23.3768 4.96407 23.1748 4.99586C22.9728 5.02766 22.7664 4.97886 22.6 4.85997C20.0355 3.23018 17.0365 2.41766 14 2.52997C10.9685 2.42698 7.98553 3.31134 5.5 5.04997C5.35849 5.16262 5.18062 5.21954 5 5.20997Z&apos; fill=&apos;%23DC582E&apos;/%3E %3Cpath d=&apos;M26.23 12.26C26.1063 12.2588 25.9847 12.2283 25.8752 12.171C25.7657 12.1136 25.6713 12.031 25.6 11.93C23.87 9.48998 20.78 6.23998 14 6.23998C11.7457 6.18321 9.5111 6.67182 7.48623 7.66423C5.46136 8.65664 3.70618 10.1235 2.37 11.94C2.25001 12.1036 2.07031 12.2132 1.86996 12.245C1.66961 12.2768 1.46478 12.2283 1.3 12.11C1.21356 12.0498 1.14056 11.9723 1.08565 11.8825C1.03073 11.7926 0.995086 11.6923 0.980982 11.588C0.966878 11.4836 0.97462 11.3774 1.00372 11.2762C1.03281 11.175 1.08263 11.0809 1.15 11C2.63135 8.99882 4.57185 7.38288 6.8081 6.28825C9.04435 5.19362 11.5109 4.65234 14 4.70998C19.61 4.70998 23.81 6.78998 26.84 11.05C26.9563 11.2172 27.0016 11.4237 26.966 11.6242C26.9304 11.8248 26.8167 12.003 26.65 12.12C26.5262 12.2057 26.3805 12.2543 26.23 12.26Z&apos; fill=&apos;%23DC582E&apos;/%3E %3Cpath d=&apos;M10.28 31C10.1249 30.9992 9.9735 30.9522 9.84524 30.8649C9.71699 30.7776 9.61768 30.654 9.56 30.51C9.52001 30.4158 9.49973 30.3144 9.5004 30.2121C9.50107 30.1097 9.52268 30.0086 9.5639 29.9149C9.60512 29.8213 9.66507 29.737 9.74007 29.6674C9.81507 29.5977 9.90353 29.5442 10 29.51C14.37 27.83 17 24.39 17 20.3C17.0299 19.8984 16.9728 19.4951 16.8326 19.1176C16.6924 18.74 16.4724 18.3972 16.1876 18.1124C15.9028 17.8276 15.56 17.6077 15.1825 17.4675C14.8049 17.3273 14.4016 17.2702 14 17.3C12.14 17.3 11.24 18.3 11 20.65C10.8884 21.7491 10.3551 22.7622 9.51228 23.4764C8.6694 24.1906 7.58253 24.5504 6.48 24.48C5.88709 24.4886 5.29889 24.3737 4.75286 24.1424C4.20683 23.9112 3.71495 23.5688 3.30854 23.137C2.90214 22.7052 2.59013 22.1935 2.39239 21.6344C2.19464 21.0754 2.1155 20.4813 2.16 19.89C2.21526 16.7982 3.49121 13.8538 5.70939 11.6993C7.92758 9.54484 10.9079 8.3552 14 8.39003C17.1705 8.38997 20.2122 9.64464 22.4606 11.88C24.7091 14.1153 25.9815 17.1496 26 20.32C25.9294 22.5524 25.4586 24.754 24.61 26.82C24.5285 27.0043 24.3789 27.1499 24.1925 27.2263C24.0061 27.3027 23.7974 27.3041 23.61 27.23C23.5171 27.1917 23.4326 27.1354 23.3616 27.0643C23.2906 26.9931 23.2344 26.9086 23.1963 26.8156C23.1581 26.7226 23.1388 26.623 23.1395 26.5224C23.1401 26.4219 23.1607 26.3225 23.2 26.23C23.9679 24.3501 24.3978 22.3494 24.47 20.32C24.4568 17.5537 23.3472 14.9055 21.3846 12.956C19.4219 11.0065 16.7663 9.9147 14 9.92003C12.6614 9.89352 11.3308 10.1313 10.0842 10.6198C8.83767 11.1083 7.69973 11.8379 6.73554 12.7667C5.77135 13.6956 4.99987 14.8056 4.46526 16.0331C3.93064 17.2605 3.64341 18.5814 3.62 19.92C3.57901 20.3091 3.6209 20.7024 3.7429 21.0741C3.86491 21.4458 4.06426 21.7875 4.32785 22.0766C4.59143 22.3656 4.91325 22.5956 5.27214 22.7513C5.63102 22.9071 6.01882 22.985 6.41 22.98C6.77012 23.0158 7.13377 22.9799 7.47994 22.8744C7.82612 22.7689 8.14797 22.5959 8.4269 22.3653C8.70583 22.1347 8.93632 21.8512 9.10505 21.531C9.27379 21.2109 9.37743 20.8605 9.41 20.5C9.77 17.39 11.3 15.81 13.97 15.81C14.5751 15.7794 15.1798 15.8768 15.7447 16.0957C16.3097 16.3145 16.8221 16.6501 17.2486 17.0804C17.6751 17.5106 18.0061 18.026 18.22 18.5928C18.4339 19.1597 18.5259 19.7652 18.49 20.37C18.49 25.11 15.49 29.09 10.49 31C10.4202 31.008 10.3498 31.008 10.28 31Z&apos; fill=&apos;%23DC582E&apos;/%3E %3Cpath d=&apos;M17.77 30.28C17.5785 30.2769 17.3942 30.2061 17.25 30.08C17.1786 30.0093 17.122 29.9252 17.0833 29.8325C17.0447 29.7398 17.0248 29.6404 17.0248 29.54C17.0248 29.4396 17.0447 29.3401 17.0833 29.2475C17.122 29.1548 17.1786 29.0707 17.25 29C19.4998 26.6679 20.7672 23.5603 20.79 20.32C20.79 18.76 20.31 13.67 14.09 13.67C13.1837 13.6381 12.2801 13.7871 11.4319 14.1081C10.5838 14.4292 9.80803 14.9159 9.15 15.54C8.56124 16.1225 8.09578 16.8176 7.78138 17.5839C7.46698 18.3501 7.31007 19.1718 7.32 20C7.31737 20.2025 7.23509 20.3958 7.09097 20.538C6.94685 20.6803 6.7525 20.76 6.55 20.76C6.44936 20.7613 6.34945 20.7426 6.25609 20.705C6.16272 20.6674 6.07776 20.6117 6.00612 20.541C5.93449 20.4703 5.87761 20.386 5.83879 20.2932C5.79998 20.2003 5.77999 20.1006 5.78 20C5.76442 18.9755 5.95265 17.9582 6.33377 17.0071C6.71488 16.056 7.28127 15.1902 8 14.46C8.7967 13.6953 9.73733 13.0965 10.7673 12.6982C11.7973 12.3 12.8961 12.1102 14 12.14C20.08 12.14 22.24 16.54 22.24 20.32C22.2269 23.9269 20.8311 27.3915 18.34 30C18.2713 30.0855 18.1846 30.1549 18.0861 30.2033C17.9876 30.2517 17.8797 30.2779 17.77 30.28Z&apos; fill=&apos;%23DC582E&apos;/%3E %3Cpath d=&apos;M6.66 27.74C6.13873 27.7388 5.61794 27.7087 5.1 27.65C5.00019 27.6388 4.90356 27.6081 4.81563 27.5596C4.72769 27.5111 4.65017 27.4458 4.58749 27.3673C4.52481 27.2888 4.4782 27.1988 4.45032 27.1023C4.42244 27.0058 4.41383 26.9048 4.425 26.805C4.43616 26.7052 4.46687 26.6086 4.51538 26.5206C4.56388 26.4327 4.62923 26.3552 4.7077 26.2925C4.78616 26.2298 4.87621 26.1832 4.97269 26.1553C5.06917 26.1275 5.17019 26.1188 5.27 26.13C7.76 26.41 9.72 25.97 11.11 24.81C11.7507 24.237 12.2689 23.5403 12.6332 22.7618C12.9975 21.9833 13.2005 21.1391 13.23 20.28C13.2349 20.1787 13.2604 20.0795 13.3048 19.9884C13.3491 19.8972 13.4115 19.816 13.4882 19.7497C13.5648 19.6833 13.6541 19.6332 13.7507 19.6023C13.8472 19.5714 13.9491 19.5604 14.05 19.57C14.2516 19.5854 14.4393 19.6784 14.5736 19.8295C14.708 19.9807 14.7784 20.178 14.77 20.38C14.7279 21.4496 14.4685 22.4994 14.0078 23.4656C13.5471 24.4317 12.8946 25.294 12.09 26C10.5464 27.2109 8.61987 27.8283 6.66 27.74Z&apos; fill=&apos;%23DC582E&apos;/%3E %3Cpath fill-rule=&apos;evenodd&apos; clip-rule=&apos;evenodd&apos; d=&apos;M30.7174 12.0541C30.9145 11.9865 31.1279 11.9821 31.3276 12.0417C31.5273 12.1012 31.7035 12.2216 31.8314 12.3861L38.8314 21.3861C38.968 21.5617 39.0421 21.7777 39.0421 22.0001C39.0421 22.2225 38.968 22.4386 38.8314 22.6141L31.8314 31.6141C31.7034 31.7785 31.5273 31.8988 31.3277 31.9582C31.128 32.0176 30.9148 32.0132 30.7178 31.9456C30.5208 31.878 30.3498 31.7505 30.2287 31.581C30.1076 31.4115 30.0425 31.2084 30.0424 31.0001V27.0101C24.6634 27.1221 22.0794 28.1431 20.7814 29.2531C19.5474 30.3081 19.3214 31.5491 19.0864 32.8491L19.0254 33.1841C18.9805 33.4239 18.8496 33.6389 18.6573 33.7888C18.4649 33.9388 18.2244 34.0132 17.981 33.9982C17.7376 33.9833 17.5081 33.8798 17.3356 33.7074C17.1631 33.535 17.0595 33.3055 17.0444 33.0621C16.8724 30.3141 17.1304 26.3321 19.0714 23.0011C20.9554 19.7681 24.3474 17.2821 30.0424 17.0221V13.0001C30.0423 12.7918 30.1074 12.5886 30.2284 12.419C30.3494 12.2494 30.5204 12.1219 30.7174 12.0541Z&apos; fill=&apos;%23DC582E&apos;/%3E %3C/svg%3E&quot; style=&quot;width: 27px; height: 22px;&quot;&gt;
+  (Session info: chrome=134.0.6998.89)
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [df8d839860804cc7822c2a6ca56d86ac, clickElement {id=f.E268DF6AFB556F4A2EC1D498D5C11241.d.43D12E68ECF14262AF55AC79E8CB91C4.e.524}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\IPSL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60615}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60615/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (df8d839860804cc7822c2a6ca56d86ac)] -&gt; xpath: //div[normalize-space()=&quot;Hiring Team&quot;]]
+Session ID: df8d839860804cc7822c2a6ca56d86ac
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+	at pageObject.Requirement_HiringTeamPage.clkHiring_Team(Requirement_HiringTeamPage.java:33)
+	at testCases.TC007_AddCandidate_AddManually.verify_Hiring(TC007_AddCandidate_AddManually.java:126)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_InterviewSetup">
+                  </a> <!-- verify_InterviewSetup -->
+                  <span class="method-name">verify_InterviewSetup</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div style=&quot;font-size: 18px; line-height: 24px; font-style: normal; margin: 15px;&quot;&gt;...&lt;/div&gt; is not clickable at point (859, 12). Other element would receive the click: &lt;div style=&quot;width: 100%; display: flex; justify-content: flex-end;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=134.0.6998.89)
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [df8d839860804cc7822c2a6ca56d86ac, clickElement {id=f.E268DF6AFB556F4A2EC1D498D5C11241.d.43D12E68ECF14262AF55AC79E8CB91C4.e.527}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\IPSL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60615}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60615/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (df8d839860804cc7822c2a6ca56d86ac)] -&gt; xpath: //div[normalize-space()=&quot;Interview Setup&quot;]]
+Session ID: df8d839860804cc7822c2a6ca56d86ac
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+	at pageObject.Requirement_InterviewSetupPage.clkInterview_Setup(Requirement_InterviewSetupPage.java:54)
+	at testCases.TC007_AddCandidate_AddManually.verify_InterviewSetup(TC007_AddCandidate_AddManually.java:134)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-All_Test_Suite-class-failed -->
           <div class="suite-All_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testCases.TC0012_ReimbursementTravelAdvance</span>
+              <span class="class-name">testCases.TC007_AddCandidate_AddManually</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_CreateRequisition">
+                  </a> <!-- verify_CreateRequisition -->
+                  <span class="method-name">verify_CreateRequisition</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="verify_Login">
@@ -143,16 +524,30 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verify_RequisitionPage">
-                  </a> <!-- verify_RequisitionPage -->
-                  <span class="method-name">verify_RequisitionPage</span>
+                  <a name="verify_Pop_UP">
+                  </a> <!-- verify_Pop_UP -->
+                  <span class="method-name">verify_Pop_UP</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verify_myReimbursement">
-                  </a> <!-- verify_myReimbursement -->
-                  <span class="method-name">verify_myReimbursement</span>
+                  <a name="verify_Recruitment">
+                  </a> <!-- verify_Recruitment -->
+                  <span class="method-name">verify_Recruitment</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_RequirementDetails">
+                  </a> <!-- verify_RequirementDetails -->
+                  <span class="method-name">verify_RequirementDetails</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_RequisitionPage">
+                  </a> <!-- verify_RequisitionPage -->
+                  <span class="method-name">verify_RequisitionPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -174,7 +569,7 @@
     &lt;parameter name=&quot;os&quot; value=&quot;Windows&quot;/&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testCases.TC0012_ReimbursementTravelAdvance&quot;/&gt;
+      &lt;class name=&quot;testCases.TC007_AddCandidate_AddManually&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- C:/Users/IPSL/IdeaProjects/AitomOrgzStack --&gt;
 &lt;/suite&gt; &lt;!-- All Test Suite --&gt;
@@ -202,9 +597,25 @@
               <span class="test-group-name">Master</span>
               <br/>
               <div class="method-in-group">
+                <span class="method-in-group-name">verify_CreateRequisition</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
                 <span class="method-in-group-name">verify_Login</span>
                 <br/>
               </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verify_RequirementDetails</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verify_RequisitionPage</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Requisition</span>
+              <br/>
               <div class="method-in-group">
                 <span class="method-in-group-name">verify_RequisitionPage</span>
                 <br/>
@@ -226,24 +637,52 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(10);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verify_myReimbursement')
-data.setCell(0, 2, 'testCases.TC0012_ReimbursementTravelAdvance')
-data.setCell(0, 3, 9238);
+data.setCell(0, 1, 'verify_GenerateKeyword')
+data.setCell(0, 2, 'testCases.TC007_AddCandidate_AddManually')
+data.setCell(0, 3, 40079);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verify_RequisitionPage')
-data.setCell(1, 2, 'testCases.TC0012_ReimbursementTravelAdvance')
-data.setCell(1, 3, 1216);
+data.setCell(1, 1, 'verify_Recruitment')
+data.setCell(1, 2, 'testCases.TC007_AddCandidate_AddManually')
+data.setCell(1, 3, 38733);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verify_Login')
-data.setCell(2, 2, 'testCases.TC0012_ReimbursementTravelAdvance')
-data.setCell(2, 3, 500);
+data.setCell(2, 1, 'verify_RequirementDetails')
+data.setCell(2, 2, 'testCases.TC007_AddCandidate_AddManually')
+data.setCell(2, 3, 21004);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verify_CreateRequisition')
+data.setCell(3, 2, 'testCases.TC007_AddCandidate_AddManually')
+data.setCell(3, 3, 5102);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'verify_RequisitionPage')
+data.setCell(4, 2, 'testCases.TC007_AddCandidate_AddManually')
+data.setCell(4, 3, 3094);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'verify_Hiring')
+data.setCell(5, 2, 'testCases.TC007_AddCandidate_AddManually')
+data.setCell(5, 3, 1406);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'verify_AddCandidate')
+data.setCell(6, 2, 'testCases.TC007_AddCandidate_AddManually')
+data.setCell(6, 3, 1379);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'verify_InterviewSetup')
+data.setCell(7, 2, 'testCases.TC007_AddCandidate_AddManually')
+data.setCell(7, 3, 1374);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'verify_Login')
+data.setCell(8, 2, 'testCases.TC007_AddCandidate_AddManually')
+data.setCell(8, 3, 700);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'verify_Pop_UP')
+data.setCell(9, 2, 'testCases.TC007_AddCandidate_AddManually')
+data.setCell(9, 3, 537);
 window.suiteTableData['All_Test_Suite']= { tableData: data, tableDiv: 'times-div-All_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-All_Test_Suite">
               </div> <!-- times-div-All_Test_Suite -->
             </div> <!-- times-div -->
@@ -269,22 +708,58 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testCases.TC0012_ReimbursementTravelAdvance</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testCases.TC007_AddCandidate_AddManually</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup(Windows, chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">verify_Login</span>
-                <span class="method-start">3992 ms</span>
+                <span class="method-start">55510 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verify_RequisitionPage</span>
-                <span class="method-start">4508 ms</span>
+                <span class="method-start">56227 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">verify_myReimbursement</span>
-                <span class="method-start">5726 ms</span>
+                <span class="method-name">verify_CreateRequisition</span>
+                <span class="method-start">59326 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verify_RequirementDetails</span>
+                <span class="method-start">64431 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verify_Pop_UP</span>
+                <span class="method-start">85436 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verify_Recruitment</span>
+                <span class="method-start">85974 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verify_GenerateKeyword</span>
+                <span class="method-start">124708 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verify_Hiring</span>
+                <span class="method-start">164951 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verify_InterviewSetup</span>
+                <span class="method-start">166483 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verify_AddCandidate</span>
+                <span class="method-start">168010 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -11,7 +11,7 @@ public class TC006_InterviewSetup extends BaseClass {
 
     LeftMenuPage lp;
 
-    @Test(priority = 2, groups = "Master")
+    @Test(priority = 2, groups = {"Master", "Requisition"})
     public void verify_RequisitionPage()
     {
         RequisitionTopMenuPage rp=new RequisitionTopMenuPage(driver);
@@ -121,7 +121,7 @@ public class TC006_InterviewSetup extends BaseClass {
     }
 
     @Test(priority = 8)
-    public void verify_Hiring() {
+    public void verify_Hiring() throws InterruptedException {
         Requirement_HiringTeamPage ht=new Requirement_HiringTeamPage(driver);
         ht.clkHiring_Team();
         ht.selectLcoation();

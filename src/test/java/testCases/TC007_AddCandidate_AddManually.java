@@ -21,8 +21,7 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
     }
 
     @Test(priority = 3, groups = "Master")
-    public void verify_CreateRequisition()
-    {
+    public void verify_CreateRequisition() throws InterruptedException {
         CreateRequisition cr=new CreateRequisition(driver);
         cr.clkCreate_requisition();
 
@@ -121,7 +120,7 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
     }
 
     @Test(priority = 8)
-    public void verify_Hiring() throws InterruptedException {
+    public void verify_Hiring() {
         Requirement_HiringTeamPage ht=new Requirement_HiringTeamPage(driver);
         ht.clkHiring_Team();
         ht.selectLcoation();
@@ -190,5 +189,4 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         rc.selectCourses("Yes");
         rc.submit();
     }
-
 }

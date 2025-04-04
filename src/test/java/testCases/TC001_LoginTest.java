@@ -17,6 +17,10 @@ public class TC001_LoginTest extends BaseClass {
         lp.enterEmail(p.getProperty("email"));
         lp.enterPassword(p.getProperty("password"));
         lp.clkLogin();
+
+        String expTitle= "Orgzstack";
+        String actTitle=driver.getTitle();
+        Assert.assertTrue(expTitle.equals(actTitle), "Login is not done" + expTitle + ", but found: " + actTitle);
     }
 
     @Test(dataProvider = "LoginData", dataProviderClass = Dataproviders.class, groups = "Master") //Getting dataprovider from different class

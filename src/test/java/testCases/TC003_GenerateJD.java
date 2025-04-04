@@ -21,8 +21,7 @@ public class TC003_GenerateJD extends BaseClass {
     }
 
     @Test(priority = 3, groups = "Master")
-    public void verify_CreateRequisition()
-    {
+    public void verify_CreateRequisition() throws InterruptedException {
         CreateRequisition cr=new CreateRequisition(driver);
         cr.clkCreate_requisition();
 

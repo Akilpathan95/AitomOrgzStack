@@ -21,8 +21,7 @@ public class TC004_Keyword extends BaseClass {
     }
 
     @Test(priority = 3, groups = "Master")
-    public void verify_CreateRequisition()
-    {
+    public void verify_CreateRequisition() throws InterruptedException {
         CreateRequisition cr=new CreateRequisition(driver);
         cr.clkCreate_requisition();
 

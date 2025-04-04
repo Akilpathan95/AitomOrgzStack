@@ -1,13 +1,18 @@
 package pageObject;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
+import java.time.Duration;
 
 public class CreateRequisition extends BasePage {
+
+    JavascriptExecutor js;
 
     public CreateRequisition(WebDriver driver)
     {
@@ -31,29 +36,44 @@ public class CreateRequisition extends BasePage {
 
     public void clkCreate_requisition()
     {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, 0);");
         btnCreate_Requisition.click();
     }
 
-    public void clk_InternalExternal()
-    {
+    public void clk_InternalExternal() throws InterruptedException {
+        js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", drpSelect_InternatExternalType);
         drpSelect_InternatExternalType.click();
-        driver.findElement(By.xpath("//div[@id='react-select-2-option-1']")).click();
+
+        Thread.sleep(1000);
+
+        WebElement intext=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class=' css-11unzgr']//div[contains(text(), 'External')]")));
+        js.executeScript("arguments[0].click();", intext);
     }
 
     public void clkSelect_Organisation()
     {
+        wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(drpSelect_Organisation));
         drpSelect_Organisation.click();
-        driver.findElement(By.xpath("//div[@id='react-select-3-option-1']")).click();
+
+        WebElement orgOption = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class=' css-11unzgr']//div[contains(text(), 'IPS Vantage Tech Services Pvt. Ltd.')]")));
+        orgOption.click();
     }
 
     public void clk_ClientName()
     {
+        wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(drpClient_Name));
         drpClient_Name.click();
-        driver.findElement(By.xpath("//div[@id='react-select-4-option-3']")).click();
+        driver.findElement(By.xpath("//div[@class=' css-11unzgr']//div[contains(text(), 'Urbanwrk Pvt Ltd')]")).click();
     }
 
     public void clkCreateRequisition_POPup()
     {
+        wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(btnCreateRequisition_POPup));
         btnCreateRequisition_POPup.click();
     }
 

@@ -13,6 +13,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -109,13 +110,17 @@ public class BaseClass {
         driver.quit();
     }
 
-    @Test(priority = 1, groups = "Master")
+    @Test(priority = 1)
     public void verify_Login()
     {
         LoginPage lp=new LoginPage(driver);
         lp.enterEmail(p.getProperty("email"));
         lp.enterPassword(p.getProperty("password"));
         lp.clkLogin();
+
+        String expTitle= "Orgzstack";
+        String actTitle=driver.getTitle();
+        Assert.assertTrue(expTitle.equals(actTitle), "Login is not done" + expTitle + ", but found: " + actTitle);
     }
 
     public String randomString()
@@ -135,6 +140,13 @@ public class BaseClass {
         String generatedString=RandomStringUtils.randomAlphabetic(3);
         String generatedNumber=RandomStringUtils.randomNumeric(3);
         return (generatedString+"@"+generatedNumber);
+    }
+
+    public String randomStringNumeric()
+    {
+        String generatedString=RandomStringUtils.randomAlphabetic(3);
+        String generatedNumber=RandomStringUtils.randomNumeric(3);
+        return (generatedString +generatedNumber);
     }
 //https://github.com/Akilpathan95/AitomOrgzStack.git
     public String captureScreen(String tname) throws IOException

@@ -8,15 +8,12 @@
     <parameter name="os" value="Windows"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TC007_AddCandidate_AddManually">
+      <class name="testCases.TC_Testing">
         <methods>
-          <include name="verify_InterviewSetup"/>
-          <include name="verify_GenerateKeyword"/>
+          <include name="verify_AddZone"/>
           <include name="setup"/>
-          <include name="verify_AddCandidate"/>
-          <include name="verify_Hiring"/>
         </methods>
-      </class> <!-- testCases.TC007_AddCandidate_AddManually -->
+      </class> <!-- testCases.TC_Testing -->
     </classes>
   </test> <!-- C:/Users/IPSL/IdeaProjects/AitomOrgzStack(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

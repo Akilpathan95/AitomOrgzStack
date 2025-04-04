@@ -23,6 +23,24 @@ public class LeftMenuPage extends BasePage {
     @FindBy(xpath = "//div[contains(text(),'Reimbursement')]")
     WebElement btnReimbursement;
 
+    @FindBy(xpath = "//li/div[contains(text(), 'ZONE')]")
+    WebElement btnZone;
+
+    @FindBy(xpath = "//div[text()='BRANCHES']")
+    WebElement btnBranch;
+
+    @FindBy(xpath = "//div[text()='DIVISION']")
+    WebElement btnDivision;
+
+    @FindBy(xpath = "//div[text()='DEPARTMENT']")
+    WebElement btnDepartment;
+
+    @FindBy(xpath = "//div[text()='DESIGNATION']")
+    WebElement btnDesignation;
+
+    @FindBy(xpath = "//div[text()='CLIENT']")
+    WebElement btnClient;
+
     public void clkRequisition()
     {
         btnRequisition.click();
@@ -38,8 +56,38 @@ public class LeftMenuPage extends BasePage {
         btnOrgInfo.click();
     }
 
+    public void clkZone()
+    {
+        btnZone.click();
+    }
+
     public void clkReimbursement()
     {
         btnReimbursement.click();
+    }
+
+    public void clkBranch()
+    {
+        btnBranch.click();
+    }
+
+    public void clkDivision()
+    {
+        btnDivision.click();
+    }
+
+    public void clkDepartment()
+    {
+        btnDepartment.click();
+    }
+
+    public void clkDesignation()
+    {
+        btnDesignation.click();
+    }
+
+    public void clkClient()
+    {
+        btnClient.click();
     }
 }

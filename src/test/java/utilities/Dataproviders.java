@@ -31,6 +31,27 @@ public class Dataproviders {
 
     //DataProvider 2
 
+    @DataProvider(name = "CreateRequisitionData")
+    public String[][] getRequisitionData() throws IOException {
+        String path=".\\testData\\requisitionData.xlsx";  //taking xl file from testData
+        ExcelUtility xlutil=new ExcelUtility(path); //creating an object for XLUtility
+
+        int totalrows=xlutil.getRowCount("Sheet1");
+        int totalcols=xlutil.getCellCount("Sheet1",1);
+
+        String requisitiondata[][]=new String[totalrows][totalcols]; //Created for two dimension array which can store
+
+        for (int i=1; i<=totalrows;i++)  //1 //Read the data from xl storing in two dimensional array
+        {
+            for (int j=0; j<totalcols;j++)
+            {
+                requisitiondata[i-1][j]=xlutil.getCellData("Sheet1",i,j);
+            }
+        }
+
+        return requisitiondata; //returning two dimension array
+    }
+
     //DataProvider 3
 
     //DataProvider 4

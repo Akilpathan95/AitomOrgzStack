@@ -19,8 +19,8 @@
         <parameter name="os" value="Windows"/>
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="testCases.TC0012_ReimbursementTravelAdvance"/>
-            <class name="testCases.TC0013_ReimbursementOtherAdvance"/>
+            <class name="testCases.TC0015_OtganisationSetupCodes"/>
+            <class name="testCases.TC0017_OtganisationSetupEditClient"/>
         </classes>
     </test>
 

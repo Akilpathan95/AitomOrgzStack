@@ -1,10 +1,12 @@
 package testCases;
 
 import org.testng.annotations.Test;
-import pageObject.*;
+import pageObject.BasePage;
+import pageObject.LeftMenuPage;
+import pageObject.OrganisationSetup_ClientPage;
 import testBase.BaseClass;
 
-public class TC_Testing extends BaseClass {
+public class TC0017_OtganisationSetupEditClient extends BaseClass {
 
     LeftMenuPage lp;
 

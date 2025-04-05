@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-04T17:30:47 IST" name="All Test Suite" finished-at="2025-04-04T17:31:18 IST" duration-ms="31804">
+  <suite started-at="2025-04-05T10:44:22 IST" name="All Test Suite" finished-at="2025-04-05T10:45:22 IST" duration-ms="59778">
     <groups>
     </groups>
-    <test started-at="2025-04-04T17:30:47 IST" name="C:/Users/IPSL/IdeaProjects/AitomOrgzStack" finished-at="2025-04-04T17:31:18 IST" duration-ms="31804">
-      <class name="testCases.TC0016_OtganisationSetupClient">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC0016_OtganisationSetupClient@7f0eb4b4]" started-at="2025-04-04T17:30:47 IST" name="setup" finished-at="2025-04-04T17:30:51 IST" duration-ms="4528" status="PASS">
+    <test started-at="2025-04-05T10:44:22 IST" name="C:/Users/IPSL/IdeaProjects/AitomOrgzStack" finished-at="2025-04-05T10:45:22 IST" duration-ms="59778">
+      <class name="testCases.TC0016_OrganisationSetupCreateClient">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC0016_OrganisationSetupCreateClient@7f0eb4b4]" started-at="2025-04-05T10:44:23 IST" name="setup" finished-at="2025-04-05T10:44:38 IST" duration-ms="15206" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,15 +23,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verify_Login()[pri:1, instance:testCases.TC0016_OtganisationSetupClient@7f0eb4b4]" started-at="2025-04-04T17:30:51 IST" name="verify_Login" finished-at="2025-04-04T17:30:52 IST" duration-ms="545" status="PASS">
+        <test-method signature="verify_Login()[pri:1, instance:testCases.TC0016_OrganisationSetupCreateClient@7f0eb4b4]" started-at="2025-04-05T10:44:38 IST" name="verify_Login" finished-at="2025-04-05T10:44:39 IST" duration-ms="1370" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_Login -->
-        <test-method signature="verify_AddZone()[pri:2, instance:testCases.TC0016_OtganisationSetupClient@7f0eb4b4]" started-at="2025-04-04T17:30:52 IST" name="verify_AddZone" finished-at="2025-04-04T17:31:18 IST" duration-ms="26395" status="PASS">
+        <test-method signature="verify_AddClient()[pri:2, instance:testCases.TC0016_OrganisationSetupCreateClient@7f0eb4b4]" started-at="2025-04-05T10:44:39 IST" name="verify_AddClient" finished-at="2025-04-05T10:45:22 IST" duration-ms="42638" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verify_AddZone -->
-      </class> <!-- testCases.TC0016_OtganisationSetupClient -->
+        </test-method> <!-- verify_AddClient -->
+      </class> <!-- testCases.TC0016_OrganisationSetupCreateClient -->
     </test> <!-- C:/Users/IPSL/IdeaProjects/AitomOrgzStack -->
   </suite> <!-- All Test Suite -->
 </testng-results>

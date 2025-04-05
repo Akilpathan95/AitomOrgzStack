@@ -96,6 +96,22 @@ public class OrganisationSetup_ClientPage extends BasePage{
     @FindBy(xpath = "//button[normalize-space()=\"Save\"]")
     WebElement btnSave;
 
+    @FindBy(xpath = "//span[normalize-space()=\"Add New\"]")
+    WebElement btnAddNew;
+
+    @FindBy(xpath = "//input[@name=\"client_name\"]")
+    WebElement txtClientName;
+
+    public void clkAddNew()
+    {
+        btnAddNew.click();
+    }
+
+    public void enterClientName(String clientName)
+    {
+        txtClientName.sendKeys(clientName);
+    }
+
     public void inputSearchClient(String search)
     {
         txtSearchClient.sendKeys(search);

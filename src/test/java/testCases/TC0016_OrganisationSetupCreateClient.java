@@ -6,19 +6,19 @@ import pageObject.LeftMenuPage;
 import pageObject.OrganisationSetup_ClientPage;
 import testBase.BaseClass;
 
-public class TC0017_OtganisationSetupEditClient extends BaseClass {
+public class TC0016_OrganisationSetupCreateClient extends BaseClass {
 
     LeftMenuPage lp;
 
     @Test(priority = 2)
-    public void verify_EditClient()
+    public void verify_AddClient()
     {
         lp=new LeftMenuPage(driver);
         lp.clkOrganisationSetup();
         lp.clkClient();
         OrganisationSetup_ClientPage oc=new OrganisationSetup_ClientPage(driver);
-        oc.inputSearchClient("Capgemini");
-        oc.clkEditAction();
+        oc.clkAddNew();
+        oc.enterClientName("AkilTesting");
         oc.selectLogo();
         oc.inputClientCode(randomString().toLowerCase() + "7086" );
         oc.inputAddress("Goregav" + randomString().toLowerCase());

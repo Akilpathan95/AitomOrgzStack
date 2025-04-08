@@ -1,0 +1,888 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>AitomOrgzstack Automation Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">AitomOrgzstack Functional Testing</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Mar 26, 2025 04:51:24 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">Master</a><a class="dropdown-item" href="#">Requisition</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag="Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">testCases.TC007_AddCandidate_AddManually</p>
+            <p class="text-sm">
+              <span>4:52:21 pm</span> / <span>00:00:00:006</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">testCases.TC007_AddCandidate_AddManually</h5>
+<span class='badge badge-success'>03.26.2025 4:52:21 pm</span>
+<span class='badge badge-danger'>03.26.2025 4:52:21 pm</span>
+<span class='badge badge-default'>00:00:00:006</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:52:21 pm</td>
+        <td>
+          verify_Logingot successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag="Requisition Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">testCases.TC007_AddCandidate_AddManually</p>
+            <p class="text-sm">
+              <span>4:52:24 pm</span> / <span>00:00:00:001</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">testCases.TC007_AddCandidate_AddManually</h5>
+<span class='badge badge-success'>03.26.2025 4:52:24 pm</span>
+<span class='badge badge-danger'>03.26.2025 4:52:24 pm</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Requisition</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:52:24 pm</td>
+        <td>
+          verify_RequisitionPagegot successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag="Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">testCases.TC007_AddCandidate_AddManually</p>
+            <p class="text-sm">
+              <span>4:52:29 pm</span> / <span>00:00:00:000</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">testCases.TC007_AddCandidate_AddManually</h5>
+<span class='badge badge-success'>03.26.2025 4:52:29 pm</span>
+<span class='badge badge-danger'>03.26.2025 4:52:29 pm</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:52:29 pm</td>
+        <td>
+          verify_CreateRequisitiongot successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag="Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">testCases.TC007_AddCandidate_AddManually</p>
+            <p class="text-sm">
+              <span>4:52:50 pm</span> / <span>00:00:00:000</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">testCases.TC007_AddCandidate_AddManually</h5>
+<span class='badge badge-success'>03.26.2025 4:52:50 pm</span>
+<span class='badge badge-danger'>03.26.2025 4:52:50 pm</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:52:50 pm</td>
+        <td>
+          verify_RequirementDetailsgot successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">testCases.TC007_AddCandidate_AddManually</p>
+            <p class="text-sm">
+              <span>4:52:51 pm</span> / <span>00:00:00:000</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">testCases.TC007_AddCandidate_AddManually</h5>
+<span class='badge badge-success'>03.26.2025 4:52:51 pm</span>
+<span class='badge badge-danger'>03.26.2025 4:52:51 pm</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:52:51 pm</td>
+        <td>
+          verify_Pop_UPgot successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">testCases.TC007_AddCandidate_AddManually</p>
+            <p class="text-sm">
+              <span>4:53:29 pm</span> / <span>00:00:00:000</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">testCases.TC007_AddCandidate_AddManually</h5>
+<span class='badge badge-success'>03.26.2025 4:53:29 pm</span>
+<span class='badge badge-danger'>03.26.2025 4:53:29 pm</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:53:29 pm</td>
+        <td>
+          verify_Recruitmentgot successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">testCases.TC007_AddCandidate_AddManually</p>
+            <p class="text-sm">
+              <span>4:54:10 pm</span> / <span>00:00:00:148</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testCases.TC007_AddCandidate_AddManually</h5>
+<span class='badge badge-success'>03.26.2025 4:54:10 pm</span>
+<span class='badge badge-danger'>03.26.2025 4:54:10 pm</span>
+<span class='badge badge-default'>00:00:00:148</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='C:\Users\IPSL\IdeaProjects\AitomOrgzStack\screenshots\verify_GenerateKeyword_20250326045410.png' src="C:\Users\IPSL\IdeaProjects\AitomOrgzStack\screenshots\verify_GenerateKeyword_20250326045410.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:54:10 pm</td>
+        <td>
+          verify_GenerateKeywordTest case FAILED 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:54:10 pm</td>
+        <td>
+          java.lang.reflect.InvocationTargetException
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [df8d839860804cc7822c2a6ca56d86ac, actions {actions=[org.openqa.selenium.interactions.Sequence@7316523a]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\IPSL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60615}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60615/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: df8d839860804cc7822c2a6ca56d86ac
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">testCases.TC007_AddCandidate_AddManually</p>
+            <p class="text-sm">
+              <span>4:54:11 pm</span> / <span>00:00:00:119</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testCases.TC007_AddCandidate_AddManually</h5>
+<span class='badge badge-success'>03.26.2025 4:54:11 pm</span>
+<span class='badge badge-danger'>03.26.2025 4:54:11 pm</span>
+<span class='badge badge-default'>00:00:00:119</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='C:\Users\IPSL\IdeaProjects\AitomOrgzStack\screenshots\verify_Hiring_20250326045411.png' src="C:\Users\IPSL\IdeaProjects\AitomOrgzStack\screenshots\verify_Hiring_20250326045411.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:54:11 pm</td>
+        <td>
+          verify_HiringTest case FAILED 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:54:11 pm</td>
+        <td>
+          element click intercepted: Element <div style="font-size: 18px; line-height: 24px; font-style: normal; margin: 15px;">...</div> is not clickable at point (589, 12). Other element would receive the click: <img class="mt-2" src="data:image/svg+xml,%3Csvg width='40' height='34' viewBox='0 0 40 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M5 5.20997C4.84008 5.20794 4.68476 5.15615 4.55562 5.06181C4.42647 4.96747 4.3299 4.83526 4.27933 4.68353C4.22875 4.53181 4.22668 4.3681 4.27339 4.21514C4.3201 4.06218 4.41329 3.92756 4.54 3.82997C7.29921 1.87792 10.6221 0.883863 14 0.999975C16.66 0.999975 20.48 1.44997 23.5 3.61997C23.6652 3.73846 23.7768 3.91744 23.8105 4.11788C23.8442 4.31833 23.7973 4.52397 23.68 4.68997C23.5582 4.85422 23.3768 4.96407 23.1748 4.99586C22.9728 5.02766 22.7664 4.97886 22.6 4.85997C20.0355 3.23018 17.0365 2.41766 14 2.52997C10.9685 2.42698 7.98553 3.31134 5.5 5.04997C5.35849 5.16262 5.18062 5.21954 5 5.20997Z' fill='%23DC582E'/%3E %3Cpath d='M26.23 12.26C26.1063 12.2588 25.9847 12.2283 25.8752 12.171C25.7657 12.1136 25.6713 12.031 25.6 11.93C23.87 9.48998 20.78 6.23998 14 6.23998C11.7457 6.18321 9.5111 6.67182 7.48623 7.66423C5.46136 8.65664 3.70618 10.1235 2.37 11.94C2.25001 12.1036 2.07031 12.2132 1.86996 12.245C1.66961 12.2768 1.46478 12.2283 1.3 12.11C1.21356 12.0498 1.14056 11.9723 1.08565 11.8825C1.03073 11.7926 0.995086 11.6923 0.980982 11.588C0.966878 11.4836 0.97462 11.3774 1.00372 11.2762C1.03281 11.175 1.08263 11.0809 1.15 11C2.63135 8.99882 4.57185 7.38288 6.8081 6.28825C9.04435 5.19362 11.5109 4.65234 14 4.70998C19.61 4.70998 23.81 6.78998 26.84 11.05C26.9563 11.2172 27.0016 11.4237 26.966 11.6242C26.9304 11.8248 26.8167 12.003 26.65 12.12C26.5262 12.2057 26.3805 12.2543 26.23 12.26Z' fill='%23DC582E'/%3E %3Cpath d='M10.28 31C10.1249 30.9992 9.9735 30.9522 9.84524 30.8649C9.71699 30.7776 9.61768 30.654 9.56 30.51C9.52001 30.4158 9.49973 30.3144 9.5004 30.2121C9.50107 30.1097 9.52268 30.0086 9.5639 29.9149C9.60512 29.8213 9.66507 29.737 9.74007 29.6674C9.81507 29.5977 9.90353 29.5442 10 29.51C14.37 27.83 17 24.39 17 20.3C17.0299 19.8984 16.9728 19.4951 16.8326 19.1176C16.6924 18.74 16.4724 18.3972 16.1876 18.1124C15.9028 17.8276 15.56 17.6077 15.1825 17.4675C14.8049 17.3273 14.4016 17.2702 14 17.3C12.14 17.3 11.24 18.3 11 20.65C10.8884 21.7491 10.3551 22.7622 9.51228 23.4764C8.6694 24.1906 7.58253 24.5504 6.48 24.48C5.88709 24.4886 5.29889 24.3737 4.75286 24.1424C4.20683 23.9112 3.71495 23.5688 3.30854 23.137C2.90214 22.7052 2.59013 22.1935 2.39239 21.6344C2.19464 21.0754 2.1155 20.4813 2.16 19.89C2.21526 16.7982 3.49121 13.8538 5.70939 11.6993C7.92758 9.54484 10.9079 8.3552 14 8.39003C17.1705 8.38997 20.2122 9.64464 22.4606 11.88C24.7091 14.1153 25.9815 17.1496 26 20.32C25.9294 22.5524 25.4586 24.754 24.61 26.82C24.5285 27.0043 24.3789 27.1499 24.1925 27.2263C24.0061 27.3027 23.7974 27.3041 23.61 27.23C23.5171 27.1917 23.4326 27.1354 23.3616 27.0643C23.2906 26.9931 23.2344 26.9086 23.1963 26.8156C23.1581 26.7226 23.1388 26.623 23.1395 26.5224C23.1401 26.4219 23.1607 26.3225 23.2 26.23C23.9679 24.3501 24.3978 22.3494 24.47 20.32C24.4568 17.5537 23.3472 14.9055 21.3846 12.956C19.4219 11.0065 16.7663 9.9147 14 9.92003C12.6614 9.89352 11.3308 10.1313 10.0842 10.6198C8.83767 11.1083 7.69973 11.8379 6.73554 12.7667C5.77135 13.6956 4.99987 14.8056 4.46526 16.0331C3.93064 17.2605 3.64341 18.5814 3.62 19.92C3.57901 20.3091 3.6209 20.7024 3.7429 21.0741C3.86491 21.4458 4.06426 21.7875 4.32785 22.0766C4.59143 22.3656 4.91325 22.5956 5.27214 22.7513C5.63102 22.9071 6.01882 22.985 6.41 22.98C6.77012 23.0158 7.13377 22.9799 7.47994 22.8744C7.82612 22.7689 8.14797 22.5959 8.4269 22.3653C8.70583 22.1347 8.93632 21.8512 9.10505 21.531C9.27379 21.2109 9.37743 20.8605 9.41 20.5C9.77 17.39 11.3 15.81 13.97 15.81C14.5751 15.7794 15.1798 15.8768 15.7447 16.0957C16.3097 16.3145 16.8221 16.6501 17.2486 17.0804C17.6751 17.5106 18.0061 18.026 18.22 18.5928C18.4339 19.1597 18.5259 19.7652 18.49 20.37C18.49 25.11 15.49 29.09 10.49 31C10.4202 31.008 10.3498 31.008 10.28 31Z' fill='%23DC582E'/%3E %3Cpath d='M17.77 30.28C17.5785 30.2769 17.3942 30.2061 17.25 30.08C17.1786 30.0093 17.122 29.9252 17.0833 29.8325C17.0447 29.7398 17.0248 29.6404 17.0248 29.54C17.0248 29.4396 17.0447 29.3401 17.0833 29.2475C17.122 29.1548 17.1786 29.0707 17.25 29C19.4998 26.6679 20.7672 23.5603 20.79 20.32C20.79 18.76 20.31 13.67 14.09 13.67C13.1837 13.6381 12.2801 13.7871 11.4319 14.1081C10.5838 14.4292 9.80803 14.9159 9.15 15.54C8.56124 16.1225 8.09578 16.8176 7.78138 17.5839C7.46698 18.3501 7.31007 19.1718 7.32 20C7.31737 20.2025 7.23509 20.3958 7.09097 20.538C6.94685 20.6803 6.7525 20.76 6.55 20.76C6.44936 20.7613 6.34945 20.7426 6.25609 20.705C6.16272 20.6674 6.07776 20.6117 6.00612 20.541C5.93449 20.4703 5.87761 20.386 5.83879 20.2932C5.79998 20.2003 5.77999 20.1006 5.78 20C5.76442 18.9755 5.95265 17.9582 6.33377 17.0071C6.71488 16.056 7.28127 15.1902 8 14.46C8.7967 13.6953 9.73733 13.0965 10.7673 12.6982C11.7973 12.3 12.8961 12.1102 14 12.14C20.08 12.14 22.24 16.54 22.24 20.32C22.2269 23.9269 20.8311 27.3915 18.34 30C18.2713 30.0855 18.1846 30.1549 18.0861 30.2033C17.9876 30.2517 17.8797 30.2779 17.77 30.28Z' fill='%23DC582E'/%3E %3Cpath d='M6.66 27.74C6.13873 27.7388 5.61794 27.7087 5.1 27.65C5.00019 27.6388 4.90356 27.6081 4.81563 27.5596C4.72769 27.5111 4.65017 27.4458 4.58749 27.3673C4.52481 27.2888 4.4782 27.1988 4.45032 27.1023C4.42244 27.0058 4.41383 26.9048 4.425 26.805C4.43616 26.7052 4.46687 26.6086 4.51538 26.5206C4.56388 26.4327 4.62923 26.3552 4.7077 26.2925C4.78616 26.2298 4.87621 26.1832 4.97269 26.1553C5.06917 26.1275 5.17019 26.1188 5.27 26.13C7.76 26.41 9.72 25.97 11.11 24.81C11.7507 24.237 12.2689 23.5403 12.6332 22.7618C12.9975 21.9833 13.2005 21.1391 13.23 20.28C13.2349 20.1787 13.2604 20.0795 13.3048 19.9884C13.3491 19.8972 13.4115 19.816 13.4882 19.7497C13.5648 19.6833 13.6541 19.6332 13.7507 19.6023C13.8472 19.5714 13.9491 19.5604 14.05 19.57C14.2516 19.5854 14.4393 19.6784 14.5736 19.8295C14.708 19.9807 14.7784 20.178 14.77 20.38C14.7279 21.4496 14.4685 22.4994 14.0078 23.4656C13.5471 24.4317 12.8946 25.294 12.09 26C10.5464 27.2109 8.61987 27.8283 6.66 27.74Z' fill='%23DC582E'/%3E %3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M30.7174 12.0541C30.9145 11.9865 31.1279 11.9821 31.3276 12.0417C31.5273 12.1012 31.7035 12.2216 31.8314 12.3861L38.8314 21.3861C38.968 21.5617 39.0421 21.7777 39.0421 22.0001C39.0421 22.2225 38.968 22.4386 38.8314 22.6141L31.8314 31.6141C31.7034 31.7785 31.5273 31.8988 31.3277 31.9582C31.128 32.0176 30.9148 32.0132 30.7178 31.9456C30.5208 31.878 30.3498 31.7505 30.2287 31.581C30.1076 31.4115 30.0425 31.2084 30.0424 31.0001V27.0101C24.6634 27.1221 22.0794 28.1431 20.7814 29.2531C19.5474 30.3081 19.3214 31.5491 19.0864 32.8491L19.0254 33.1841C18.9805 33.4239 18.8496 33.6389 18.6573 33.7888C18.4649 33.9388 18.2244 34.0132 17.981 33.9982C17.7376 33.9833 17.5081 33.8798 17.3356 33.7074C17.1631 33.535 17.0595 33.3055 17.0444 33.0621C16.8724 30.3141 17.1304 26.3321 19.0714 23.0011C20.9554 19.7681 24.3474 17.2821 30.0424 17.0221V13.0001C30.0423 12.7918 30.1074 12.5886 30.2284 12.419C30.3494 12.2494 30.5204 12.1219 30.7174 12.0541Z' fill='%23DC582E'/%3E %3C/svg%3E" style="width: 27px; height: 22px;">
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [df8d839860804cc7822c2a6ca56d86ac, clickElement {id=f.E268DF6AFB556F4A2EC1D498D5C11241.d.43D12E68ECF14262AF55AC79E8CB91C4.e.524}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\IPSL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60615}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60615/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (df8d839860804cc7822c2a6ca56d86ac)] -> xpath: //div[normalize-space()="Hiring Team"]]
+Session ID: df8d839860804cc7822c2a6ca56d86ac
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">testCases.TC007_AddCandidate_AddManually</p>
+            <p class="text-sm">
+              <span>4:54:13 pm</span> / <span>00:00:00:150</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testCases.TC007_AddCandidate_AddManually</h5>
+<span class='badge badge-success'>03.26.2025 4:54:13 pm</span>
+<span class='badge badge-danger'>03.26.2025 4:54:13 pm</span>
+<span class='badge badge-default'>00:00:00:150</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='C:\Users\IPSL\IdeaProjects\AitomOrgzStack\screenshots\verify_InterviewSetup_20250326045413.png' src="C:\Users\IPSL\IdeaProjects\AitomOrgzStack\screenshots\verify_InterviewSetup_20250326045413.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:54:13 pm</td>
+        <td>
+          verify_InterviewSetupTest case FAILED 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:54:13 pm</td>
+        <td>
+          element click intercepted: Element <div style="font-size: 18px; line-height: 24px; font-style: normal; margin: 15px;">...</div> is not clickable at point (859, 12). Other element would receive the click: <div style="width: 100%; display: flex; justify-content: flex-end;">...</div>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [df8d839860804cc7822c2a6ca56d86ac, clickElement {id=f.E268DF6AFB556F4A2EC1D498D5C11241.d.43D12E68ECF14262AF55AC79E8CB91C4.e.527}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\IPSL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60615}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60615/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (df8d839860804cc7822c2a6ca56d86ac)] -> xpath: //div[normalize-space()="Interview Setup"]]
+Session ID: df8d839860804cc7822c2a6ca56d86ac
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">testCases.TC007_AddCandidate_AddManually</p>
+            <p class="text-sm">
+              <span>4:54:14 pm</span> / <span>00:00:00:135</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">testCases.TC007_AddCandidate_AddManually</h5>
+<span class='badge badge-success'>03.26.2025 4:54:14 pm</span>
+<span class='badge badge-danger'>03.26.2025 4:54:14 pm</span>
+<span class='badge badge-default'>00:00:00:135</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='C:\Users\IPSL\IdeaProjects\AitomOrgzStack\screenshots\verify_AddCandidate_20250326045414.png' src="C:\Users\IPSL\IdeaProjects\AitomOrgzStack\screenshots\verify_AddCandidate_20250326045414.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:54:14 pm</td>
+        <td>
+          verify_AddCandidateTest case FAILED 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:54:14 pm</td>
+        <td>
+          element click intercepted: Element <div style="font-size: 18px; line-height: 24px; font-style: normal; margin: 15px;">...</div> is not clickable at point (1011, 12). Other element would receive the click: <div style="width: 100%; display: flex; justify-content: flex-end;">...</div>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [df8d839860804cc7822c2a6ca56d86ac, clickElement {id=f.E268DF6AFB556F4A2EC1D498D5C11241.d.43D12E68ECF14262AF55AC79E8CB91C4.e.528}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\IPSL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60615}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60615/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (df8d839860804cc7822c2a6ca56d86ac)] -> xpath: //div[normalize-space()="Candidates"]]
+Session ID: df8d839860804cc7822c2a6ca56d86ac
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+</span>
+<p class="name">Master</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Master</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:52:21 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>testCases.TC007_AddCandidate_AddManually</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:52:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>testCases.TC007_AddCandidate_AddManually</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:52:29 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>testCases.TC007_AddCandidate_AddManually</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:52:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>testCases.TC007_AddCandidate_AddManually</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">Requisition</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Requisition</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:52:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>testCases.TC007_AddCandidate_AddManually</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Mar 26, 2025 04:51:24 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Mar 26, 2025 04:54:14 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>6</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>4</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='60%'>
+<b>6</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='40%'><b>4</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='42%'><b>6</b> events passed</small></div>
+<div>
+<small data-tooltip='28%'><b>4</b> events failed,
+<b data-tooltip='%'>4</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"testCases.TC007_AddCandidate_AddManually":0.006,"testCases.TC007_AddCandidate_AddManually":0.001,"testCases.TC007_AddCandidate_AddManually":0,"testCases.TC007_AddCandidate_AddManually":0,"testCases.TC007_AddCandidate_AddManually":0,"testCases.TC007_AddCandidate_AddManually":0,"testCases.TC007_AddCandidate_AddManually":0.148,"testCases.TC007_AddCandidate_AddManually":0.119,"testCases.TC007_AddCandidate_AddManually":0.15,"testCases.TC007_AddCandidate_AddManually":0.135
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>Master</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Requisition</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Application</td>
+<td>AitomOrgzstack</td>
+</tr>
+<tr>
+<td>Module</td>
+<td>Admin</td>
+</tr>
+<tr>
+<td>Sub Module</td>
+<td>Customers</td>
+</tr>
+<tr>
+<td>User Name</td>
+<td>IPSL</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>QA</td>
+</tr>
+<tr>
+<td>Operating System</td>
+<td>Windows</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>chrome</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 6,
+failParent: 4,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 6,
+failEvents: 4,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 4
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c05cd28cde1617b9d0c05a831daff6cb97fd9fd5/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

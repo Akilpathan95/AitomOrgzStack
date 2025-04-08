@@ -8,12 +8,12 @@
     <parameter name="os" value="Windows"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TC_Testing">
+      <class name="testCases.TC0022_OrgnisationSetupLocation">
         <methods>
-          <include name="verify_AddZone"/>
+          <include name="verify_DeleteLocation"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- testCases.TC_Testing -->
+      </class> <!-- testCases.TC0022_OrgnisationSetupLocation -->
     </classes>
   </test> <!-- C:/Users/IPSL/IdeaProjects/AitomOrgzStack(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

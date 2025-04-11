@@ -7,16 +7,33 @@ import testBase.BaseClass;
 public class TC_Testing extends BaseClass {
 
     LeftMenuPage lp;
-    OrgSetup_CodePage oc;
+    BusinessUnitPage bu;
 
-    @Test(priority = 7)
-    public void verify_AddBranch()
+    @Test(priority = 3)
+    public void verify_clkBusinessUnit()
     {
         lp=new LeftMenuPage(driver);
-        lp.clkOrganisationSetup();
-        lp.clkBranch();
-        oc=new OrgSetup_CodePage(driver);
-        oc.clkCompany();
-        oc.enterSearch("Testing");
+        lp.clkBusinessUnit();
     }
+
+    @Test(priority = 4)
+    public void verify_createBusinessUnit()
+    {
+        bu=new BusinessUnitPage(driver);
+        //bu.clkAddBusinessUnit();
+        //bu.enterSearch("Testing Test");
+        bu.clkEditIcon();
+        bu.clkContacts();
+        bu.clkEmployees();
+        bu.clkHolidays();
+        bu.clkLeaves();
+        bu.clkShifts();
+        bu.clkLocation();
+        bu.clkAttendance();
+        bu.clkApprovalSetup();
+        bu.clkSalaryStructure();
+        bu.clkClientActivityLog();
+        bu.clkBsicInfo();
+    }
+
 }

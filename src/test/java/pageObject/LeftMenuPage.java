@@ -47,6 +47,9 @@ public class LeftMenuPage extends BasePage {
     @FindBy(xpath = "//div[text()='GRADE']")
     WebElement btnGrade;
 
+    @FindBy(xpath = "//div[text()=\"Business Unit\"]")
+    WebElement btnBusinessUnit;
+
     public void clkRequisition()
     {
         btnRequisition.click();
@@ -105,5 +108,10 @@ public class LeftMenuPage extends BasePage {
     public void clkGrade()
     {
         btnGrade.click();
+    }
+
+    public void clkBusinessUnit()
+    {
+        btnBusinessUnit.click();
     }
 }

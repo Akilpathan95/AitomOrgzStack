@@ -14,6 +14,11 @@ public class CandidateRepository_BasicInfo extends BasePage{
     Select select;
     Actions actions;
 
+    public CandidateRepository_BasicInfo(WebDriver driver)
+    {
+        super(driver);
+    }
+
     @FindBy(xpath = "//input[@name=\"first_Name\"]")
     public WebElement txtFirst_Name;
 
@@ -94,11 +99,6 @@ public class CandidateRepository_BasicInfo extends BasePage{
 
     @FindBy(xpath = "//div[normalize-space()=\"SAVE\"]")
     WebElement btnSave;
-
-    public CandidateRepository_BasicInfo(WebDriver driver)
-    {
-        super(driver);
-    }
 
     @FindBy(xpath = "//span[normalize-space()=\"EDIT\"]")
     WebElement btnEdit;

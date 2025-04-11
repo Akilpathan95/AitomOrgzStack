@@ -21,8 +21,11 @@ public class OrganisationSetup_ClientPage extends BasePage{
     @FindBy(xpath = "//input[@placeholder=\"Search by client name\"]")
     WebElement txtSearchClient;
 
-    @FindBy(xpath = "(//*[name()='svg'][@class='MuiSvgIcon-root'])[5]")
-    WebElement btnEditAction;
+    public WebElement getEditIconByBUName(String buName)
+    {
+        String buNameByName="//table//tr[td[2][normalize-space()='" + buName + "']]//button//*[name()='svg']";
+        return driver.findElement(By.xpath(buNameByName));
+    }
 
     @FindBy(xpath = "//input[@name=\"client_code\"]")
     WebElement txtClientCode;
@@ -120,7 +123,8 @@ public class OrganisationSetup_ClientPage extends BasePage{
 
     public void clkEditAction()
     {
-        btnEditAction.click();
+        WebElement clkbuName=getEditIconByBUName("Capgemini");
+        clkbuName.click();
         System.out.println("Clicked on Edit Action");
     }
 

@@ -31,6 +31,12 @@ public class OrganisationSetup_ClientPage extends BasePage{
         return driver.findElement(By.xpath(buNameByName));
     }
 
+    public WebElement getEditIconByBusinessUnit(String buName)
+    {
+        String buNameByName="//table//tr[td[3][normalize-space()='"+buName+"']]//button//*[name()='svg']";
+        return driver.findElement(By.xpath(buNameByName));
+    }
+
     @FindBy(xpath = "//input[@name=\"client_code\"]")
     WebElement txtClientCode;
 
@@ -117,6 +123,14 @@ public class OrganisationSetup_ClientPage extends BasePage{
     @FindBy(xpath = "//input[@name='industry']")
     WebElement txtIndustry;
 
+    @FindBy(xpath = "//button[normalize-space()='Update']")
+    WebElement btnUpdate;
+
+    public void clkUpdate()
+    {
+        btnUpdate.click();
+    }
+
     public void clkAddNew()
     {
         btnAddNew.click();
@@ -136,6 +150,13 @@ public class OrganisationSetup_ClientPage extends BasePage{
     public void clkEditAction()
     {
         WebElement clkbuName=getEditIconByBUName("Capgemini");
+        clkbuName.click();
+        System.out.println("Clicked on Edit Action");
+    }
+
+    public void clkEditBusinessUnit()
+    {
+        WebElement clkbuName=getEditIconByBusinessUnit("Testing Te");
         clkbuName.click();
         System.out.println("Clicked on Edit Action");
     }

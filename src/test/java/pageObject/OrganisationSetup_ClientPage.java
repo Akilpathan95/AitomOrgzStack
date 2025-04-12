@@ -21,6 +21,10 @@ public class OrganisationSetup_ClientPage extends BasePage{
     @FindBy(xpath = "//input[@placeholder=\"Search by client name\"]")
     WebElement txtSearchClient;
 
+    @FindBy(xpath = "//input[@name=\"client_name\"]")
+    WebElement txtClientName;
+
+
     public WebElement getEditIconByBUName(String buName)
     {
         String buNameByName="//table//tr[td[2][normalize-space()='" + buName + "']]//button//*[name()='svg']";
@@ -32,6 +36,14 @@ public class OrganisationSetup_ClientPage extends BasePage{
 
     @FindBy(xpath = "//input[@name=\"address1\"]")
     WebElement txtAddress;
+
+    public void enterLine2(String line2)
+    {
+        txtLine2.sendKeys(line2);
+    }
+
+    @FindBy(xpath = "//input[@name='line_2']")
+    WebElement txtLine2;
 
     @FindBy(xpath = "//input[@type='file']")
     List<WebElement> addLogo;
@@ -102,8 +114,8 @@ public class OrganisationSetup_ClientPage extends BasePage{
     @FindBy(xpath = "//span[normalize-space()=\"Add New\"]")
     WebElement btnAddNew;
 
-    @FindBy(xpath = "//input[@name=\"client_name\"]")
-    WebElement txtClientName;
+    @FindBy(xpath = "//input[@name='industry']")
+    WebElement txtIndustry;
 
     public void clkAddNew()
     {
@@ -397,5 +409,12 @@ public class OrganisationSetup_ClientPage extends BasePage{
 
         WebElement replacementClause=driver.findElement(By.xpath("(//input[@placeholder='Enter Amount'])[3]"));
         replacementClause.sendKeys("500");
+    }
+
+    public void enterIndustry(String industry)
+    {
+        txtIndustry.sendKeys(Keys.CONTROL + "a");
+        txtIndustry.sendKeys(Keys.DELETE);
+        txtIndustry.sendKeys(industry);
     }
 }

@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import pageObject.*;
 import testBase.BaseClass;
 
-public class TC_Testing extends BaseClass {
+public class TC0026_BusinessUnitContacts extends BaseClass {
 
     LeftMenuPage lp;
     BusinessUnitPage bp;
@@ -41,8 +41,8 @@ public class TC_Testing extends BaseClass {
     }
 
     @Test(priority = 6)
-    public void verify_EditBusinessUnit()
-    {
+    public void verify_EditBusinessUnit() throws InterruptedException {
+        Thread.sleep(1000);
         bp=new BusinessUnitPage(driver);
         bp.clkContacts();
         BusinessUnit_ContactsPage bc=new BusinessUnit_ContactsPage(driver);
@@ -58,8 +58,8 @@ public class TC_Testing extends BaseClass {
     }
 
     @Test(priority = 7)
-    public void verify_deleteBusinessUnit()
-    {
+    public void verify_deleteBusinessUnit() throws InterruptedException {
+        Thread.sleep(1000);
         BusinessUnit_ContactsPage bc=new BusinessUnit_ContactsPage(driver);
         bc.enterSearch("Rhutik");
         bc.clkDelete();

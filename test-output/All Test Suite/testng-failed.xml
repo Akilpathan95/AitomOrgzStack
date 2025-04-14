@@ -10,8 +10,8 @@
     <classes>
       <class name="testCases.TC_Testing">
         <methods>
+          <include name="verify_deleteBusinessUnit"/>
           <include name="setup"/>
-          <include name="verify_createBusinessUnit"/>
         </methods>
       </class> <!-- testCases.TC_Testing -->
     </classes>

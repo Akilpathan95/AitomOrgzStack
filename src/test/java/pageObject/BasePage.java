@@ -22,18 +22,6 @@ public class BasePage {
     }
 
     public void handleAlert() {
-        /*try
-        {
-            Thread.sleep(1000);
-            alert=driver.switchTo().alert();
-            System.out.println("Alert text : " + alert.getText());
-            alert.accept();
-            System.out.println("Alert handles successfully");
-        }
-        catch (Exception e)
-        {
-            System.out.println("No Pop-Up displaying");
-        }*/
         try {
             wait = new WebDriverWait(driver, Duration.ofSeconds(5));
             wait.until(ExpectedConditions.alertIsPresent());

@@ -10,8 +10,11 @@
     <classes>
       <class name="testCases.TC_Testing">
         <methods>
-          <include name="verify_deleteBusinessUnit"/>
+          <include name="verify_clkContacts"/>
+          <include name="verify_clkBusinessUnit"/>
           <include name="setup"/>
+          <include name="verify_Login"/>
+          <include name="verify_AddBusinessUnitContacts"/>
         </methods>
       </class> <!-- testCases.TC_Testing -->
     </classes>

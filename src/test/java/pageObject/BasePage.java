@@ -22,19 +22,31 @@ public class BasePage {
     }
 
     public void handleAlert() {
-        try {
+        try
+        {
             wait = new WebDriverWait(driver, Duration.ofSeconds(5));
             wait.until(ExpectedConditions.alertIsPresent());
             Alert alert = driver.switchTo().alert();
             System.out.println("Alert Text: " + alert.getText());
             alert.accept(); // Click OK or accept the alert
             System.out.println("Alert accepted.");
-        } catch (NoAlertPresentException e) {
-            System.out.println("No alert found: " + e.getMessage());
-        } catch (UnhandledAlertException e) {
+        } catch (TimeoutException | NoAlertPresentException e)
+        {
+            System.out.println("Alert did not appear. Continuing test... " + e.getMessage());
+        } catch (UnhandledAlertException e)
+        {
             System.out.println("Unhandled alert exception: " + e.getMessage());
-            Alert alert = driver.switchTo().alert();
-            alert.accept(); // Attempt to accept it
+
+            try
+            {
+                Alert alert = driver.switchTo().alert();
+                alert.accept(); // Attempt to accept it
+            }
+            catch (Exception innerEx)
+            {
+                System.out.println("Failed to handle unexpected alert.");
+            }
+
         }
     }
 

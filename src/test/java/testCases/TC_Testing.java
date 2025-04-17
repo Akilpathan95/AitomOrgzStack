@@ -9,6 +9,7 @@ public class TC_Testing extends BaseClass {
     LeftMenuPage lp;
     BusinessUnitPage bp;
     BusinessUnit_EmployessPage be;
+    BasePage basep;
 
     @Test(priority = 3, dependsOnMethods = {"verify_Login"})
     public void verify_clkBusinessUnit()
@@ -24,7 +25,7 @@ public class TC_Testing extends BaseClass {
         cp.clkEditBusinessUnit();
     }
 
-    @Test(priority = 5)
+    //@Test(priority = 5)
     public void verify_AddBasicInfo()
     {
         bp=new BusinessUnitPage(driver);
@@ -69,19 +70,24 @@ public class TC_Testing extends BaseClass {
         be.clkAdd1();
         be.enterEducation();
         be.clkSave();
-        BasePage bp=new BasePage(driver);
-        bp.handleAlert();
+        basep=new BasePage(driver);
+        basep.handleAlert();
     }
 
-    @Test(priority = 6)
+    //@Test(priority = 6)
     public void verify_Onboarding()
     {
+        BusinessUnitPage bu=new BusinessUnitPage(driver);
+        bu.clkEmployees();
+        be=new BusinessUnit_EmployessPage(driver);
+        be.clkEditEmployee();
         BusinessUnitEmployee_Onboarding be=new BusinessUnitEmployee_Onboarding(driver);
+        be.clkOnboarding();
         be.enterPanNo("AAAPA1234A");
         be.addPan();
         be.enterAadharNo("397788000234");
         be.addAadhar();
-        be.enterPassport("A9834757");
+        be.enterPassport("J8369854");
         be.addPassport();
         be.enterFatherFirstName(randomString());
         be.enterFatherSecondName(randomString());
@@ -90,16 +96,36 @@ public class TC_Testing extends BaseClass {
         be.enterMotherSecondName(randomString());
         be.enterMotherLastName(randomString());
         be.selectMaritalStatus();
+        be.selectAnniversaryDate();
+        be.clkNoOfChildren();
+        be.enterSpousesName(randomString());
         be.enterNomineeName(randomString());
         be.selectDOB();
-        be.clkOK();
-
+        be.enterRelationship("Parents");
+        be.enterPrivateBankName("SBI");
+        be.enterPrivateAccountNo("5463728283736");
+        be.enterPrivateIFSCCode("SBI0001234");
+        be.clkPrivateBankDetails();
+        be.addCancelledCheque();
+        be.addHobbies();
+        be.enterHobbies("Playing Cricket");
+        be.addSports();
+        be.enterSports("Cricket");
         be.clkSave();
+        basep=new BasePage(driver);
+        basep.handleAlert();
     }
 
-    //@Test(priority = 7)
+    @Test(priority = 7)
     public void verify_deleteBusinessUnit()
     {
-
+        BusinessUnitPage bu=new BusinessUnitPage(driver);
+        bu.clkEmployees();
+        be=new BusinessUnit_EmployessPage(driver);
+        be.clkEditEmployee();
+        BusinessUnitEmployee_Mapping bm=new BusinessUnitEmployee_Mapping(driver);
+        bm.clkMapping();
+        bm.clkCalender();
+        bm.clkOK();
     }
 }

@@ -26,6 +26,14 @@ public class BusinessUnit_EmployessPage extends BasePage{
     @FindBy(xpath = "//span[normalize-space()=\"Add New Employee\"]")
     WebElement btnAddNewEmployee;
 
+    @FindBy(xpath = "//table//tr[td[4][normalize-space()='yme@987gmail.com']]//button//*[name()='svg']")
+    WebElement btnEditEmployee;
+
+    public void clkEditEmployee()
+    {
+        btnEditEmployee.click();
+    }
+
     @FindBy(xpath = "//input[@name=\"emp_id\"]")
     WebElement txtEmployeeId;
 

@@ -216,7 +216,7 @@ public class BusinessUnitEmployee_Onboarding extends BasePage {
 
             if (yearMonth.equals(expYearMonth))
             {
-                System.out.println("Year and Month fetched");
+                System.out.println("Year and Month fetched : " + yearMonth);
                 break;
             }
 

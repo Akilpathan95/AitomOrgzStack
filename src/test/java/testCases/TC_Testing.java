@@ -117,15 +117,31 @@ public class TC_Testing extends BaseClass {
     }
 
     @Test(priority = 7)
-    public void verify_deleteBusinessUnit()
-    {
+    public void verify_deleteBusinessUnit() {
         BusinessUnitPage bu=new BusinessUnitPage(driver);
         bu.clkEmployees();
         be=new BusinessUnit_EmployessPage(driver);
         be.clkEditEmployee();
         BusinessUnitEmployee_Mapping bm=new BusinessUnitEmployee_Mapping(driver);
         bm.clkMapping();
-        bm.clkCalender();
-        bm.clkOK();
+        bm.drpField(1,"Reporting Manager", "Akil Pathan");
+        bm.calender(1,"December 2024", "14");
+        bm.drpField(1,"Zone", "West Zone Testing");
+        bm.calender(2,"November 2024", "24");
+
+        bm.drpField(1,"Branch", "Mumbai Testing");
+        bm.calender(3,"December 2024", "14");
+        bm.drpField(1,"Division", "IT");
+        bm.calender(4,"November 2024", "24");
+
+        bm.drpField(1,"Working Location", "Goregav");
+        bm.calender(5,"November 2024", "24");
+
+        bm.drpField(1,"Department", "Development");
+        bm.calender(6,"December 2024", "14");
+        bm.drpField(1,"Designation", "Sr Testing Engineer");
+        bm.calender(7,"November 2024", "24");
+
+        bm.clkSave();
     }
 }

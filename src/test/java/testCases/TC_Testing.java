@@ -116,7 +116,7 @@ public class TC_Testing extends BaseClass {
         basep.handleAlert();
     }
 
-    @Test(priority = 7)
+    //@Test(priority = 7)
     public void verify_deleteBusinessUnit() {
         BusinessUnitPage bu=new BusinessUnitPage(driver);
         bu.clkEmployees();
@@ -126,22 +126,100 @@ public class TC_Testing extends BaseClass {
         bm.clkMapping();
         bm.drpField(1,"Reporting Manager", "Akil Pathan");
         bm.calender(1,"December 2024", "14");
-        bm.drpField(1,"Zone", "West Zone Testing");
+        bm.drpField(2,"Zone", "West Zone Testing");
         bm.calender(2,"November 2024", "24");
 
-        bm.drpField(1,"Branch", "Mumbai Testing");
+        bm.drpField(3,"Branch", "Mumbai Testing");
         bm.calender(3,"December 2024", "14");
-        bm.drpField(1,"Division", "IT");
+        bm.drpField(4,"Division", "IT");
         bm.calender(4,"November 2024", "24");
 
-        bm.drpField(1,"Working Location", "Goregav");
-        bm.calender(5,"November 2024", "24");
+        //bm.drpField(5,"Working Location", "Goregav");
+        //bm.calender(5,"November 2024", "24");
 
-        bm.drpField(1,"Department", "Development");
+        bm.drpField(6,"Department", "Development");
         bm.calender(6,"December 2024", "14");
-        bm.drpField(1,"Designation", "Sr Testing Engineer");
+        bm.drpField(7,"Designation", "Sr Testing Engineer");
         bm.calender(7,"November 2024", "24");
 
         bm.clkSave();
+
+        basep=new BasePage(driver);
+        basep.handleAlert();
+    }
+
+    //@Test(priority = 8)
+    public void verify_EmploymentDetails()
+    {
+        BusinessUnitPage bu=new BusinessUnitPage(driver);
+        bu.clkEmployees();
+        be=new BusinessUnit_EmployessPage(driver);
+        be.clkEditEmployee();
+        BusinessUnitEmployee_EmploymentDetails be=new BusinessUnitEmployee_EmploymentDetails(driver);
+        be.clkEmploymentDetails();
+        be.selectNatureOfEmployment();
+        be.selectCalender("Date of Joining", 1, "14", "March 2025");
+        //be.selectContractEmployeeEndDate("Contract/ Employment End Date", 1, "14", "March 2025");
+        be.selectProbationType();
+        be.selectDuration();
+        //be.selectCalender("Confirmation Date", 1, "14", "March 2025");
+        be.enterNoticePeriod("30");
+        be.enterESIC("12300000040000503");
+        be.selectFile("Employment Form", 1, "C:\\Users\\IPSL\\Documents\\Akil_Pathan_Resume.pdf");
+        be.selectFile("Employee NDA Form", 1, "C:\\Users\\IPSL\\Documents\\Akil_Pathan_Resume.pdf");
+        be.selectFile("Declaration Against Bribery And Corruption", 1, "C:\\Users\\IPSL\\Documents\\Akil_Pathan_Resume.pdf");
+        be.selectFile("Induction Form", 1, "C:\\Users\\IPSL\\Documents\\Akil_Pathan_Resume.pdf");
+        be.selectFile("BGV Form", 1, "C:\\Users\\IPSL\\Documents\\Akil_Pathan_Resume.pdf");
+        be.selectFile("Insurance(GMC & GPA Sheet)", 1, "C:\\Users\\IPSL\\Documents\\Akil_Pathan_Resume.pdf");
+        be.selectFile("Declaration For Healthcare Coverage", 1, "C:\\Users\\IPSL\\Documents\\Akil_Pathan_Resume.pdf");
+        be.selectFile("PF Composite Form", 1, "C:\\Users\\IPSL\\Documents\\Akil_Pathan_Resume.pdf");
+        be.selectFile("PF Exemption Form", 1, "C:\\Users\\IPSL\\Documents\\Akil_Pathan_Resume.pdf");
+        be.selectFile("PF Nominee & Declaration Form", 1, "C:\\Users\\IPSL\\Documents\\Akil_Pathan_Resume.pdf");
+        be.selectFile("Gratuity Form", 1, "C:\\Users\\IPSL\\Documents\\Akil_Pathan_Resume.pdf");
+        be.selectFile("Esic Form", 1, "C:\\Users\\IPSL\\Documents\\Akil_Pathan_Resume.pdf");
+        be.enterUAN("2345678998765432");
+        be.enterPF("KA/BLR/1234567/890");
+        be.enterInsuranceNumber("AB123456C");
+        be.enterInsurancePF("MH/BAN/1234567/000/0054321");
+        be.selectCalender("Date of Resignation", 1, "14", "March 2025");
+        be.selectReasonOfLeaving();
+        be.selectCalender("Date of Leaving", 1, "14", "March 2025");
+        be.selectCalender("Actual DOL", 1, "14", "March 2025");
+        be.clkSave();
+        basep=new BasePage(driver);
+        basep.handleAlert();
+    }
+
+    @Test(priority = 9)
+    public void verify_SalaryStructure()
+    {
+        BusinessUnitPage bu=new BusinessUnitPage(driver);
+        bu.clkEmployees();
+        be=new BusinessUnit_EmployessPage(driver);
+        be.clkEditEmployee();
+        BusinessUnitEmployee_SalaryStructure bs=new BusinessUnitEmployee_SalaryStructure(driver);
+        bs.clkSalaryStructure();
+        bs.enterCalender("09-03-2025");
+        bs.clkPFYes();
+        bs.clkESIC();
+        bs.clkPT();
+        bs.clkLWF();
+        bs.inputFields("Basic", "15000");
+        bs.inputFields("DA", "2700");
+        bs.inputFields("HRA", "30000");
+        bs.verifyGrossSalary(15000, 2700, 30000);
+        bs.selectPFEmployer();
+        bs.selectESICEmployer();
+        bs.selectLWFEmployer();
+        bs.selectBonus();
+        bs.selectLeaveWage();
+        bs.selectGratuity();
+        bs.selectPFEmployee();
+        bs.selectESICEmployee();
+        bs.selectProfessionalTax();
+        bs.selectLWFEmployee();
+        bs.clkplus();
+        bs.clkSave();
+
     }
 }

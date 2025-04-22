@@ -1,7 +1,6 @@
 package pageObject;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,6 +19,9 @@ public class BusinessUnitEmployee_Mapping extends BasePage{
 
     @FindBy(xpath = "//span[normalize-space()=\"OK\"]")
     WebElement btnOK;
+
+    @FindBy(xpath = "//span[normalize-space()=\"Cancel\"]")
+    WebElement btnCancel;
 
     @FindBy(xpath = "//span[normalize-space()=\"MAPPING\"]")
     WebElement btnMapping;
@@ -85,8 +87,7 @@ public class BusinessUnitEmployee_Mapping extends BasePage{
                 break;
             }
         }
-
-        btnOK.click();
+            btnOK.click();
     }
 
     public void clkMapping()

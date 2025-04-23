@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 
 public class BusinessUnitEmployee_SalaryStructure extends BasePage{
 
@@ -79,11 +80,20 @@ public class BusinessUnitEmployee_SalaryStructure extends BasePage{
     @FindBy(xpath = "//button[normalize-space()=\"Save\"]")
     WebElement btnSave;
 
-    public void clkSalaryStructure()
-    {
-        btnSalaryStructure.click();
-        System.out.println("Clicked on Salary Structure button");
-    }
+    @FindBy(xpath = "//button[normalize-space()=\"Revise Salary\"]")
+    WebElement btnReviseSalary;
+
+    @FindBy(xpath = "//p[normalize-space()=\"Remarks\"]/following::input[@type=\"text\"]")
+    WebElement txtRemarks;
+
+    @FindBy(xpath = "//p[normalize-space()='EFFECTIVE FROM']/following::span//*[name()='svg']")
+    WebElement clkCal;
+
+    @FindBy (xpath = "//div[@class=\"MuiPickersCalendarHeader-switchHeader\"]//button[1]//span[1]//*[name()=\"svg\"]")
+    WebElement pre;
+
+    @FindBy(xpath = "//span[normalize-space()=\"OK\"]")
+    WebElement btnOk;
 
     public void clkPFYes()
     {
@@ -158,63 +168,77 @@ public class BusinessUnitEmployee_SalaryStructure extends BasePage{
     {
         select=new Select(drpLWF);
         select.selectByValue("Maharashtra");
+        System.out.println("LWF Employer is added");
     }
 
     public void selectBonus()
     {
         select=new Select(drpBonus);
         select.selectByValue("Manual");
+        System.out.println("Bonus is Selected");
 
         WebElement input=driver.findElement(By.xpath("(//p[normalize-space()=\"Bonus\"]/following::input[@type='number'])[1]"));
         input.sendKeys(Keys.CONTROL + "a");
         input.sendKeys(Keys.DELETE);
+        System.out.println("Bonus is Deleted");
         input.sendKeys("25000");
+        System.out.println("Bonus is added");
     }
 
     public void selectLeaveWage()
     {
         select=new Select(drpLeaveWage);
         select.selectByValue("Manual");
+        System.out.println("Leave Wage is selected");
 
         WebElement input=driver.findElement(By.xpath("(//p[normalize-space()=\"Leave Wage\"]/following::input[@type='number'])[1]"));
         input.sendKeys(Keys.CONTROL + "a");
         input.sendKeys(Keys.DELETE);
+        System.out.println("Leave Wage is Deleted");
         input.sendKeys("2500");
+        System.out.println("Leave Wage is added");
     }
 
     public void selectGratuity()
     {
         select=new Select(drpGratuity);
         select.selectByValue("Manual");
+        System.out.println("Gratuity is selected");
 
         WebElement input=driver.findElement(By.xpath("(//p[normalize-space()=\"Gratuity\"]/following::input[@type='number'])[1]"));
         input.sendKeys(Keys.CONTROL + "a");
         input.sendKeys(Keys.DELETE);
+        System.out.println("Gratuity is Deleted");
         input.sendKeys("2500");
+        System.out.println("Gratuity is added");
     }
 
     public void selectPFEmployee()
     {
         select=new Select(drpPFEmployee);
         select.selectByValue("((Basic+DA)/100)*12");
+        System.out.println("PF is selected");
     }
 
     public void selectESICEmployee()
     {
         select=new Select(drpESICEmployee);
         select.selectByValue("Gross > 21000 ? 0 : (Gross/100)*0.75");
+        System.out.println("Employee ESIC is selected");
     }
 
     public void selectProfessionalTax()
     {
         select=new Select(drpProfessionalTax);
         select.selectByValue("Maharashtra");
+        System.out.println("Professional Tax is selected");
     }
 
     public void selectLWFEmployee()
     {
         select=new Select(drpLWFEmployee);
         select.selectByValue("Maharashtra");
+        System.out.println("LWF is selected");
     }
 
     public void clkplus()
@@ -225,8 +249,85 @@ public class BusinessUnitEmployee_SalaryStructure extends BasePage{
         input.sendKeys("Good");
     }
 
+    public void revisedInputFields(String label, String value)
+    {
+        String allownces="(//tr[normalize-space()=\"" + label + "\"]//td//input[@type='number'])[1]";
+        WebElement fields=driver.findElement(By.xpath(allownces));
+
+        fields.sendKeys(Keys.CONTROL + "a");
+        fields.sendKeys(Keys.DELETE);
+        System.out.println("Current values deleted");
+        fields.sendKeys(value);
+        System.out.println(label + " : value added");
+    }
+
+    public void reviseddrp(String label, int index, String selectValue)
+    {
+        String allownces="(//th[normalize-space()=\"" + label + "\"]/following::select)["+ index +"]";
+        WebElement fields=driver.findElement(By.xpath(allownces));
+
+        select=new Select(fields);
+        select.selectByVisibleText(selectValue);
+        System.out.println("Values is selected from the dropdown : " + label);
+    }
+
+    public void clkRevisedSalary()
+    {
+        btnReviseSalary.click();
+        System.out.println("Clicked on the Revised Salary button");
+    }
+
+    public void clkSalaryStructure()
+    {
+        btnSalaryStructure.click();
+        System.out.println("Clicked on Salary Structure button");
+    }
+
+    public void enterRemarks(String remarks)
+    {
+        txtRemarks.sendKeys(remarks);
+        System.out.println("Remarks added");
+    }
+
     public void clkSave()
     {
         btnSave.click();
+        System.out.println("Clicked on the save button");
+    }
+
+    public void cal()
+    {
+        clkCal.click();
+        System.out.println("Calender is opened");
+
+        String expYearMonth="March 2025";
+        String expDate="1";
+
+        while (true)
+        {
+            String yearMonth=driver.findElement(By.xpath("//p[@class=\"MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter\"]")).getText();
+
+            if (yearMonth.equals(expYearMonth))
+            {
+                System.out.println("Actual Date matched with the expected Date");
+                break;
+            }
+            pre.click();
+            System.out.println("Clicked on the previous button");
+        }
+
+        List<WebElement> dates=driver.findElements(By.xpath("//button[@class=\"MuiButtonBase-root MuiIconButton-root MuiPickersDay-day\"]"));
+
+        for (WebElement allDates : dates)
+        {
+            if (allDates.getText().equals(expDate))
+            {
+                allDates.click();
+                System.out.println("Date is selected");
+                break;
+            }
+        }
+        btnOk.click();
+        System.out.println("Date is saved");
     }
 }

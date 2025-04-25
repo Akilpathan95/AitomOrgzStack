@@ -95,6 +95,20 @@ public class BusinessUnitEmployee_SalaryStructure extends BasePage{
     @FindBy(xpath = "//span[normalize-space()=\"OK\"]")
     WebElement btnOk;
 
+    @FindBy(xpath = "//button[normalize-space()=\"Salary Structure Preview\"]")
+    WebElement btnSalaryStructurePreview;
+
+    public void clkSalaryStructurePreview()
+    {
+        btnSalaryStructurePreview.sendKeys(Keys.PAGE_UP);
+        btnSalaryStructurePreview.click();
+        System.out.println("Clicked on the Salary Preview button");
+        String curTitle=driver.getTitle();
+        System.out.println("Page title is : " + curTitle);
+        String expeTitle="Orgzstack";
+        Assert.assertEquals(curTitle, expeTitle, "Title not matched.");
+    }
+
     public void clkPFYes()
     {
         selectPFYes.click();

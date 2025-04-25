@@ -83,4 +83,26 @@ public class BasePage {
             return false; // No alert
         }
     }
+
+    public void toastMessage()
+    {
+        try {
+            wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement text=driver.findElement(By.xpath("//div[@role=\"alert\"]"));
+            wait.until(ExpectedConditions.visibilityOf(text));
+            String getText=text.getText();
+            System.out.println("Text on the POP-UP is : " + getText);
+
+            WebElement cancelButton=driver.findElement(By.xpath("//*[name()=\"path\" and contains(@fill-rule,\"evenodd\")]"));
+
+            wait.until(ExpectedConditions.elementToBeClickable(cancelButton));
+            cancelButton.click();
+            System.out.println("Clicked on the Cancel button");
+        }
+        catch (Exception e)
+        {
+            System.out.println("Alert is not present : " + e.getMessage());
+        }
+
+    }
 }

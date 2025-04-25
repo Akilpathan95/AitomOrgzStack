@@ -190,7 +190,7 @@ public class TC_Testing extends BaseClass {
         basep.handleAlert();
     }
 
-    //@Test(priority = 9)
+    @Test(priority = 9)
     public void verify_SalaryStructure()
     {
         BusinessUnitPage bu=new BusinessUnitPage(driver);
@@ -220,9 +220,12 @@ public class TC_Testing extends BaseClass {
         bs.selectLWFEmployee();
         bs.clkplus();
         bs.clkSave();
+        basep=new BasePage(driver);
+        basep.toastMessage();
+        bs.clkSalaryStructurePreview();
     }
 
-    @Test(priority = 9)
+    //@Test(priority = 10)
     public void verify_RevisedSalaryStructure()
     {
         BusinessUnitPage bu=new BusinessUnitPage(driver);

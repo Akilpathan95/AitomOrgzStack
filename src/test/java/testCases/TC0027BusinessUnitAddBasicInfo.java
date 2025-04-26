@@ -72,5 +72,6 @@ public class TC0027BusinessUnitAddBasicInfo extends BaseClass {
         be.clkSave();
         basep=new BasePage(driver);
         basep.handleAlert();
+        System.out.println(driver.getTitle());
     }
 }

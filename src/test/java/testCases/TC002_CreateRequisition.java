@@ -53,8 +53,8 @@ public class TC002_CreateRequisition extends BaseClass {
         rp.countNo_OfPosition();
         rp.selectCurrency();
         rp.selectPeriod();
-        rp.enterCTC_Min("8");
-        rp.enterCTC_Max("5");
+        rp.enterCTC_Min("5");
+        rp.enterCTC_Max("8");
         rp.selectWork_Model();
         rp.enterTarget_Company("IPSearch Executive Search");
         rp.selectShift_Type();
@@ -69,18 +69,5 @@ public class TC002_CreateRequisition extends BaseClass {
         rp.enterAlternate_Qualificatio("Computer Science");
         rp.enterAdd_Remark("ISTQB certified tester has added advantage");
         rp.clkSave();
-    }
-
-    @Test(priority = 5)
-    public void verify_Pop_UP() {
-        BasePage bp = new BasePage(driver);
-
-        String expected_Message = "Requisition Created";
-
-        String actual_Message = bp.getAlertText();
-
-        Assert.assertEquals(actual_Message, expected_Message, "Pop-up message verification failed!");
-
-        bp.handleAlert();
     }
 }

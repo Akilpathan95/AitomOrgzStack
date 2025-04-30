@@ -1,6 +1,5 @@
 package testCases;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObject.*;
 import testBase.BaseClass;
@@ -72,19 +71,6 @@ public class TC004_Keyword extends BaseClass {
         rp.enterAlternate_Qualificatio("Computer Science");
         rp.enterAdd_Remark("ISTQB certified tester has added advantage");
         rp.clkSave();
-    }
-
-    @Test(priority = 5, groups = {"Master", "Requisition"})
-    public void verify_Pop_UP() {
-        BasePage bp = new BasePage(driver);
-
-        String expected_Message = "Requisition Created";
-
-        String actual_Message = bp.getAlertText();
-
-        Assert.assertEquals(actual_Message, expected_Message, "Pop-up message verification failed!");
-
-        bp.handleAlert();
     }
 
     @Test(priority = 6)

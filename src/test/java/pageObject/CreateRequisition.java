@@ -67,7 +67,7 @@ public class CreateRequisition extends BasePage {
         wait=new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(drpClient_Name));
         drpClient_Name.click();
-        driver.findElement(By.xpath("//div[@class=' css-11unzgr']//div[contains(text(), 'Urbanwrk Pvt Ltd')]")).click();
+        driver.findElement(By.xpath("//div[@class=' css-11unzgr']//div[contains(text(), 'Ajmal & Sons')]")).click();
     }
 
     public void clkCreateRequisition_POPup()

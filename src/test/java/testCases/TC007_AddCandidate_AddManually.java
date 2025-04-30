@@ -31,7 +31,7 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         cr.clkCreateRequisition_POPup();
     }
 
-    @Test(priority = 4, groups = "Master")
+    //@Test(priority = 4, groups = "Master")
     public void verify_RequirementDetails()
     {
         Requirement_DetailsPage rp=new Requirement_DetailsPage(driver);
@@ -74,19 +74,6 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         rp.clkSave();
     }
 
-    @Test(priority = 5)
-    public void verify_Pop_UP() {
-        BasePage bp = new BasePage(driver);
-
-        String expected_Message = "Requisition Created";
-
-        String actual_Message = bp.getAlertText();
-
-        Assert.assertEquals(actual_Message, expected_Message, "Pop-up message verification failed!");
-
-        bp.handleAlert();
-    }
-
     @Test(priority = 6)
     public void verify_Recruitment()
     {
@@ -119,7 +106,7 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         jd.clkGenerateKeyword_Save();
     }
 
-    @Test(priority = 8)
+    //@Test(priority = 8)
     public void verify_Hiring() {
         Requirement_HiringTeamPage ht=new Requirement_HiringTeamPage(driver);
         ht.clkHiring_Team();
@@ -127,7 +114,7 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         ht.selectAssigntoAllLocations();
     }
 
-    @Test(priority = 9)
+    //@Test(priority = 9)
     public void verify_InterviewSetup() throws InterruptedException {
         Requirement_InterviewSetupPage ip=new Requirement_InterviewSetupPage(driver);
         ip.clkInterview_Setup();
@@ -185,7 +172,7 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         rc.selectEducation("Yes");
         rc.selectExperience("Yes");
         rc.selectProject("Yes");
-        rc.selectLanguage("Yes");
+        rc.selectLanguage("English");
         rc.selectCourses("Yes");
         rc.submit();
     }

@@ -2,7 +2,9 @@ package pageObject;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -51,6 +53,8 @@ public class Requirement_InterviewSetupPage extends BasePage {
 
     public void clkInterview_Setup()
     {
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(btn_InterviewSetup));
         btn_InterviewSetup.click();
         BasePage bp=new BasePage(driver);
         bp.handleAlert();

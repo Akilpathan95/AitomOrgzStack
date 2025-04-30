@@ -99,7 +99,7 @@ public class BaseClass {
         driver.manage().deleteAllCookies();
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get(p.getProperty("appURL")); //Reading url from Properties file.
+        driver.get(p.getProperty("productionAppURL")); //Reading url from Properties file.
         driver.manage().window().maximize();
 
     }

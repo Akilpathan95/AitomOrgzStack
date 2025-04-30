@@ -20,7 +20,7 @@ public class Requirement_JobDescriptionPage extends BasePage {
     @FindBy(xpath = "//button[normalize-space()=\"Enhance/Create with AI\"]")
     WebElement btnCreateWithAI;
 
-    @FindBy(xpath = "(//input[@placeholder='Select from below suggestions or enter your own response here'])[1]")
+    @FindBy(xpath = "(//input[@placeholder=\"Select from suggestions or enter your response here\"])[1]")
     WebElement txtSelectSuggestion;
 
     @FindBy(xpath = "(//div[@class='suggestions']//span[@class='suggestion-bubble'])[1]")
@@ -29,7 +29,7 @@ public class Requirement_JobDescriptionPage extends BasePage {
     @FindBy(xpath = "//button[normalize-space()=\"Submit\"]")
     WebElement btnSubmit;
 
-    @FindBy(xpath = "//button[normalize-space()=\"Generate JD\"]")
+    @FindBy(xpath = "//button[normalize-space()=\"Generate Job Description\"]")
     WebElement btnGenerate_JD;
 
     @FindBy(xpath = "//button[normalize-space()=\"Save\"]")

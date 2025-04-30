@@ -28,30 +28,47 @@ public class Requirement_HiringTeamPage extends BasePage {
     @FindBy(xpath = "(//span[contains(text(),'For Location:')])")
     List<WebElement> location;
 
+    @FindBy(xpath = "(//button//span[text()='Add To Team'])[1]")
+    WebElement addButton;
+
     public void clkHiring_Team()
     {
         selectHiring_Team.click();
     }
 
-    public void selectLcoation()
+    /*public void selectLcoation()
     {
         for (int i=0; i<location.size(); i++)
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            Actions actions = new Actions(driver);
 
             //Wait and select Assign Role
             WebElement assignRole=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'Assign Role')])[" + (i + 1) + "]")));
-            Actions actions = new Actions(driver);
             actions.moveToElement(assignRole).click().perform();
             System.out.println("Assign role is selected");
+
+
             WebElement role=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(), 'Recruiter')]")));
             actions.moveToElement(role).click().perform();
+            System.out.println("Recruiter role selectred");
 
             //Wait for select Recruiter role
             WebElement nameEmailId=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'Name/Email Id')])[" + (i + 1) + "]")));
             actions.moveToElement(nameEmailId).click().perform();
-            System.out.println("Name and Email id selected");
-            driver.findElement(By.xpath("//div[contains(text(),'Akil Pathan (akilp1995@gmail.com)')]")).click();
+            System.out.println("Dropdown opened");
+
+            // Now interact with Name/Email Id input field
+            WebElement inputField = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.id("react-select-7-input")));
+            actions.moveToElement(inputField).click().sendKeys("akil").perform();
+            System.out.println("Typed into Name/Email Id input field");
+
+            WebElement emailOption = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//*[contains(text(),'akilp1995@gmail.com')]")
+            ));
+            emailOption.click();
+            System.out.println("Email option clicked successfully!");
 
             //wait for the buttin to be submit
             WebElement addToTeamButton = driver.findElement(By.xpath("(//span[contains(text(),'Add To Team')])[" + (i + 1) + "]"));
@@ -65,7 +82,37 @@ public class Requirement_HiringTeamPage extends BasePage {
         } catch (Exception e) {
             System.out.println("Error on row " + (i + 1) + ": " + e.getMessage());
         }
+    }*/
 
+    public void selectLcoation()
+    {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        Actions actions = new Actions(driver);
+
+        //Wait and select Assign Role
+        WebElement assignRole=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'Assign Role')])[1]")));
+        actions.moveToElement(assignRole).click().perform();
+        System.out.println("Assign role is selected");
+
+        WebElement role=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(), 'Recruiter')]")));
+        actions.moveToElement(role).click().perform();
+        System.out.println("Recruiter role selectred");
+
+        //Wait for select Recruiter role
+        WebElement nameEmailId=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[contains(@id, 'react-select') and @type='text'])[2]")));
+        nameEmailId.click();
+        nameEmailId.sendKeys("akil.pathan@orgzstack.com");
+        System.out.println("Dropdown opened");
+
+        WebElement selectValue=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()=\"akil.pathan@orgzstack.com\"]")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", selectValue);
+        selectValue.click();
+
+        WebElement addButton=driver.findElement(By.xpath("(//button//span[text()='Add To Team'])[1]"));
+        addButton.click();
+
+        BasePage bp=new BasePage(driver);
+        bp.toastMessage();
     }
 
     public void selectAssigntoAllLocations() {
@@ -87,6 +134,8 @@ public class Requirement_HiringTeamPage extends BasePage {
                     Thread.sleep(1000); // Allow time for scrolling
                     addButton.click();
                     System.out.println("Add to location is applied to all locations");
+                    BasePage bp=new BasePage(driver);
+                    bp.toastMessage();
                 }
                 else
                 {
@@ -95,7 +144,8 @@ public class Requirement_HiringTeamPage extends BasePage {
             } else {
                 System.out.println("Checkbox is not present on the page.");
             }
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             System.out.println("Unexpected error: " + e.getMessage());
         }
     }

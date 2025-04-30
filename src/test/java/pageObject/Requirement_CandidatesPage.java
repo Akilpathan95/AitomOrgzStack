@@ -110,7 +110,7 @@ public class Requirement_CandidatesPage extends BasePage {
     @FindBy(xpath = "//input[@id=\"must-have-skills\"]")
     WebElement txtSkills;
 
-    @FindBy(xpath = "//div[normalize-space()=\"SUBMIT\"]")
+    @FindBy(xpath = "//button[normalize-space()=\"Save & Submit\"]")
     WebElement btnCandidate_submit;
 
     //------------Bulk Uploads--------------------
@@ -510,7 +510,7 @@ public class Requirement_CandidatesPage extends BasePage {
 
     public void selectEducation(String selectEducationDetails) throws InterruptedException {
         WebElement education=driver.findElement(By.xpath("//button[normalize-space()=\"+ Add Education\"]"));
-        List<WebElement> eduDetails=driver.findElements(By.xpath("//div[@style='padding: 20px 40px; background-color: rgb(242, 242, 242); margin-left: 20px;']//div[@style='display: flex; justify-content: space-between; align-items: center;']"));
+        List<WebElement> eduDetails=driver.findElements(By.xpath("(//h1[contains(text(),'Education Details')]/following::div[contains(@style, 'margin-top')]//div[contains(@style, 'rgb(224, 224, 224)')])[1]"));
 
         if (eduDetails.size()>0)
         {
@@ -533,7 +533,7 @@ public class Requirement_CandidatesPage extends BasePage {
                 WebElement toDate=driver.findElement(By.xpath("//input[@name=\"toDate\"]"));
                 WebElement percentage=driver.findElement(By.xpath("//input[@name=\"percentage\"]"));
                 WebElement location=driver.findElement(By.xpath("(//input[@name=\"location\"])[1]"));
-                WebElement add=driver.findElement(By.xpath("//button[normalize-space()=\"Add\"][1]"));
+                WebElement add=driver.findElement(By.xpath("//h1[contains(text(),'Education Details')]/following::button[text()='Save'][1]"));
 
                 degree.sendKeys("B.sc in Computer Science");
                 institution.sendKeys("ICL's Motilal JhunJhunwala College");
@@ -554,7 +554,7 @@ public class Requirement_CandidatesPage extends BasePage {
 
     public void selectExperience(String experienceDetails) throws InterruptedException {
         WebElement experience=driver.findElement(By.xpath("//button[normalize-space()=\"+ Add Experience\"]"));
-        List<WebElement> expDetails=driver.findElements(By.xpath("//h1[contains(text(),'Experience')]/ancestor::div/following-sibling::div[contains(@style, 'padding')]"));
+        List<WebElement> expDetails=driver.findElements(By.xpath("(//h1[contains(text(),'Experience')]/following::div[contains(@style, 'margin-top')]//div[contains(@style, 'rgb(224, 224, 224)')])[1]"));
 
         if (expDetails.size()>0)
         {
@@ -584,7 +584,7 @@ public class Requirement_CandidatesPage extends BasePage {
                 toDate.sendKeys("05-08-2022");
                 WebElement roles=driver.findElement(By.xpath("//input[@name=\"roles\"]"));
                 roles.sendKeys("Manual and Automation Testing");
-                WebElement add=driver.findElement(By.xpath("//h1[contains(text(),'Experience')]/following::button[text()='Add'][1]"));
+                WebElement add=driver.findElement(By.xpath("//h1[contains(text(),'Experience')]/following::button[text()='Save'][1]"));
                 add.click();
 
                 System.out.println("Experience added successfully");
@@ -600,7 +600,7 @@ public class Requirement_CandidatesPage extends BasePage {
     public void selectProject(String selectProjectDetail)
     {
         WebElement project=driver.findElement(By.xpath("//button[normalize-space()=\"+ Add Project\"]"));
-        List<WebElement> proDetails=driver.findElements(By.xpath("//h1[contains(text(),'Project')]/ancestor::div/following-sibling::div[contains(@style, 'padding')]"));
+        List<WebElement> proDetails=driver.findElements(By.xpath("(//h1[contains(text(),'Project Details')]/following::div[contains(@style, 'margin-top')]//div[contains(@style, 'rgb(224, 224, 224)')])[1]"));
 
         if (proDetails.size()>1)
         {
@@ -619,9 +619,9 @@ public class Requirement_CandidatesPage extends BasePage {
                 from_Date.sendKeys("06-10-2022");
                 WebElement to_Date = driver.findElement(By.xpath("//h1[contains(text(),'Project')]/following::input[@name='toDate'][1]"));
                 to_Date.sendKeys("03-12-2024");
-                WebElement project_Description = driver.findElement(By.xpath("//input[@name=\"description\"]"));
+                WebElement project_Description = driver.findElement(By.xpath("//textarea[@name=\"description\"]"));
                 project_Description.sendKeys("It is HR management tool");
-                WebElement add = driver.findElement(By.xpath("//h1[contains(text(),'Project')]/following::button[text()='Add'][1]"));
+                WebElement add = driver.findElement(By.xpath("//h1[contains(text(),'Project Details')]/following::button[text()='Save'][1]"));
                 add.click();
                 System.out.println("Project added successfully");
             } else if (selectProjectDetail.equalsIgnoreCase("No")) {
@@ -630,32 +630,23 @@ public class Requirement_CandidatesPage extends BasePage {
         }
     }
 
-    public void selectLanguage(String selectLanguage_Option)
+    public void selectLanguage(String lan)
     {
         WebElement language=driver.findElement(By.xpath("//button[normalize-space()=\"+ Add Language\"]"));
 
-        if (selectLanguage_Option.equalsIgnoreCase("Yes"))
-        {
             language.click();
 
-            WebElement selectlanguage_option=driver.findElement(By.xpath("//select[@name=\"language\"]"));
-            select=new Select(selectlanguage_option);
-            select.selectByValue("English");
+            WebElement enterlanguage=driver.findElement(By.xpath("//input[@name=\"language\"]"));
+            enterlanguage.sendKeys(lan);
             WebElement read=driver.findElement(By.xpath("//input[@name=\"read\"]"));
             read.click();
             WebElement write=driver.findElement(By.xpath("//input[@name=\"write\"]"));
             write.click();
             WebElement speak=driver.findElement(By.xpath("//input[@name=\"speak\"]"));
             speak.click();
-            WebElement add=driver.findElement(By.xpath("//h1[contains(text(), 'Language Details')]/following::div//button[text()='Add']"));
+            WebElement add=driver.findElement(By.xpath("//h1[contains(text(),'Language Details')]/following::button[text()='Save'][1]"));
             add.click();
-
             System.out.println("Language added successfully");
-        }
-        else if (selectLanguage_Option.equalsIgnoreCase("No"))
-        {
-            System.out.println("User dont want to update Language, Please move forward");
-        }
 
         actions=new Actions(driver);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -665,7 +656,7 @@ public class Requirement_CandidatesPage extends BasePage {
     {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement course=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()=\"+ Add Course\"]")));
-        List<WebElement> couDetails=driver.findElements(By.xpath("//h1[contains(text(),'Courses')]/ancestor::div/following-sibling::div[contains(@style, 'padding')]"));
+        List<WebElement> couDetails=driver.findElements(By.xpath("(//h1[contains(text(),'Course Details')]/following::div[contains(@style, 'margin-top')]//div[contains(@style, 'rgb(224, 224, 224)')])[1]"));
         if (couDetails.size()>0)
         {
             System.out.println("Course details are already present. No need to Add");
@@ -683,7 +674,7 @@ public class Requirement_CandidatesPage extends BasePage {
                 fromDate.sendKeys("07-05-2023");
                 WebElement toDate = driver.findElement(By.xpath("//h1[contains(text(),'Courses')]/following::input[@name='toDate']"));
                 toDate.sendKeys("15-11-2023");
-                WebElement add = driver.findElement(By.xpath("//h1[contains(text(),'Courses')]/following::button[text()='Add'][1]"));
+                WebElement add = driver.findElement(By.xpath("//h1[contains(text(),'Course Details')]/following::button[text()='Save'][1]"));
                 add.click();
 
                 System.out.println("Course details added successfully");

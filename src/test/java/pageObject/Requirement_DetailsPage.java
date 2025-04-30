@@ -1,6 +1,7 @@
 package pageObject;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,7 +38,7 @@ public class Requirement_DetailsPage extends BasePage{
     @FindBy(xpath = "//select[@name=\"priority\"]")
     WebElement drpPriority;
 
-    @FindBy(xpath = "(//select[@id='demo-simple-select'])[1]")
+    @FindBy(xpath = "//select[@name=\"typeOfCandidate\"]")
     WebElement drpSelect_Candidate;
 
     @FindBy(xpath = "//input[@placeholder=\"No.of days\"]")
@@ -46,7 +47,7 @@ public class Requirement_DetailsPage extends BasePage{
     @FindBy(xpath = "//input[@id=\"date-picker-inline\"]")
     WebElement dateRequiredBy_Date;
 
-    @FindBy(xpath = "(//select[@id='demo-simple-select'])[2]")
+    @FindBy(xpath = "//select[@name=\"requirement_type\"]")
     WebElement drpRequirement_Type;
 
     @FindBy(xpath = "//input[@name=\"Notice_Period\"]")
@@ -58,10 +59,10 @@ public class Requirement_DetailsPage extends BasePage{
     @FindBy(xpath = "//input[@placeholder=\"Position\"]")
     List<WebElement> txtNo_Position;
 
-    @FindBy(xpath = "//div[contains(@class,\"flex flex-row px-12 pt-8 w-full font-normal font-sans leading-5 text-sm gap-x-12\")]//button[2]//*[name()=\"svg\"]")
+    @FindBy(xpath = "//button[2]//*[name()=\"svg\"]")
     WebElement btnAddWork_Location;
 
-    @FindBy(xpath = "(//*[name()='svg'][contains(@class,'MuiSvgIcon-root MuiSvgIcon-fontSizeSmall')])[1]")
+    @FindBy(xpath = "//p[text()=\"Work Location \"]/following::button[1]//*[name()=\"svg\"]")
     WebElement btnSubWork_Location;
 
     @FindBy(xpath = "//input[@placeholder=\"0\"]")
@@ -76,10 +77,10 @@ public class Requirement_DetailsPage extends BasePage{
     @FindBy(xpath = "//select[@name=\"frequency\"]")
     WebElement drpSelect_Period;
 
-    @FindBy(xpath = "//input[@id=\"from\"]")
+    @FindBy(xpath = "//input[@name=\"toAmount\"]")
     WebElement txtCTC_Max;
 
-    @FindBy(xpath = "//input[@id=\"to\"]")
+    @FindBy(xpath = "//input[@name=\"fromAmount\"]")
     WebElement txtCTC_Min;
 
     @FindBy(xpath = "//select[@name=\"work_Model\"]")
@@ -91,7 +92,7 @@ public class Requirement_DetailsPage extends BasePage{
     @FindBy(xpath = "//input[@name=\"target_Company\"]")
     WebElement txtTarget_Company;
 
-    @FindBy(xpath = "(//select[@id='demo-simple-select'])[8]")
+    @FindBy(xpath = "//select[@name=\"gender\"]")
     WebElement drpGender;
 
     @FindBy(xpath = "//input[@name=\"age_from\"]")
@@ -106,10 +107,10 @@ public class Requirement_DetailsPage extends BasePage{
     @FindBy(xpath = "//input[@name=\"exeperience_To\"]")
     WebElement txtExperience_To;
 
-    @FindBy(xpath = "(//select[@id='demo-simple-select'])[9]")
+    @FindBy(xpath = "//select[@name=\"skillset\"]")
     WebElement drpEducational_Qualification;
 
-    @FindBy(xpath = "(//div[contains(@class,'css-ackcql')])[2]")
+    @FindBy(xpath = "//div[contains(@class,\"7b7m-control\")]//div[contains(@class,\"Container\")]//*[name()=\"svg\"]")
     WebElement drpAdditional_Qualification;
 
     @FindBy(xpath = "//input[@name=\"alternative_Quali\"]")
@@ -126,6 +127,7 @@ public class Requirement_DetailsPage extends BasePage{
 
     public void enterJob_Title(String job_Title)
     {
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom = '90%'");
         txtJob_Title.sendKeys(job_Title);
     }
 
@@ -299,7 +301,9 @@ public class Requirement_DetailsPage extends BasePage{
 
     public void selectAdditional_Qualification(String qualification)
     {
-        drpAdditional_Qualification.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(drpAdditional_Qualification)).click();
+        System.out.println("clicked on the additional Qualification");
         List<WebElement> options=driver.findElements(By.xpath("//div[@class=\" css-mtovj2-menu\"]//div[@class=' css-yt9ioa-option']"));
         System.out.println("Number of options in the dropdown : " + options.size());
         for (WebElement option : options)
@@ -308,6 +312,8 @@ public class Requirement_DetailsPage extends BasePage{
             System.out.println (optionText);
             if (optionText.equals(qualification))
             {
+                wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+                wait.until(ExpectedConditions.elementToBeClickable(option));
                 option.click();
                 break;
             }

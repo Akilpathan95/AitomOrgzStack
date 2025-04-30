@@ -79,9 +79,9 @@ public class TC003_GenerateJD extends BaseClass {
     {
         lp=new LeftMenuPage(driver);
         lp.clkRequisition();
-        RecruitmentPage rp=new RecruitmentPage(driver);
         RequisitionTopMenuPage rtp=new RequisitionTopMenuPage(driver);
         rtp.clkRecruitment();
+        RecruitmentPage rp=new RecruitmentPage(driver);
         rp.clkRecruitment_List();
         Requirement_JobDescriptionPage jd=new Requirement_JobDescriptionPage(driver);
         jd.clkJob_Description();

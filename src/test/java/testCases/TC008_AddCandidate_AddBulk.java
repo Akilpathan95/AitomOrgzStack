@@ -27,6 +27,6 @@ public class TC008_AddCandidate_AddBulk extends BaseClass {
         rc.clkBulkUpload();
         rc.addBulkUpload();
         rc.clkCancel();
-        rc.enterSearch("Akil");
+        rc.enterSearch("Sunny");
     }
 }

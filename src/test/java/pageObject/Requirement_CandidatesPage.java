@@ -701,8 +701,8 @@ public class Requirement_CandidatesPage extends BasePage {
         WebElement uploads=driver.findElement(By.xpath("//input[@type='file']"));
         js=(JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);",uploads);
-        String file1="C:\\Users\\IPSL\\Downloads\\Umashankar DS - Mechanical Technician.pdf";
-        String file2="C:\\Users\\IPSL\\Downloads\\Saiyad Ali -Electrical Techician.pdf";
+        String file1="C:\\Users\\IPSL\\Downloads\\Naukri_SunnyKhavle[8y_0m].pdf";
+        String file2="C:\\Users\\IPSL\\Downloads\\Naukri_CANileshAnantaDaule[11y_0m].pdf";
 
         uploads.sendKeys(file1 + "\n" + file2);
 
@@ -712,7 +712,7 @@ public class Requirement_CandidatesPage extends BasePage {
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-        List<WebElement> statusElements=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class=\"upload-section\"]//div//div//p")));
+        List<WebElement> statusElements=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[contains(@style, 'align-items: center') and contains(@style, 'margin-top: 4px;')]/span")));
 
         boolean allUploaded = false;
         int attempts = 0;
@@ -724,7 +724,7 @@ public class Requirement_CandidatesPage extends BasePage {
             for (WebElement statusElement : statusElements) {
                 String statusText = statusElement.getText().trim();
 
-                if (statusText.equalsIgnoreCase("Uploading...")) {
+                if (statusText.equalsIgnoreCase("Processing...")) {
                     allUploaded = false; // If any file is still uploading, wait
                     break;
                 }
@@ -740,7 +740,7 @@ public class Requirement_CandidatesPage extends BasePage {
 
     public void clkCancel()
     {
-        driver.findElement(By.xpath("//div[normalize-space()=\"x\"]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),\"✕\")]")).click();
         WebElement closeButton=driver.findElement(By.xpath("//p[text()='x']"));
         js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", closeButton);

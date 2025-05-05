@@ -102,6 +102,8 @@ public class BaseClass {
         driver.get(p.getProperty("productionAppURL")); //Reading url from Properties file.
         driver.manage().window().maximize();
 
+        verify_Login();
+
     }
 
     //@AfterClass(groups = "Master")
@@ -110,7 +112,7 @@ public class BaseClass {
         driver.quit();
     }
 
-    @Test(priority = 1)
+
     public void verify_Login()
     {
         LoginPage lp=new LoginPage(driver);

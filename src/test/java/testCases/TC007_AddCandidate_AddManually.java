@@ -31,7 +31,7 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         cr.clkCreateRequisition_POPup();
     }
 
-    //@Test(priority = 4, groups = "Master")
+    @Test(priority = 4, groups = "Master")
     public void verify_RequirementDetails()
     {
         Requirement_DetailsPage rp=new Requirement_DetailsPage(driver);
@@ -57,7 +57,7 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         rp.selectCurrency();
         rp.selectPeriod();
         rp.enterCTC_Min("8");
-        rp.enterCTC_Max("5");
+        rp.enterCTC_Max("15");
         rp.selectWork_Model();
         rp.enterTarget_Company("IPSearch Executive Search");
         rp.selectShift_Type();
@@ -72,17 +72,12 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         rp.enterAlternate_Qualificatio("Computer Science");
         rp.enterAdd_Remark("ISTQB certified tester has added advantage");
         rp.clkSave();
-    }
-
-    @Test(priority = 6)
-    public void verify_Recruitment()
-    {
         lp=new LeftMenuPage(driver);
         lp.clkRequisition();
-        RecruitmentPage rp=new RecruitmentPage(driver);
+        RecruitmentPage rrp=new RecruitmentPage(driver);
         RequisitionTopMenuPage rtp=new RequisitionTopMenuPage(driver);
         rtp.clkRecruitment();
-        rp.clkRecruitment_List();
+        rrp.clkRecruitment_List();
         Requirement_JobDescriptionPage jd=new Requirement_JobDescriptionPage(driver);
         jd.clkJob_Description();
         jd.clkCreateWithAI();
@@ -95,6 +90,29 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         jd.selectGenerate_JD();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
         jd.selectSave();
+    }
+
+    //@Test(priority = 6)
+    public void verify_Recruitment()
+    {
+        lp=new LeftMenuPage(driver);
+        lp.clkRequisition();
+        RecruitmentPage rp=new RecruitmentPage(driver);
+        RequisitionTopMenuPage rtp=new RequisitionTopMenuPage(driver);
+        rtp.clkRecruitment();
+        rp.clkRecruitment_List();
+        //Requirement_JobDescriptionPage jd=new Requirement_JobDescriptionPage(driver);
+        //jd.clkJob_Description();
+        //jd.clkCreateWithAI();
+        //jd.selectSuggestion_Inputbox();
+        //jd.selectSuggestion();
+        //jd.selectSubmit();
+        //jd.selectSuggestion_Inputbox();
+        //jd.selectSuggestion();
+        //jd.selectSubmit();
+        //jd.selectGenerate_JD();
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        //jd.selectSave();
     }
 
     @Test(priority = 7)
@@ -141,7 +159,7 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         rc.clkCandidate();
         rc.clkAdd_Candidate();
         rc.clkAdd_Manually();
-        rc.addFileWithRetry("C:/Users/IPSL/Downloads/Saiyad Ali -Electrical Techician.pdf", 3);
+        rc.addFileWithRetry("C:/Users/IPSL/Downloads/Saiyad Ali -Electrical Techician.pdf", 1);
         driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(2));
         rc.enterFirst_Name("Akil");
         rc.enterMiddle_Name("Nisar");
@@ -172,8 +190,8 @@ public class TC007_AddCandidate_AddManually extends BaseClass {
         rc.selectEducation("Yes");
         rc.selectExperience("Yes");
         rc.selectProject("Yes");
-        rc.selectLanguage("English");
-        rc.selectCourses("Yes");
+        rc.selectLanguage("Yes");
+        rc.selectCertificate("Yes");
         rc.submit();
     }
 }

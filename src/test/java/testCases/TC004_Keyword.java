@@ -19,7 +19,7 @@ public class TC004_Keyword extends BaseClass {
         rp.clkRequisition_Option();
     }
 
-    @Test(priority = 3, groups = "Master")
+    //@Test(priority = 3, groups = "Master")
     public void verify_CreateRequisition() throws InterruptedException {
         CreateRequisition cr=new CreateRequisition(driver);
         cr.clkCreate_requisition();
@@ -30,7 +30,7 @@ public class TC004_Keyword extends BaseClass {
         cr.clkCreateRequisition_POPup();
     }
 
-    @Test(priority = 4, groups = "Master")
+    //@Test(priority = 4, groups = "Master")
     public void verify_RequirementDetails()
     {
         Requirement_DetailsPage rp=new Requirement_DetailsPage(driver);
@@ -56,7 +56,7 @@ public class TC004_Keyword extends BaseClass {
         rp.selectCurrency();
         rp.selectPeriod();
         rp.enterCTC_Min("8");
-        rp.enterCTC_Max("5");
+        rp.enterCTC_Max("15");
         rp.selectWork_Model();
         rp.enterTarget_Company("IPSearch Executive Search");
         rp.selectShift_Type();
@@ -84,16 +84,16 @@ public class TC004_Keyword extends BaseClass {
         rp.clkRecruitment_List();
         Requirement_JobDescriptionPage jd=new Requirement_JobDescriptionPage(driver);
         jd.clkJob_Description();
-        jd.clkCreateWithAI();
-        jd.selectSuggestion_Inputbox();
-        jd.selectSuggestion();
-        jd.selectSubmit();
-        jd.selectSuggestion_Inputbox();
-        jd.selectSuggestion();
-        jd.selectSubmit();
-        jd.selectGenerate_JD();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-        jd.selectSave();
+        //jd.clkCreateWithAI();
+        //jd.selectSuggestion_Inputbox();
+        //jd.selectSuggestion();
+        //jd.selectSubmit();
+        //jd.selectSuggestion_Inputbox();
+        //jd.selectSuggestion();
+        //jd.selectSubmit();
+        //jd.selectGenerate_JD();
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        //jd.selectSave();
     }
 
     @Test(priority = 7)
@@ -101,6 +101,7 @@ public class TC004_Keyword extends BaseClass {
         Requirement_JobDescriptionPage jd=new Requirement_JobDescriptionPage(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
         jd.selectGenerate_Keyword();
+        jd.enterInputBox();
         jd.clkdrpGenerate_Keyword();
         jd.clkGenerateKeyword_Save();
     }

@@ -1,5 +1,6 @@
 package pageObject;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -43,6 +44,15 @@ public class Requirement_JobDescriptionPage extends BasePage {
 
     @FindBy(xpath = "//div[contains(text(),\"SAVE\")]")
     WebElement btnGenerateKeyword_Save;
+
+    @FindBy(xpath = "//input[@id=\"mui-1\"]")
+    WebElement txtInputBox;
+
+    public void enterInputBox()
+    {
+        txtInputBox.sendKeys(Keys.CONTROL + "a");
+        txtInputBox.sendKeys(Keys.DELETE);
+    }
 
     public void clkJob_Description()
     {

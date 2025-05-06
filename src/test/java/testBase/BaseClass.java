@@ -15,6 +15,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObject.LoginPage;
@@ -34,8 +35,8 @@ public class BaseClass {
     public Logger logger; //Log4j
     public Properties p;
 
-    @BeforeClass(groups = "Master")
     @Parameters({"os","browser"})
+    @BeforeSuite(groups = "Master")
     public void setup(String os, String br) throws IOException {
 
         //Loading config.properties file

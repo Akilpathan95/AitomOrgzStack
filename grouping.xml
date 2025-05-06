@@ -2,6 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
 
+    <parameter name="os" value="Windows"/>
+    <parameter name="browser" value="chrome"/>
+
     <groups>
         <run>
             <!--<include name="Master"/>
@@ -16,10 +19,14 @@
     </listeners>
 
     <test thread-count="5" name="test">
-        <parameter name="os" value="Windows"/>
-        <parameter name="browser" value="chrome"/>
+
         <classes>
+            <class name="testCases.TC002_CreateRequisition"/>
+            <class name="testCases.TC003_GenerateJD"/>
+            <class name="testCases.TC004_Keyword"/>
+            <class name="testCases.TC005_HiringTeam"/>
             <class name="testCases.TC007_AddCandidate_AddManually"/>
+            <class name="testCases.TC008_AddCandidate_AddBulk"/>
         </classes>
     </test>
 

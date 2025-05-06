@@ -1,5 +1,6 @@
 package testCases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObject.*;
 import testBase.BaseClass;
@@ -68,5 +69,8 @@ public class TC002_CreateRequisition extends BaseClass {
         rp.enterAlternate_Qualificatio("Computer Science");
         rp.enterAdd_Remark("ISTQB certified tester has added advantage");
         rp.clkSave();
+        boolean isReqPresent=rp.verifyRequirementExists("Senior Software Tester");
+        Assert.assertTrue(isReqPresent, "Requirement not listed after Creation!");
+        System.out.println("Requirement successfully created and verified.");
     }
 }

@@ -335,4 +335,16 @@ public class Requirement_DetailsPage extends BasePage{
         btnSave.click();
     }
 
+    public boolean verifyRequirementExists(String jobTitle)
+    {
+        try {
+            WebElement enterJobTitle=driver.findElement(By.xpath("(//td[@class='MuiTableCell-root'][normalize-space()='"+jobTitle+"'])[1]"));
+            return enterJobTitle.isDisplayed();
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+
 }
